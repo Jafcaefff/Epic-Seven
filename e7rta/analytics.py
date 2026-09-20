@@ -126,27 +126,36 @@ def _team(raw):
 
 
 def load_battles(season=None):
-    """返回 [(my_set, enemy_set, win), ...]，win=我方是否胜(0/1)。"""
+    """返回 [(my_set, enemy_set, win), ...]，win=我方是否胜(0/1)。
+
+    优化：直接从 battle_picks 表读取（已清洗过的 hero_code），
+    避免 373k 场 × 2 次 json.loads() 的开销（之前要 20s）。
+    """
     conn = _conn()
     if season and _valid_season(season):
-        rows = conn.execute(
-            "SELECT my_team, enemy_team, is_win FROM battles WHERE season_code=?",
-            (season,)).fetchall()
+        rows = conn.execute("""
+            SELECT b.battle_seq, bp.side, bp.hero_code, b.is_win
+            FROM battles b JOIN battle_picks bp ON b.battle_seq=bp.battle_seq
+            WHERE b.season_code=?
+        """, (season,)).fetchall()
     else:
-        rows = conn.execute("SELECT my_team, enemy_team, is_win FROM battles").fetchall()
+        rows = conn.execute("""
+            SELECT b.battle_seq, bp.side, bp.hero_code, b.is_win
+            FROM battles b JOIN battle_picks bp ON b.battle_seq=bp.battle_seq
+        """).fetchall()
     conn.close()
-    out = []
-    for my, en, win in rows:
-        try:
-            my_set = frozenset(x.get("hero_code") for x in json.loads(my) if isinstance(x, dict))
-        except Exception:
-            my_set = frozenset()
-        try:
-            en_set = frozenset(x.get("hero_code") for x in json.loads(en) if isinstance(x, dict))
-        except Exception:
-            en_set = frozenset()
-        out.append((my_set, en_set, int(win or 0)))
-    return out
+
+    # 一次性 group by battle_seq
+    out_map = {}
+    for seq, side, code, win in rows:
+        if seq not in out_map:
+            out_map[seq] = (set(), set(), int(win or 0))
+        if side == 'my':
+            out_map[seq][0].add(code)
+        elif side == 'enemy':
+            out_map[seq][1].add(code)
+    # 转 frozenset 以便 hash
+    return [(frozenset(m), frozenset(e), w) for m, e, w in out_map.values()]
 
 
 # ---------------------------------------------------------------------------

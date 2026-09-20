@@ -43,3 +43,6 @@ logs/
 
 # 一次性推送脚本
 _push_github.py
+
+# 运行期 pickle 缓存（重启自动重建）
+e7rta/.cache/

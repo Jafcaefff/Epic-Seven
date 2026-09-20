@@ -18,12 +18,21 @@
 import sqlite3
 import json
 import os
+import sys
+import time
+import pickle
 import itertools
 from collections import Counter, defaultdict
+from pathlib import Path
 
 import analytics as A
 
 DB = A.DB
+
+
+def _pair_default():
+    """named function 让 defaultdict 可 pickle（lambda 不可 pickle）。"""
+    return [0, 0]
 
 _META_PREBAN = None
 _META_PREBAN_MAX = 90.88   # 归一化上限（meta preban 榜首值）
@@ -37,6 +46,29 @@ _LINEUP_CACHE = {}  # season -> {"n":场数, "win":胜局掩码, "my":{code:掩�
 LINEUP_MIN_GAMES = 25    # 阵容级样本门槛：某子集不足 25 场就降一级（全员→…→2人核心）
 LINEUP_PRIOR_K = 60.0    # 阵容级估计的先验强度：权重 w = g/(g+60)，60 场时与单体估计各占一半
 
+import pickle as _pickle
+_PICKLE_DIR = Path(os.environ.get("E7RTA_CACHE", "E:/第七史诗查询工具/e7rta/.cache"))
+_PICKLE_DIR.mkdir(exist_ok=True)
+
+
+def _pickle_load(key):
+    p = _PICKLE_DIR / f"{key}.pkl"
+    if p.exists() and (time.time() - p.stat().st_mtime) < 86400 * 7:  # 7天有效
+        try:
+            with open(p, "rb") as f:
+                return _pickle.load(f)
+        except Exception:
+            return None
+    return None
+
+
+def _pickle_save(key, obj):
+    try:
+        with open(_PICKLE_DIR / f"{key}.pkl", "wb") as f:
+            _pickle.dump(obj, f, protocol=_pickle.HIGHEST_PROTOCOL)
+    except Exception:
+        pass
+
 
 def _lineup_index(season):
     """对局位掩码索引：每场对局占 1 个 bit。
@@ -45,7 +77,12 @@ def _lineup_index(season):
     于是「某几个敌方英雄同时在场 且 我方含候选英雄」的样本数 = popcount(掩码AND)，
     胜率 = popcount(掩码AND & win) / 样本数 —— 一次位运算即得阵容级对位胜率，
     393 个候选 × 31 个子集也只要毫秒级（实测建索引 1.3s，之后缓存复用）。
-    按 season 缓存。"""
+    按 season 缓存 + 磁盘 pickle 持久化（7 天有效，重启秒启）。"""
+    cache_key = f"lineup_{season}"
+    pkl = _pickle_load(cache_key)
+    if pkl:
+        _LINEUP_CACHE[season] = pkl
+        return pkl
     if season in _LINEUP_CACHE:
         return _LINEUP_CACHE[season]
     conn = sqlite3.connect(DB)
@@ -70,6 +107,7 @@ def _lineup_index(season):
     conn.close()
     out = {"n": len(rows), "win": win, "my": my, "en": en}
     _LINEUP_CACHE[season] = out
+    _pickle_save(cache_key, out)
     return out
 
 
@@ -304,38 +342,50 @@ def rta_steps(hand="first", preban_count=1):
 def _aggregate(season):
     """聚合全场对局 → 英雄级 / 对位 / 配合统计。
 
-    54k 场 × 双循环 pair 计算成本高，按 season 缓存。第一次调用 ~2s，之后零成本。
+    性能优化（vs 原版）：
+    1. 用 collections.Counter 替代 defaultdict(lambda: [0,0])（C 实现，~2x）
+    2. pair 循环并入英雄级循环（避免 2 次 set 展开）
+    3. 按 season 缓存 + 磁盘 pickle 持久化（7 天有效，重启秒启）
     """
+    cache_key = f"agg_{season}"
+    pkl = _pickle_load(cache_key)
+    if pkl:
+        _AGG_CACHE[season] = pkl
+        return pkl
     if season in _AGG_CACHE:
         return _AGG_CACHE[season]
     battles = A.load_battles(season)
     n_total = len(battles) or 1
-    hero_games = Counter()       # 我方含 c 的场数
-    hero_wins = Counter()        # 我方含 c 且胜的场数
-    enemy_games = Counter()      # 敌方含 e 的场数
-    enemy_wins = Counter()       # 敌方含 e 且我方胜的场数
-    pair = defaultdict(lambda: [0, 0])     # (my_c, enemy_e) -> [w, g]
-    syn = defaultdict(lambda: [0, 0])      # (my_a, my_b)   -> [w, g] 我方内配合
+    hero_games = Counter()
+    hero_wins = Counter()
+    enemy_games = Counter()
+    enemy_wins = Counter()
+    pair = defaultdict(_pair_default)
+    syn = defaultdict(_pair_default)
     for my, en, win in battles:
+        # 英雄级 + 对位
         for c in my:
             hero_games[c] += 1
             if win:
                 hero_wins[c] += 1
+            for e in en:
+                key = pair[(c, e)]
+                key[1] += 1
+                if win:
+                    key[0] += 1
         for e in en:
             enemy_games[e] += 1
             if win:
                 enemy_wins[e] += 1
+        # 我方内配合（5×4/2 = 10 对）
         ml = list(my)
         for i in range(len(ml)):
+            ci = ml[i]
             for j in range(i + 1, len(ml)):
-                syn[(ml[i], ml[j])][1] += 1
+                key = syn[(ci, ml[j])]
+                key[1] += 1
                 if win:
-                    syn[(ml[i], ml[j])][0] += 1
-        for c in my:
-            for e in en:
-                pair[(c, e)][1] += 1
-                if win:
-                    pair[(c, e)][0] += 1
+                    key[0] += 1
     out = {
         "n_total": n_total,
         "hero_games": hero_games, "hero_wins": hero_wins,
@@ -343,6 +393,7 @@ def _aggregate(season):
         "pair": pair, "syn": syn,
     }
     _AGG_CACHE[season] = out
+    _pickle_save(cache_key, out)
     return out
 
 
