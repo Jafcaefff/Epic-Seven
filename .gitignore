@@ -15,6 +15,8 @@ data/meta_snapshot.json
 # 本地英雄图标（373张 png，~10MB，从 CDN 重新拉即可）
 e7rta/static/img/heroes/*.png
 !e7rta/static/img/heroes/.gitkeep
+e7rta/client/templates/*.png
+!e7rta/client/templates/.gitkeep
 
 # AI 助手记忆 / 缓存
 .workbuddy/
@@ -32,6 +34,7 @@ logs/
 .idea/
 *.swp
 .DS_Store
+.pytest_cache/
 
 # 压缩包
 *.rar

@@ -70,14 +70,15 @@ curl -X POST http://127.0.0.1:8799/api/draft/quick \
 | 测试（30/30 回归 + 策略审查）| ✅ 全过 |
 | ss21（2026秋）数据 | ✅ 53k 场 |
 | ss20（2026夏）数据 | ⏳ 抓取中 |
-| MuMu 客户端 | ❌ 未实现 |
-| Codex 协作 | ⏳ 进行中 |
+| 跨平台客户端 v1 | ✅ 已完成（OCR / API / 悬浮窗 / 主循环） |
+| MuMu 实机集成 | ⏳ 待 Windows 端接入 ADB 截图与坐标标定 |
+| Codex 协作 | ✅ Mac 客户端 v1 已交付（PR #1） |
 
 ---
 
-## Codex 任务分配（Mac 端）
+## Codex 交付状态（Mac 端）
 
-Codex 在 Mac 上负责：
+Codex 在 `feat/client-v1` 分支已完成：
 
 1. **OCR 识别模块**（`e7rta/client/hero_recognizer.py`）
    - OpenCV 模板匹配，从截图中识别英雄 code
@@ -100,6 +101,14 @@ Codex 在 Mac 上负责：
 5. **测试**（`e7rta/client/tests/`）
    - pytest 单元测试，覆盖 OCR / API / 主循环
    - Mac 端完整可跑
+
+**验收结果（2026-09-20）**：
+
+- `python3 -m pytest -q e7rta/client/tests`：6/6 通过
+- 用 CDN 真实英雄头像生成合成 BP 截图，正确识别 `c5154 / c2124 / c1183`
+- PyQt 悬浮窗已在 macOS 完成离屏渲染检查
+- 提交：`1de69c2`
+- Pull Request：<https://github.com/Jafcaefff/Epic-Seven/pull/1>
 
 ### Windows 端（我）后续做
 
@@ -129,11 +138,31 @@ Codex 在 Mac 上负责：
 - **测试**：跑 `python e7rta/verify_system.py` 应全过
 - **重启服务**：改了 `server.py` 或 `draft.py` 要重启 server.py
 
+### 客户端本地验证
+
+```bash
+python -m pip install -r e7rta/client/requirements.txt
+python e7rta/client/download_templates.py
+python e7rta/client/tests/generate_fixture.py
+python -m pytest -q e7rta/client/tests
+python e7rta/client/main.py
+```
+
+`main.py` 使用 Qt 定时器每 1.5 秒检查一次合成截图，只在识别到的阵容变化时请求推荐接口。
+
+### Windows 端集成测试
+
+- 将 `e7rta/client/capture_stub.py` 替换为 MuMu ADB `screencap` 实现。
+- 在 MuMu 实际分辨率下标定 `main.py` 的 `SLOT_RECTS`。
+- 用真实 BP 界面确认 5 个槽位识别率和英雄选择防抖。
+- 确认推荐服务与 MuMu 在同机 `127.0.0.1:8799` 可达。
+- TODO：加入 Windows 真实截图 fixture，完成真机端到端回归。
+
 ---
 
 ## 后续路线
 
 1. **数据补全**：ss20 + ss19 全赛季（背景爬虫）
-2. **客户端实现**：Codex Mac 端 → Windows 端集成测试
+2. **客户端实现**：✅ Codex Mac 端已完成 → ⏳ Windows 端集成测试
 3. **MuMu 实机**：截图识别准确率优化
 4. **韩服/全球服扩展**：单独抓取 + 独立 season_code
