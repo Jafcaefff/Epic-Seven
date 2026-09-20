@@ -107,6 +107,36 @@ class Handler(BaseHTTPRequestHandler):
             return _send(self, {"steps": D.rta_steps(hand, preban)})
         if path == "/api/meta":
             return _send(self, _meta_snapshot())
+        if path == "/api/health":
+            import sqlite3
+            try:
+                conn = sqlite3.connect(DB, timeout=2)
+                battles = conn.execute("SELECT COUNT(*) FROM battles").fetchone()[0]
+                picks = conn.execute("SELECT COUNT(*) FROM battle_picks").fetchone()[0]
+                heroes = conn.execute("SELECT COUNT(*) FROM heroes").fetchone()[0]
+                conn.close()
+                db_ok = True
+            except Exception as e:
+                battles = picks = heroes = 0
+                db_ok = False
+                db_err = str(e)
+            # 缓存命中率（首次冷启动 vs 热）
+            return _send(self, {
+                "status": "ok" if db_ok else "degraded",
+                "db": {
+                    "battles": battles,
+                    "picks": picks,
+                    "heroes": heroes,
+                },
+                "caches": {
+                    "_AGG_CACHE": len(D._AGG_CACHE),
+                    "_POS_CACHE": len(D._POS_CACHE),
+                    "_LINEUP_CACHE": len(D._LINEUP_CACHE),
+                    "_META_OF_CACHE": len(D._META_OF_CACHE),
+                },
+                "db_error": None if db_ok else db_err,
+                "uptime_check": "process alive",
+            })
         # 静态文件兜底（css/js/png 等）
         rel = path.lstrip("/")
         fp = os.path.join(STATIC_DIR, rel)

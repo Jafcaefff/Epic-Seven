@@ -37,3 +37,6 @@ logs/
 *.rar
 *.zip
 *.7z
+
+# 一次性推送脚本
+_push_github.py
