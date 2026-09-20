@@ -129,6 +129,26 @@ Codex 在 Mac 上负责：
 - **测试**：跑 `python e7rta/verify_system.py` 应全过
 - **重启服务**：改了 `server.py` 或 `draft.py` 要重启 server.py
 
+### 客户端本地验证
+
+```bash
+python -m pip install -r e7rta/client/requirements.txt
+python e7rta/client/download_templates.py
+python e7rta/client/tests/generate_fixture.py
+python -m pytest -q e7rta/client/tests
+python e7rta/client/main.py
+```
+
+`main.py` 使用 Qt 定时器每 1.5 秒检查一次合成截图，只在识别到的阵容变化时请求推荐接口。
+
+### Windows 端集成测试
+
+- 将 `e7rta/client/capture_stub.py` 替换为 MuMu ADB `screencap` 实现。
+- 在 MuMu 实际分辨率下标定 `main.py` 的 `SLOT_RECTS`。
+- 用真实 BP 界面确认 5 个槽位识别率和英雄选择防抖。
+- 确认推荐服务与 MuMu 在同机 `127.0.0.1:8799` 可达。
+- TODO：加入 Windows 真实截图 fixture，完成真机端到端回归。
+
 ---
 
 ## 后续路线
