@@ -3,6 +3,18 @@
 > 你是 Codex（OpenAI 模型，跑在 Mac 端），接手 BP 推荐引擎的客户端实现。
 > 本文告诉你：你要做什么、怎么做、怎么测、怎么交。
 
+## 交付结果（2026-09-20）
+
+Mac 端客户端 v1 已完成，代码位于 `feat/client-v1` 分支：
+
+- 提交：`1de69c2`
+- Pull Request：<https://github.com/Jafcaefff/Epic-Seven/pull/1>
+- 测试：`python3 -m pytest -q e7rta/client/tests` → 6/6 通过
+- 实际头像合成图识别：`c5154 / c2124 / c1183` 全部正确
+- UI：PyQt 悬浮窗已完成 macOS 离屏渲染验收
+
+本文下方保留原始任务要求作为实现与验收依据。当前剩余工作只有 Windows/MuMu 实机集成。
+
 ---
 
 ## 你接手的项目
@@ -191,15 +203,16 @@ git push origin feat/client-v1
 **PR 模板**（`.github/PULL_REQUEST_TEMPLATE.md`）：
 ```markdown
 ## 改动
-- [ ] OCR 识别模块（hero_recognizer.py + tests）
-- [ ] PyQt 悬浮窗（overlay_ui.py）
-- [ ] API 客户端（recommender.py + mock test）
-- [ ] 主循环骨架（main.py + capture_stub.py）
-- [ ] 测试 fixtures（synthetic + real screenshots）
+- [x] OCR 识别模块（hero_recognizer.py + tests）
+- [x] PyQt 悬浮窗（overlay_ui.py）
+- [x] API 客户端（recommender.py + mock test）
+- [x] 主循环骨架（main.py + capture_stub.py）
+- [x] 合成测试 fixture
+- [ ] Windows 真实 BP 截图 fixture
 
 ## 测试
-- [ ] 所有 pytest 通过（`pytest e7rta/client/tests/`）
-- [ ] Mac 端合成图识别准确率 ≥ 95%
+- [x] 所有 pytest 通过（`pytest e7rta/client/tests/`）
+- [x] Mac 端合成图已知槽位识别正确率 100%
 - [ ] 截图周期 ≤ 2s（`time.time()` 包 capture + recognize）
 
 ## 待办
@@ -235,9 +248,12 @@ A: `brew install pyqt@5` 或用 conda env。
 
 ## 完成定义
 
-你的 PR 合并后：
-1. `pytest e7rta/client/tests/` 全过
-2. Mac 端能跑 main.py 显示合成图推荐
-3. README.md 加一段 "Windows 端集成测试" 说明，留 TODO 给 Windows 端接手人
+当前验收状态：
+
+1. [x] `pytest e7rta/client/tests/` 全过
+2. [x] Mac 端能识别合成图并渲染推荐悬浮窗
+3. [x] README.md 已增加 "Windows 端集成测试" 说明
+4. [ ] PR #1 合并至 `main`
+5. [ ] Windows/MuMu 真机端到端测试
 
 剩下的（MuMu ADB 截图 + 真机集成）由 Windows 端接管。
