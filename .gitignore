@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+
+# 数据库（data.db 861MB，不能进 git）
+*.db
+*.db-journal
+*.db-shm
+*.db-wal
+*.db-wal-journal
+data/meta_snapshot.json
+
+# 本地英雄图标（373张 png，~10MB，从 CDN 重新拉即可）
+e7rta/static/img/heroes/*.png
+!e7rta/static/img/heroes/.gitkeep
+
+# AI 助手记忆 / 缓存
+.workbuddy/
+
+# 旧项目存档（2850 个文件）
+dqss/
+Debug/
+
+# 抓取进度日志
+*.log
+logs/
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# 压缩包
+*.rar
+*.zip
+*.7z

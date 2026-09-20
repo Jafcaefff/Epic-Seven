@@ -1,0 +1,739 @@
+{
+  "most_picked": [
+    {
+      "rank": 1,
+      "name": "Estelle",
+      "code": "c1183",
+      "pick_rate": 54.59,
+      "win_rate": 3.96,
+      "games": 128
+    },
+    {
+      "rank": 2,
+      "name": "Perfumer Byblis",
+      "code": "c5154",
+      "pick_rate": 54.18,
+      "win_rate": 0.03,
+      "games": 48
+    },
+    {
+      "rank": 3,
+      "name": "Rhianna and Luciella",
+      "code": "c2185",
+      "pick_rate": 49.38,
+      "win_rate": 3.63,
+      "games": 48
+    },
+    {
+      "rank": 4,
+      "name": "Boss Arunka",
+      "code": "c2124",
+      "pick_rate": 47.47,
+      "win_rate": 0.46,
+      "games": 48
+    },
+    {
+      "rank": 5,
+      "name": "School Nurse Yulha",
+      "code": "c2131",
+      "pick_rate": 43.66,
+      "win_rate": 23.37,
+      "games": 48
+    },
+    {
+      "rank": 6,
+      "name": "Lady of the Scales",
+      "code": "c6005",
+      "pick_rate": 42.94,
+      "win_rate": 0.8,
+      "games": 48
+    },
+    {
+      "rank": 7,
+      "name": "Arbiter Vildred",
+      "code": "c2007",
+      "pick_rate": 42.16,
+      "win_rate": 1.7,
+      "games": 48
+    },
+    {
+      "rank": 8,
+      "name": "Eye of the Abyss Fumyr",
+      "code": "c5147",
+      "pick_rate": 30.04,
+      "win_rate": 4.18,
+      "games": 48
+    },
+    {
+      "rank": 9,
+      "name": "Zio",
+      "code": "c1133",
+      "pick_rate": 28.91,
+      "win_rate": 1.35,
+      "games": 48
+    },
+    {
+      "rank": 10,
+      "name": "Belian",
+      "code": "c1117",
+      "pick_rate": 27.05,
+      "win_rate": 0.21,
+      "games": 48
+    },
+    {
+      "rank": 11,
+      "name": "Aubade Ludwig",
+      "code": "c5069",
+      "pick_rate": 26.76,
+      "win_rate": 0.82,
+      "games": 48
+    },
+    {
+      "rank": 12,
+      "name": "Shepherd of the Dark Diene",
+      "code": "c2076",
+      "pick_rate": 25.18,
+      "win_rate": 0.31,
+      "games": 48
+    },
+    {
+      "rank": 13,
+      "name": "Tidal Rift Elvira",
+      "code": "c2148",
+      "pick_rate": 24.28,
+      "win_rate": 1.39,
+      "games": 48
+    },
+    {
+      "rank": 14,
+      "name": "Notos",
+      "code": "c2181",
+      "pick_rate": 22.89,
+      "win_rate": 0.95,
+      "games": 48
+    },
+    {
+      "rank": 15,
+      "name": "Lisette",
+      "code": "c2186",
+      "pick_rate": 22.36,
+      "win_rate": 4.19,
+      "games": 48
+    },
+    {
+      "rank": 16,
+      "name": "Rinak",
+      "code": "c1168",
+      "pick_rate": 19.85,
+      "win_rate": 1.06,
+      "games": 48
+    },
+    {
+      "rank": 17,
+      "name": "Genesis Ras",
+      "code": "c2001",
+      "pick_rate": 19.09,
+      "win_rate": 4.67,
+      "games": 48
+    },
+    {
+      "rank": 18,
+      "name": "Frieren",
+      "code": "c1172",
+      "pick_rate": 18.89,
+      "win_rate": 0.24,
+      "games": 48
+    },
+    {
+      "rank": 19,
+      "name": "Hecate",
+      "code": "c1178",
+      "pick_rate": 18.21,
+      "win_rate": 1.87,
+      "games": 48
+    },
+    {
+      "rank": 20,
+      "name": "Harsetti",
+      "code": "c1153",
+      "pick_rate": 17.64,
+      "win_rate": 0.32,
+      "games": 48
+    }
+  ],
+  "highest_winrate": [
+    {
+      "rank": 1,
+      "name": "Lisette",
+      "code": "c2186",
+      "pick_rate": 22.36,
+      "win_rate": 4.19,
+      "games": 128
+    },
+    {
+      "rank": 2,
+      "name": "Shepherd of the Dark Diene",
+      "code": "c2076",
+      "pick_rate": 25.18,
+      "win_rate": 0.31,
+      "games": 48
+    },
+    {
+      "rank": 3,
+      "name": "Notos",
+      "code": "c2181",
+      "pick_rate": 22.89,
+      "win_rate": 0.95,
+      "games": 48
+    },
+    {
+      "rank": 4,
+      "name": "Frieren",
+      "code": "c1172",
+      "pick_rate": 18.89,
+      "win_rate": 0.24,
+      "games": 48
+    },
+    {
+      "rank": 5,
+      "name": "Wanderer Silk",
+      "code": "c2004",
+      "pick_rate": 1.93,
+      "win_rate": 0.53,
+      "games": 48
+    },
+    {
+      "rank": 6,
+      "name": "Perfumer Byblis",
+      "code": "c5154",
+      "pick_rate": 54.18,
+      "win_rate": 0.03,
+      "games": 48
+    },
+    {
+      "rank": 7,
+      "name": "Monarch of the Sword Iseria",
+      "code": "c6024",
+      "pick_rate": 7.32,
+      "win_rate": 0.13,
+      "games": 48
+    },
+    {
+      "rank": 8,
+      "name": "Genesis Ras",
+      "code": "c2001",
+      "pick_rate": 19.09,
+      "win_rate": 4.67,
+      "games": 48
+    },
+    {
+      "rank": 9,
+      "name": "Aube",
+      "code": "c5190",
+      "pick_rate": 12.58,
+      "win_rate": 0.16,
+      "games": 48
+    },
+    {
+      "rank": 10,
+      "name": "Commander Pavel",
+      "code": "c2080",
+      "pick_rate": 3.4,
+      "win_rate": 0.16,
+      "games": 48
+    },
+    {
+      "rank": 11,
+      "name": "Silver Blade Aramintha",
+      "code": "c2048",
+      "pick_rate": 1.17,
+      "win_rate": 0.13,
+      "games": 48
+    },
+    {
+      "rank": 12,
+      "name": "Maid Chloe",
+      "code": "c2049",
+      "pick_rate": 2.46,
+      "win_rate": 0.81,
+      "games": 48
+    },
+    {
+      "rank": 13,
+      "name": "Mort",
+      "code": "c1104",
+      "pick_rate": 5.2,
+      "win_rate": 0.31,
+      "games": 48
+    },
+    {
+      "rank": 14,
+      "name": "Politis",
+      "code": "c1112",
+      "pick_rate": 1.57,
+      "win_rate": 0.3,
+      "games": 48
+    },
+    {
+      "rank": 15,
+      "name": "Lady of the Scales",
+      "code": "c6005",
+      "pick_rate": 42.94,
+      "win_rate": 0.8,
+      "games": 48
+    },
+    {
+      "rank": 16,
+      "name": "Tidal Rift Elvira",
+      "code": "c2148",
+      "pick_rate": 24.28,
+      "win_rate": 1.39,
+      "games": 48
+    },
+    {
+      "rank": 17,
+      "name": "New Moon Luna",
+      "code": "c2066",
+      "pick_rate": 14.88,
+      "win_rate": 1.66,
+      "games": 48
+    },
+    {
+      "rank": 18,
+      "name": "Little Queen Charlotte",
+      "code": "c2009",
+      "pick_rate": 11.62,
+      "win_rate": 0.69,
+      "games": 48
+    },
+    {
+      "rank": 19,
+      "name": "Young Senya",
+      "code": "c1162",
+      "pick_rate": 5.91,
+      "win_rate": 0.25,
+      "games": 48
+    },
+    {
+      "rank": 20,
+      "name": "Ruele of Light",
+      "code": "c1022",
+      "pick_rate": 8.19,
+      "win_rate": 0.43,
+      "games": 48
+    }
+  ],
+  "most_pre_banned": [
+    {
+      "rank": 1,
+      "name": "Lisette",
+      "code": "c2186",
+      "preban_rate": 90.88,
+      "pick_rate": 6.83,
+      "games": 128
+    },
+    {
+      "rank": 2,
+      "name": "Notos",
+      "code": "c2181",
+      "preban_rate": 82.34,
+      "pick_rate": 5.0,
+      "games": 48
+    },
+    {
+      "rank": 3,
+      "name": "Rhianna and Luciella",
+      "code": "c2185",
+      "preban_rate": 50.22,
+      "pick_rate": 4.06,
+      "games": 48
+    },
+    {
+      "rank": 4,
+      "name": "Lady of the Scales",
+      "code": "c6005",
+      "preban_rate": 41.87,
+      "pick_rate": 1.31,
+      "games": 48
+    },
+    {
+      "rank": 5,
+      "name": "Harsetti",
+      "code": "c1153",
+      "preban_rate": 30.36,
+      "pick_rate": 4.51,
+      "games": 48
+    },
+    {
+      "rank": 6,
+      "name": "Zio",
+      "code": "c1133",
+      "preban_rate": 22.75,
+      "pick_rate": 4.32,
+      "games": 48
+    },
+    {
+      "rank": 7,
+      "name": "Perfumer Byblis",
+      "code": "c5154",
+      "preban_rate": 16.85,
+      "pick_rate": 1.37,
+      "games": 48
+    },
+    {
+      "rank": 8,
+      "name": "Tidal Rift Elvira",
+      "code": "c2148",
+      "preban_rate": 9.37,
+      "pick_rate": 0.62,
+      "games": 48
+    },
+    {
+      "rank": 9,
+      "name": "Boss Arunka",
+      "code": "c2124",
+      "preban_rate": 8.5,
+      "pick_rate": 0.92,
+      "games": 48
+    },
+    {
+      "rank": 10,
+      "name": "Belian",
+      "code": "c1117",
+      "preban_rate": 5.51,
+      "pick_rate": 1.68,
+      "games": 48
+    },
+    {
+      "rank": 11,
+      "name": "Briar Witch Iseria",
+      "code": "c2024",
+      "preban_rate": 5.31,
+      "pick_rate": 1.23,
+      "games": 48
+    },
+    {
+      "rank": 12,
+      "name": "Eye of the Abyss Fumyr",
+      "code": "c5147",
+      "preban_rate": 4.92,
+      "pick_rate": 0.43,
+      "games": 48
+    },
+    {
+      "rank": 13,
+      "name": "Shepherd of the Dark Diene",
+      "code": "c2076",
+      "preban_rate": 4.28,
+      "pick_rate": 0.04,
+      "games": 48
+    },
+    {
+      "rank": 14,
+      "name": "Aubade Ludwig",
+      "code": "c5069",
+      "preban_rate": 4.0,
+      "pick_rate": 0.43,
+      "games": 48
+    },
+    {
+      "rank": 15,
+      "name": "Hecate",
+      "code": "c1178",
+      "preban_rate": 3.63,
+      "pick_rate": 0.34,
+      "games": 48
+    },
+    {
+      "rank": 16,
+      "name": "School Nurse Yulha",
+      "code": "c2131",
+      "preban_rate": 2.36,
+      "pick_rate": 1.25,
+      "games": 48
+    },
+    {
+      "rank": 17,
+      "name": "Arbiter Vildred",
+      "code": "c2007",
+      "preban_rate": 2.2,
+      "pick_rate": 0.6,
+      "games": 48
+    },
+    {
+      "rank": 18,
+      "name": "Estelle",
+      "code": "c1183",
+      "preban_rate": 2.17,
+      "pick_rate": 0.1,
+      "games": 48
+    },
+    {
+      "rank": 19,
+      "name": "Salome",
+      "code": "c2184",
+      "preban_rate": 2.04,
+      "pick_rate": 0.1,
+      "games": 48
+    },
+    {
+      "rank": 20,
+      "name": "New Moon Luna",
+      "code": "c2066",
+      "preban_rate": 1.26,
+      "pick_rate": 0.04,
+      "games": 48
+    }
+  ],
+  "most_post_banned": [
+    {
+      "rank": 1,
+      "name": "Shepherd of the Dark Diene",
+      "code": "c2076",
+      "postban_rate": 10.78,
+      "pick_rate": 0.16,
+      "games": 128
+    },
+    {
+      "rank": 2,
+      "name": "Aubade Ludwig",
+      "code": "c5069",
+      "postban_rate": 8.04,
+      "pick_rate": 0.16,
+      "games": 48
+    },
+    {
+      "rank": 3,
+      "name": "Rhianna and Luciella",
+      "code": "c2185",
+      "postban_rate": 7.73,
+      "pick_rate": 0.31,
+      "games": 48
+    },
+    {
+      "rank": 4,
+      "name": "School Nurse Yulha",
+      "code": "c2131",
+      "postban_rate": 7.28,
+      "pick_rate": 3.72,
+      "games": 48
+    },
+    {
+      "rank": 5,
+      "name": "Belian",
+      "code": "c1117",
+      "postban_rate": 7.2,
+      "pick_rate": 0.43,
+      "games": 48
+    },
+    {
+      "rank": 6,
+      "name": "Lady of the Scales",
+      "code": "c6005",
+      "postban_rate": 7.15,
+      "pick_rate": 0.3,
+      "games": 48
+    },
+    {
+      "rank": 7,
+      "name": "Arbiter Vildred",
+      "code": "c2007",
+      "postban_rate": 6.11,
+      "pick_rate": 0.15,
+      "games": 48
+    },
+    {
+      "rank": 8,
+      "name": "Notos",
+      "code": "c2181",
+      "postban_rate": 5.96,
+      "pick_rate": 0.31,
+      "games": 48
+    },
+    {
+      "rank": 9,
+      "name": "Boss Arunka",
+      "code": "c2124",
+      "postban_rate": 5.6,
+      "pick_rate": 0.04,
+      "games": 48
+    },
+    {
+      "rank": 10,
+      "name": "Lisette",
+      "code": "c2186",
+      "postban_rate": 5.59,
+      "pick_rate": 0.7,
+      "games": 48
+    },
+    {
+      "rank": 11,
+      "name": "Perfumer Byblis",
+      "code": "c5154",
+      "postban_rate": 5.47,
+      "pick_rate": 0.12,
+      "games": 48
+    },
+    {
+      "rank": 12,
+      "name": "Frieren",
+      "code": "c1172",
+      "postban_rate": 5.19,
+      "pick_rate": 0.6,
+      "games": 48
+    },
+    {
+      "rank": 13,
+      "name": "Harsetti",
+      "code": "c1153",
+      "postban_rate": 5.05,
+      "pick_rate": 0.07,
+      "games": 48
+    },
+    {
+      "rank": 14,
+      "name": "New Moon Luna",
+      "code": "c2066",
+      "postban_rate": 4.52,
+      "pick_rate": 0.32,
+      "games": 48
+    },
+    {
+      "rank": 15,
+      "name": "Estelle",
+      "code": "c1183",
+      "postban_rate": 4.29,
+      "pick_rate": 0.16,
+      "games": 48
+    },
+    {
+      "rank": 16,
+      "name": "Hecate",
+      "code": "c1178",
+      "postban_rate": 4.26,
+      "pick_rate": 0.19,
+      "games": 48
+    },
+    {
+      "rank": 17,
+      "name": "Tidal Rift Elvira",
+      "code": "c2148",
+      "postban_rate": 4.12,
+      "pick_rate": 0.55,
+      "games": 48
+    },
+    {
+      "rank": 18,
+      "name": "Rinak",
+      "code": "c1168",
+      "postban_rate": 3.99,
+      "pick_rate": 0.18,
+      "games": 48
+    },
+    {
+      "rank": 19,
+      "name": "Ivana",
+      "code": "c1182",
+      "postban_rate": 3.66,
+      "pick_rate": 0.16,
+      "games": 48
+    },
+    {
+      "rank": 20,
+      "name": "Lone Crescent Bellona",
+      "code": "c2071",
+      "postban_rate": 3.65,
+      "pick_rate": 0.1,
+      "games": 48
+    }
+  ],
+  "pick_order": {
+    "first_pick": [],
+    "second_pick": [
+      {
+        "rank": 1,
+        "name": "Rhianna and Luciella",
+        "code": "c2185",
+        "pick_rate": 25.52,
+        "win_rate": 0.74,
+        "games": 48
+      },
+      {
+        "rank": 2,
+        "name": "Lisette",
+        "code": "c2186",
+        "pick_rate": 17.18,
+        "win_rate": 3.27,
+        "games": 48
+      },
+      {
+        "rank": 3,
+        "name": "Lady of the Scales",
+        "code": "c6005",
+        "pick_rate": 15.31,
+        "win_rate": 0.56,
+        "games": 48
+      },
+      {
+        "rank": 4,
+        "name": "Perfumer Byblis",
+        "code": "c5154",
+        "pick_rate": 13.17,
+        "win_rate": 0.2,
+        "games": 48
+      },
+      {
+        "rank": 5,
+        "name": "Notos",
+        "code": "c2181",
+        "pick_rate": 8.65,
+        "win_rate": 0.2,
+        "games": 48
+      },
+      {
+        "rank": 6,
+        "name": "Boss Arunka",
+        "code": "c2124",
+        "pick_rate": 5.77,
+        "win_rate": 0.23,
+        "games": 48
+      },
+      {
+        "rank": 7,
+        "name": "Estelle",
+        "code": "c1183",
+        "pick_rate": 5.57,
+        "win_rate": 1.33,
+        "games": 48
+      },
+      {
+        "rank": 8,
+        "name": "School Nurse Yulha",
+        "code": "c2131",
+        "pick_rate": 3.68,
+        "win_rate": 2.74,
+        "games": 48
+      },
+      {
+        "rank": 9,
+        "name": "Arbiter Vildred",
+        "code": "c2007",
+        "pick_rate": 0.78,
+        "win_rate": 0.16,
+        "games": 48
+      },
+      {
+        "rank": 10,
+        "name": "Zio",
+        "code": "c1133",
+        "pick_rate": 0.59,
+        "win_rate": 0.15,
+        "games": 48
+      }
+    ],
+    "pick_1": []
+  },
+  "season": "Unknown",
+  "last_updated": null,
+  "captured_at": "2026-09-19T12:33:30.686155+08:00"
+}

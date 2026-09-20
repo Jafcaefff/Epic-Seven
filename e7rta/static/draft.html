@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RTA 选人辅助 · BP 模拟器</title>
+<style>
+  :root{
+    --bg:#0c0e14; --panel:#151926; --panel2:#1c2233; --line:#2a3245;
+    --txt:#e6ebf5; --muted:#8a93a8; --accent:#ffb347; --me:#4ea1ff; --enemy:#ff6b6b;
+    --fire:#ff5a3c; --ice:#3ca6ff; --wind:#3cff8e; --light:#ffd23c; --dark:#a86bff;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:radial-gradient(1200px 600px at 70% -10%,#1a2138 0%,var(--bg) 60%);color:var(--txt);
+    font-family:"Segoe UI","PingFang SC","Microsoft YaHei",system-ui,sans-serif;}
+  a{color:var(--accent);text-decoration:none}
+  .wrap{max-width:1180px;margin:0 auto;padding:18px 18px 60px}
+  header{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:6px}
+  h1{font-size:22px;margin:0;letter-spacing:1px}
+  h1 .em{color:var(--accent)}
+  .sub{color:var(--muted);font-size:13px}
+  .nav{margin-left:auto;font-size:13px}
+  .nav a{color:var(--accent);text-decoration:none;font-weight:700}
+  .onb{margin-top:10px;padding:8px 12px;background:rgba(255,215,0,.08);border:1px solid rgba(255,215,0,.25);border-radius:8px;font-size:12px;line-height:1.7;color:#e6d89b}
+  .onb b{color:var(--accent)}
+  .controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;background:var(--panel);
+    border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin:12px 0}
+  .seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+  .seg button{background:transparent;color:var(--muted);border:0;padding:7px 14px;cursor:pointer;font-size:14px}
+  .seg button.on{background:var(--accent);color:#1a1205;font-weight:700}
+  .btn{background:var(--panel2);color:var(--txt);border:1px solid var(--line);border-radius:8px;
+    padding:7px 13px;cursor:pointer;font-size:13px}
+  .btn:hover{border-color:var(--accent)}
+  .btn.primary{background:var(--accent);color:#1a1205;border-color:var(--accent);font-weight:700}
+  .chk{display:inline-flex;align-items:center;gap:6px;color:var(--muted);font-size:13px;cursor:pointer}
+  select{background:var(--panel2);color:var(--txt);border:1px solid var(--line);border-radius:8px;padding:7px 8px}
+
+  /* draft track */
+  .track{display:flex;gap:6px;overflow-x:auto;padding:10px 2px 4px;margin-bottom:8px}
+  .chip{flex:0 0 auto;min-width:78px;background:var(--panel);border:1px solid var(--line);
+    border-radius:9px;padding:7px 8px;text-align:center;font-size:12px;color:var(--muted);position:relative}
+  .chip .lbl{font-weight:700;color:var(--txt);font-size:13px}
+  .chip.me{border-left:3px solid var(--me)} .chip.enemy{border-left:3px solid var(--enemy)}
+  .chip.ban{opacity:.8}
+  .chip.active{background:var(--panel2);border-color:var(--accent);box-shadow:0 0 0 1px var(--accent),0 0 14px rgba(255,179,71,.25)}
+  .chip.done{opacity:.45}
+  .chip .cnt{font-size:11px;color:var(--muted)}
+
+  .status{background:linear-gradient(90deg,#1b2236,#151a28);border:1px solid var(--line);
+    border-radius:10px;padding:10px 14px;margin:6px 0 14px;font-size:14px}
+  .status b{color:var(--accent)}
+
+  .boards{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:760px){.boards{grid-template-columns:1fr}}
+  .board{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px}
+  .board h3{margin:0 0 10px;font-size:15px;display:flex;align-items:center;gap:8px}
+  .dot{width:9px;height:9px;border-radius:50%}
+  .dot.me{background:var(--me)} .dot.enemy{background:var(--enemy)}
+  .slots{display:grid;grid-template-columns:repeat(5,1fr);gap:7px}
+  .slot{aspect-ratio:3/4;border:1px dashed var(--line);border-radius:8px;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;background:#10141f;position:relative;overflow:hidden}
+  .slot.filled{border-style:solid}
+  .slot.threat{border-color:#ff5252;box-shadow:0 0 0 2px rgba(255,82,82,.3)}
+  .slot .warn{position:absolute;top:-6px;right:-6px;background:#ff3b3b;color:#fff;font-size:11px;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:2;border:2px solid #1a1205;animation:pulse 1.5s infinite}
+  .slot .x-slot{position:absolute;top:-5px;left:-5px;background:rgba(255,90,60,.95);color:#fff;font-size:11px;font-weight:800;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:2;border:2px solid #1a1205;box-shadow:0 1px 3px rgba(0,0,0,.5)}
+  .slot.filled:hover{border-color:#ff5a3c;box-shadow:0 0 0 2px rgba(255,90,60,.3)}
+  @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
+  .slot .po{position:absolute;top:3px;left:5px;font-size:10px;color:var(--muted)}
+  .slot.ban-target-exempt{border-color:#3a2a2a}
+  .slot img{width:100%;height:100%;object-fit:cover;display:block}
+  .slot .fb{position:absolute;inset:0;display:none;align-items:center;justify-content:center;
+    font-weight:800;font-size:22px;color:#fff}
+  .slot .nm{position:absolute;bottom:0;left:0;right:0;font-size:10px;text-align:center;
+    background:rgba(0,0,0,.55);padding:2px 1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .slot.active-me{box-shadow:0 0 0 2px var(--me)} .slot.active-enemy{box-shadow:0 0 0 2px var(--enemy)}
+  .bans{margin-top:10px;border-top:1px solid var(--line);padding-top:8px;font-size:12px;color:var(--muted)}
+  .banrow{display:flex;gap:6px;flex-wrap:wrap;margin-top:5px}
+  .banpill{display:inline-flex;align-items:center;gap:5px;background:var(--panel2);border:1px solid var(--line);
+    border-radius:20px;padding:3px 9px;font-size:12px}
+  .banpill.ban-me{border-color:#5a3030} .banpill.ban-enemy{border-color:#5a3030}
+  .banpill .x{color:var(--enemy);cursor:pointer}
+
+  /* action panel */
+  .panel{margin-top:14px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px}
+  .panel h3{margin:0 0 4px;font-size:15px}
+  .panel .hint{color:var(--muted);font-size:12px;margin-bottom:10px}
+  .recgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:9px}
+  .card{background:var(--panel2);border:1px solid var(--line);border-radius:10px;overflow:hidden;cursor:pointer;
+    transition:transform .08s,border-color .12s;position:relative}
+  .card:hover{transform:translateY(-2px);border-color:var(--accent)}
+  .card .pic{aspect-ratio:3/2;position:relative;background:#0c0f17}
+  .card .pic img{width:100%;height:100%;object-fit:cover;display:block}
+  .card .pic .fb{position:absolute;inset:0;display:none;align-items:center;justify-content:center;
+    font-weight:800;font-size:26px;color:#fff}
+  .card .meta{padding:6px 8px}
+  .card .nm{font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .card .tags{display:flex;gap:4px;margin:4px 0}
+  .tag{font-size:10px;padding:1px 6px;border-radius:10px;background:#0e1320;border:1px solid var(--line);color:var(--muted)}
+  .card .score{position:absolute;top:5px;right:5px;background:var(--accent);color:#1a1205;font-weight:800;
+    font-size:11px;border-radius:8px;padding:1px 7px}
+  .card .rs{font-size:10.5px;color:var(--muted);padding:0 8px 7px;line-height:1.4}
+  .card .counter{display:flex;gap:4px;padding:0 8px 4px;font-size:10px;flex-wrap:wrap}
+  .card .pos-line{font-size:10.5px;padding:0 8px 3px;color:var(--muted)}
+  .card .pos-line b{color:var(--fg,#e8e8f0)}
+  .card .ct{padding:1px 6px;border-radius:8px;font-weight:600;line-height:1.5}
+  .card .ct-out{background:#1d3a1d;color:#7be87b;border:1px solid #2d5a2d}
+  .card .ct-in{background:#3a1d1d;color:#ff9b9b;border:1px solid #5a2d2d}
+  .card .meta-badge{position:absolute;top:5px;left:5px;background:linear-gradient(90deg,#ff5a3c,#ff8a26);color:#fff;font-weight:800;font-size:11px;padding:2px 7px;border-radius:8px;z-index:1;box-shadow:0 1px 3px rgba(0,0,0,.5)}
+  .card .meta-badge.low{background:linear-gradient(90deg,#7a4a2a,#9a6a3a);color:#ffe0c0}
+  .epredict{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin:0 0 10px;padding:7px 10px;background:#161e2e;border:1px dashed #2c3a55;border-radius:8px;font-size:12px}
+  .epredict .lbl{color:var(--accent);font-weight:700}
+  .epredict .epc{display:inline-flex;align-items:center;gap:4px;padding:2px 8px 2px 2px;background:#1a2230;border-radius:14px;font-weight:600;border:1px solid var(--line)}
+  .epredict .epc img{width:22px;height:22px;border-radius:50%;object-fit:cover;display:block}
+  .epredict .epc i{display:none;font-style:normal;width:22px;height:22px;border-radius:50%;background:#333;text-align:center;line-height:22px;color:#fff;font-size:11px}
+  .attr-fire{background:var(--fire)} .attr-ice{background:var(--ice)} .attr-wind{background:var(--wind)}
+  .attr-light{background:var(--light)} .attr-dark{background:var(--dark)}
+  .search{width:100%;background:var(--panel2);border:1px solid var(--line);border-radius:8px;
+    padding:8px 10px;color:var(--txt);font-size:13px;margin-bottom:10px}
+  .more{margin-top:10px}
+  .toggleMore{cursor:pointer;color:var(--accent);font-size:12px;display:none}
+  .final{margin-top:14px;background:linear-gradient(90deg,#16203a,#141a26);border:1px solid var(--accent);
+    border-radius:12px;padding:14px}
+  .final h3{margin:0 0 8px}
+  .final .vs{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:center}
+  .final .side h4{margin:0 0 6px;font-size:13px}
+  .final .vsmark{font-size:18px;color:var(--accent);font-weight:800}
+  .matchup{display:flex;align-items:center;gap:10px;margin-bottom:10px;padding:8px 12px;border-radius:8px;font-size:13px;border:1px solid var(--line)}
+  .matchup.good{background:linear-gradient(90deg,#15301a,#1a3d22);border-color:#2e6e3e;color:#b8f0c8}
+  .matchup.mid{background:#1a2230;border-color:#2c3a55;color:#cad7ee}
+  .matchup.warn{background:linear-gradient(90deg,#3a2a15,#4d361a);border-color:#7a5c2e;color:#f0d2a8}
+  .matchup.bad{background:linear-gradient(90deg,#3a1818,#4d1d1d);border-color:#7e2c2c;color:#f0aaaa}
+  .matchup.no{background:#1a1a1a;color:var(--muted)}
+  .matchup .mw b{font-size:18px;color:#fff;margin:0 3px}
+  .matchup .adv{font-weight:800;font-size:15px;padding:1px 8px;border-radius:6px;background:rgba(255,255,255,.08)}
+  .matchup .tag{margin-left:auto;font-size:11px;padding:2px 8px;border-radius:6px;background:rgba(255,255,255,.1);font-weight:700}
+  .aov{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:center;margin:8px 0;padding:8px 12px;background:#141a26;border:1px solid var(--line);border-radius:8px;font-size:12px}
+  .aov-side{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+  .aov-side b{font-size:12px;color:var(--muted);margin-right:6px}
+  .aov-mid{text-align:center}
+  .aov-tag{padding:3px 10px;border-radius:6px;font-size:11px;font-weight:700}
+  .aov-tag.good{background:#15301a;color:#7be87b;border:1px solid #2d5a2d}
+  .aov-tag.mid{background:#1a2230;color:#cad7ee;border:1px solid #2c3a55}
+  .aov-tag.bad{background:#3a1818;color:#ff9b9b;border:1px solid #5a2d2d}
+  .adt{display:inline-block;padding:1px 7px;border-radius:8px;font-size:10px;font-weight:700;color:#1a1205}
+  .adt-火{background:var(--fire)} .adt-水{background:var(--ice)} .adt-风{background:var(--wind)}
+  .adt-光{background:var(--light)} .adt-暗{background:var(--dark)}
+  .history{margin:12px 0;padding:10px 14px;background:var(--panel);border:1px solid var(--line);border-radius:10px}
+  .history h4{margin:0 0 8px;font-size:13px;color:var(--muted)}
+  .empty-h{color:var(--muted);font-size:12px}
+  .hrow{display:flex;align-items:center;gap:8px;padding:5px 0;border-top:1px solid var(--line);font-size:11px;flex-wrap:wrap}
+  .hrow:first-of-type{border-top:none}
+  .hrow .hd{color:var(--muted);width:80px;flex-shrink:0}
+  .hrow .hmine,.hrow .hene{display:flex;gap:3px;flex-wrap:wrap;max-width:340px}
+  .hrow .hm{display:inline-block;padding:1px 5px;background:#1a2230;border-radius:6px;font-weight:600;font-size:10px}
+  .hrow .hvs{color:var(--accent);font-weight:800;flex-shrink:0}
+  .hrow .hwr{font-size:13px;color:var(--accent)}
+  .hrow .btn-mini{margin-left:auto;padding:2px 8px;background:#1a2230;color:#ddd;border:1px solid var(--line);border-radius:6px;cursor:pointer;font-size:10px}
+  .hrow .btn-mini:hover{background:var(--accent);color:#1a1205}
+  .filter-bar{display:flex;align-items:flex-end;gap:10px;flex-wrap:wrap;margin:0 0 10px;padding:8px 12px;background:var(--panel);border:1px solid var(--line);border-radius:10px}
+  .roster-head{margin:14px 0 6px;font-size:13px;font-weight:700;color:var(--accent);border-top:1px dashed var(--line);padding-top:12px}
+  .filter-bar .fgrp{font-size:11px;color:var(--muted);font-weight:700;margin-right:2px;align-self:flex-start;padding-top:6px}
+  .filter-bar .fbtns{display:flex;gap:5px;flex-wrap:wrap}
+  /* 图标筛选按钮：属性/职业/星数（组内多选=或，组间=且） */
+  .filter-bar .ichip{display:flex;flex-direction:column;align-items:center;gap:2px;min-width:38px;
+    padding:4px 5px 3px;border:1px solid var(--line);border-radius:8px;cursor:pointer;transition:.12s;background:transparent;color:var(--muted)}
+  .filter-bar .ichip:hover{background:#1a2230;color:#fff}
+  .filter-bar .ichip.on{border-color:var(--accent);background:rgba(255,179,71,.14);box-shadow:0 0 0 1px var(--accent)}
+  .filter-bar .ichip.on .ilbl{color:var(--accent);font-weight:700}
+  .filter-bar .ichip svg{width:20px;height:20px;display:block}
+  .filter-bar .ichip .ilbl{font-size:9.5px;line-height:1;color:var(--muted)}
+  .filter-bar .ichip .starrow{font-size:11px;letter-spacing:-1px;color:#8a93a8}
+  .filter-bar .ichip.on .starrow{color:#ffc82e}
+  /* 英雄卡：星数 + 数据行 */
+  .stars{color:#ffc82e;font-size:10.5px;letter-spacing:-1px;line-height:1}
+  .stars .n{color:#5a627a}
+  .card .stat-line{font-size:10.5px;padding:0 8px 3px;color:var(--muted);display:flex;gap:8px;flex-wrap:wrap}
+  .card .stat-line b{color:#e8e8f0}
+  /* 针对敌方已选的对位行：vs 英雄 胜率 */
+  .card .vs-line{display:flex;gap:4px;flex-wrap:wrap;padding:0 8px 3px}
+  .card .vs-chip{font-size:10px;padding:1px 6px;border-radius:8px;background:#1a2230;border:1px solid var(--line);color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+  .card .vs-chip b{color:#e8e8f0}
+  .card .vs-chip.best{background:#20321f;border-color:#3f7a3a;color:#b9e6b0}
+  .card .vs-chip.best b{color:#8fe07f}
+  /* 阵容级对位（全员/最大子集同时在场的真实胜率）*/
+  .card .vs-chip.lineup{background:#1d2a3d;border-color:#3f6ea8;color:#cfe0f5;display:flex;flex-direction:column;align-items:flex-start;gap:0;line-height:1.35}
+  .card .vs-chip.lineup b{color:#7fc4ff}
+  .card .vs-chip.lineup .who{font-size:9px;color:#7f8ba0;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .card .nodata{font-size:10.5px;color:#5a627a;padding:0 8px 7px}
+  .card .aj{display:inline-flex;align-items:center;gap:3px;font-size:10px;padding:1px 6px;border-radius:10px;background:#0e1320;border:1px solid var(--line);color:#aab}
+  .card .aj svg{width:11px;height:11px;display:block}
+  .meta-panel{margin:12px 0;padding:10px 14px;background:var(--panel);border:1px solid var(--line);border-radius:10px}
+  .meta-panel h4{margin:0 0 8px;font-size:13px;display:flex;align-items:center;gap:8px}
+  .meta-season{color:var(--accent);font-weight:700;font-size:11px;padding:1px 6px;background:rgba(255,255,255,.06);border-radius:6px}
+  .meta-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+  .meta-cell{background:#0e1320;border:1px solid var(--line);border-radius:8px;padding:8px}
+  .meta-cell .mlbl{font-size:11px;color:var(--muted);margin-bottom:5px;font-weight:700}
+  .meta-cell ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:3px}
+  .meta-cell li{display:flex;align-items:center;gap:6px;font-size:11.5px;padding:2px 4px;border-radius:4px}
+  .meta-cell li:hover{background:#1a2230}
+  .meta-cell .rk{display:inline-block;width:14px;text-align:center;color:var(--muted);font-weight:700;font-size:10px}
+  .meta-cell .nm{flex:1;color:#ddd;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .meta-cell .v{color:var(--accent);font-weight:700;font-size:11px}
+  .meta-cell .sub{color:var(--muted);font-size:10px;margin-left:4px}
+  .mini{display:flex;gap:5px;flex-wrap:wrap}
+  .mini .m{width:42px;aspect-ratio:3/4;border-radius:6px;overflow:hidden;position:relative;border:1px solid var(--line)}
+  .mini .m img{width:100%;height:100%;object-fit:cover;display:block}
+  .mini .m .fb{position:absolute;inset:0;display:none;align-items:center;justify-content:center;font-weight:800;font-size:15px;color:#fff}
+  .mini .m .nm{position:absolute;bottom:0;left:0;right:0;font-size:8px;text-align:center;background:rgba(0,0,0,.6)}
+  .note{color:var(--muted);font-size:12px;margin-top:8px;line-height:1.5}
+  .empty{color:var(--muted);font-size:13px;padding:20px;text-align:center}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1><span class="em">RTA</span> 选人辅助 · BP 模拟器</h1>
+    <span class="sub">按真实对局顺序：先手/后手 → ban → 1-2-2-2-2-1 选人 → 每步根据对面实时给建议</span>
+    <div class="onb">
+      <b>用法（每一步只做一件事）</b>：
+      ① 先选「我方先手 / 我方后手」→ ② 顶部状态栏会告诉你现在轮到谁、该 ban 还是选 →
+      ③ 下方英雄网格按 <b>推荐/威胁指数</b> 从高到低排列，每张卡带 星数 / 属性 / 职业 图标和 第N选率 · 该位胜率 · 自身强度 数据：ban 阶段点击 = 记入 ban 名单，选人阶段点击 = 选入阵容 →
+      ④ 对方回合同样有按对手视角排序的网格，或点「🎲 模拟对手」自动填 →
+      ⑤ 9 步走完自动出 4v4 对阵 + 胜率；选错点英雄左上 ✕ 删除 →
+      ⑥ 用「属性 / 职业 / 星数」图标筛选缩小范围（组内多选=或，组间叠加=且）
+    </div>
+    <span class="nav"><a href="/">📊 数据看板</a> · <a href="/">⚙️ 手工选人辅助</a></span>
+  </header>
+
+  <div class="controls">
+    <div class="seg" id="handSeg">
+      <button data-h="first" class="on">我方先手</button>
+      <button data-h="second">我方后手</button>
+    </div>
+    <button class="btn" id="coinBtn" style="display:none">🎲 抛硬币</button>
+    <label class="chk"><input type="checkbox" id="masterChk"> 大师+（ban 2）</label>
+    <select id="seasonSel"><option value="">全赛季</option></select>
+    <button class="btn" id="resetBtn">重置</button>
+    <button class="btn" id="histBtn">📜 历史</button>
+  </div>
+  <div class="history" id="historyWrap" style="display:none">
+    <h4>📜 BP 历史（最近 30 条，本地存储）</h4>
+    <div id="historyPanel"></div>
+  </div>
+
+  <div class="track" id="track"></div>
+  <div class="status" id="status">选择先手/后手开始模拟。</div>
+
+  <div class="boards">
+    <div class="board">
+      <h3><span class="dot me"></span>我方阵容 <span id="meCount" style="color:var(--muted);font-weight:400;font-size:12px"></span></h3>
+      <div class="slots" id="meSlots"></div>
+      <div class="bans">已 ban：<span class="banrow" id="meBans"></span></div>
+    </div>
+    <div class="board">
+      <h3><span class="dot enemy"></span>敌方阵容 <span id="enemyCount" style="color:var(--muted);font-weight:400;font-size:12px"></span></h3>
+      <div class="slots" id="enemySlots"></div>
+      <div class="bans">已 ban：<span class="banrow" id="enemyBans"></span></div>
+    </div>
+  </div>
+
+  <div class="meta-panel" id="metaPanel">
+    <h4>📊 当前赛季 Meta <span id="metaSeason" class="meta-season"></span></h4>
+    <div class="meta-grid" id="metaGrid"></div>
+  </div>
+
+  <div class="panel" id="actionPanel"></div>
+
+  <div id="finalWrap"></div>
+</div>
+
+<script>
+const ATTR_COLOR={fire:'var(--fire)',ice:'var(--ice)',wind:'var(--wind)',light:'var(--light)',dark:'var(--dark)'};
+// 2026-09-18 换源：assets.epicsevendb.com 已废弃(该站迁到 epic7db.com, 旧域 TLS 握手失败)
+// 现在用 CeciliaBot/E7Assets-Temp 仓库的原始官方资源, 仍按 hero code 命名, 经 jsDelivr 加速
+const IMG_BASE="https://cdn.jsdelivr.net/gh/CeciliaBot/E7Assets-Temp@main/assets/face/";
+let HEROES=[]; let HMAP={}; let STEPS=[];
+let state={hand:'first',preban:1,season:'',my_picks:[],enemy_picks:[],my_bans:[],enemy_bans:[],stepIndex:0};
+let suggestCache={};
+// 对方下步预测中可能 ban/pick 的英雄（用于我方阵容卡片预警）
+let threatFromEnemy=new Set();
+// 当前回合的全量排序列表（后端 suggest.all）与渲染模式（pick/ban）
+let currentAll=[]; let currentMode='pick';
+let currentRoster={side:null,phase:null};
+// 全局筛选（属性/职业/星数）：组内多选=或(叠加)，组间=且；对齐官方筛选
+let HERO_FILTER={attrs:new Set(),jobs:new Set(),rarities:new Set()};
+// 属性图标（圆形徽记，对齐官方五色球）
+const ATTR_SVG={
+ fire:'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#d8402a"/><path fill="#ffb199" d="M12 4c.8 3.4-3.6 5.2-3.6 9.2a3.6 3.6 0 0 0 7.2 0c0-1.3-.5-2.3-1.2-3.2 2 .8 3.2 2.4 3.2 4.6a5.6 5.6 0 0 1-11.2 0C6.4 9.4 11 7.8 12 4z"/></svg>',
+ ice:'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#2277cc"/><path fill="#a8dcff" d="M12 3.5s5.5 6.6 5.5 10.3a5.5 5.5 0 0 1-11 0C6.5 10.1 12 3.5 12 3.5z"/></svg>',
+ wind:'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#2d9e4b"/><path fill="#b3f0c2" d="M19.5 4.5C9.5 4.5 4.5 9.5 4.5 19.5c10 0 15-5 15-15zm-7.5 7.5l6-6"/></svg>',
+ light:'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#d8a20e"/><path fill="#ffe9a8" d="M12 2l2.3 7.7L22 12l-7.7 2.3L12 22l-2.3-7.7L2 12l7.7-2.3z"/></svg>',
+ dark:'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#7d3fc4"/><path fill="#e0c8ff" d="M20.5 14.5A8.5 8.5 0 1 1 10 3.2a7 7 0 0 0 10.5 11.3z"/></svg>'
+};
+// 职业图标（官方 6 职业，线性白图标）
+const JOB_SVG={
+ warrior:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14.5 4.5l5 5L9 20l-5 1 1-5z"/><path d="M13 8l3 3"/></svg>',
+ knight:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 3l7 2.5V11c0 4.8-3.2 7.8-7 9.5-3.8-1.7-7-4.7-7-9.5V5.5z"/></svg>',
+ assassin:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3c4 0 6.5 3.5 6.5 8l1.5 8-4-2.2-4 2.7-4-2.7-4 2.2 1.5-8C5.5 6.5 8 3 12 3z"/><circle cx="10" cy="11" r=".6" fill="currentColor"/><circle cx="14" cy="11" r=".6" fill="currentColor"/></svg>',
+ ranger:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 3.5c7 2.5 11 8.5 11 17M7 3.5C5.5 9 7 15.5 12 19"/><path d="M18 20.5L8 10.5M8 10.5h4M8 10.5v4"/></svg>',
+ mage:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l3.5 9h-7z"/><path d="M5.5 15.5h13M8 18.5h8M12 12v0"/></svg>',
+ manauser:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h12l-1.5 7a4.5 4.5 0 0 1-9 0z"/><path d="M12 15.5V19M8.5 20.5h7"/></svg>'
+};
+function starsHTML(r){
+  if(!r) return '';
+  return `<span class="stars">${'★'.repeat(r)}${r<5?'<span class="n">'+'★'.repeat(5-r)+'</span>':''}</span>`;
+}
+function filteredHeroes(){
+  return HEROES.filter(h=>
+    (HERO_FILTER.attrs.size===0 || HERO_FILTER.attrs.has(h.attr_raw||h.attr)) &&
+    (HERO_FILTER.jobs.size===0  || HERO_FILTER.jobs.has(h.job_raw||h.job))
+  );
+}
+// 图标筛选条：渲染进 actionPanel 内的 #filterChips；组内多选=或，组间=且
+function renderFilterChips(){
+  const el=document.getElementById('filterChips'); if(!el)return;
+  const ats=[['fire','火'],['ice','水'],['wind','风'],['light','光'],['dark','暗']];
+  const jbs=[['warrior','战士'],['knight','骑士'],['assassin','刺客'],['ranger','游侠'],['mage','法师'],['manauser','术师']];
+  const ras=[[3,'★★★'],[4,'★★★★'],[5,'★★★★★']];
+  const chipA=(k,l)=>`<span class="ichip ${HERO_FILTER.attrs.has(k)?'on':''}" data-g="attrs" data-k="${k}" title="${l}属性">${ATTR_SVG[k]}<span class="ilbl">${l}</span></span>`;
+  const chipJ=(k,l)=>`<span class="ichip ${HERO_FILTER.jobs.has(k)?'on':''}" data-g="jobs" data-k="${k}" title="${l}">${JOB_SVG[k]}<span class="ilbl">${l}</span></span>`;
+  const chipR=(k,l)=>`<span class="ichip ${HERO_FILTER.rarities.has(k)?'on':''}" data-g="rarities" data-k="${k}" title="${k}星"><span class="starrow">${'★'.repeat(k)}</span><span class="ilbl">${k}星</span></span>`;
+  el.innerHTML =
+    '<span class="fgrp">属性</span><span class="fbtns">'+ats.map(a=>chipA(a[0],a[1])).join('')+'</span>'+
+    '<span class="fgrp">职业</span><span class="fbtns">'+jbs.map(j=>chipJ(j[0],j[1])).join('')+'</span>'+
+    '<span class="fgrp">星数</span><span class="fbtns">'+ras.map(r=>chipR(r[0],r[1])).join('')+'</span>';
+  el.querySelectorAll('.ichip').forEach(c=>{
+    c.onclick = ()=>{
+      const g=c.dataset.g, k=c.dataset.k;
+      const set = g==='attrs'?HERO_FILTER.attrs : g==='jobs'?HERO_FILTER.jobs : HERO_FILTER.rarities;
+      if(set.has(k)) set.delete(k); else set.add(k);
+      renderFilterChips();
+      refreshRoster();
+    };
+  });
+}
+
+// 头像三级降级：本地缓存 /img/heroes/<code>.png → CDN → 属性色 SVG 占位
+// 本地图由 fetch_images.py 下载（assets.epicsevendb.com 在某些网络下不可达）
+function heroImg(code,name,attr,cls){
+  const fb=`<div class="fb ${'attr-'+(attr||'dark')}" style="background:${attrColor(attr)}">${(name||code||'?').slice(0,1)}</div>`;
+  const local=`/img/heroes/${code}.png`;
+  const cdn=`${IMG_BASE}${code}_s.png`;
+  return `<img src="${local}" alt="${name||code}" data-cdn="${cdn}" `+
+    `onerror="if(!this.dataset.tried){this.dataset.tried=1;this.src=this.dataset.cdn;}`+
+    `else{this.style.display='none';this.nextElementSibling.style.display='flex';}">${fb}`;
+}
+function attrColor(a){return ATTR_COLOR[a]||'#555';}
+
+async function loadHeroes(){
+  const r=await fetch('/api/heroes'); HEROES=await r.json();
+  HMAP={}; HEROES.forEach(h=>HMAP[h.code]=h);
+}
+
+let META = null;
+async function loadMeta(){
+  try{
+    const r=await fetch('/api/meta'); META=await r.json();
+    renderMetaPanel();
+  }catch(_){}
+}
+function renderMetaPanel(){
+  const el=document.getElementById('metaPanel'); if(!el||!META||META.error)return;
+  document.getElementById('metaSeason').textContent = META.season||'';
+  const pre = (META.most_pre_banned||[]).slice(0,5);
+  const post = (META.most_post_banned||[]).slice(0,5);
+  const picked = (META.most_picked||[]).slice(0,5);
+  const wr = (META.highest_winrate||[]).slice(0,5);
+  const cell=(arr, label, key, sub)=>{
+    const items=arr.map((e,i)=>{
+      const h=HMAP[e.code];
+      const name= h? h.name : (e.name||'');
+      const val=e[key];
+      return `<li><span class="rk">${i+1}</span><span class="nm">${name}</span><span class="v">${val!=null?val.toFixed(1):'?'}%</span>${sub&&e[sub]!=null?`<span class="sub">${e[sub].toFixed(1)}</span>`:''}</li>`;
+    }).join('');
+    return `<div class="meta-cell"><div class="mlbl">${label}</div><ul>${items}</ul></div>`;
+  };
+  document.getElementById('metaGrid').innerHTML = cell(pre,'🔥 必 Ban','preban_rate')+
+    cell(post,'🛡 常被终 Ban','postban_rate')+
+    cell(picked,'⭐ 最常选','pick_rate','win_rate')+
+    cell(wr,'📈 最高胜率','win_rate','pick_rate');
+}
+async function loadSeasons(){
+  const r=await fetch('/api/seasons'); const s=await r.json();
+  const sel=document.getElementById('seasonSel');
+  s.forEach(x=>{const o=document.createElement('option');o.value=x.code;o.textContent=x.code+' ('+x.count+')';sel.appendChild(o);});
+}
+async function loadSequence(){
+  const r=await fetch('/api/draft/sequence?hand='+state.hand+'&preban='+state.preban);
+  STEPS=(await r.json()).steps;
+}
+function curStep(){return STEPS[state.stepIndex]||null;}
+// STEPS 里 ban 阶段的 phase 值是 'preban' / 'postban'，前端多处用 ==='ban' 判断会永远为假，
+// 统一用 isBan 判断，避免 ban 点击被误判成 pick 而失效。
+function isBan(p){return p==='preban'||p==='postban';}
+
+// 2026-09-19 修复「选完还缺人」：pick 步的 filled 不能用总选人数判断！
+// 旧实现 return my_picks.length —— 我方先手时第 2 个我方步（×2）开始前已有 1 选，
+// 于是每步只点 1 人就"填满"自动跳步，最后 我3/敌4 却显示 BP 完成。
+// 正确做法：用「本步开始前的累计基线」做差，只统计本步内新增的选人数。
+function picksBefore(idx){
+  // STEPS[0..idx-1] 中各侧 pick 步的累计 count（= 进入第 idx 步前该侧应已选的人数）
+  let my=0, en=0;
+  for(let i=0;i<idx && i<STEPS.length;i++){
+    const s=STEPS[i];
+    if(s && s.phase==='pick'){ if(s.side==='me') my+=s.count; else en+=s.count; }
+  }
+  return {my, en};
+}
+function stepFilledCount(step, stepIdx){
+  const i = (stepIdx===undefined) ? state.stepIndex : stepIdx;
+  if(!step) return 0;
+  if(isBan(step.phase)){
+    // ban 步同样用「本步前累计基线」做差：大师+ 模式每侧有 2 个 preban 步，
+    // 总数判断会让第 2 个 preban 步开局就"已满"被跳过
+    const arr = step.side==='me'?state.my_bans:state.enemy_bans;
+    const pre = step.phase==='preban';
+    const tot = arr.filter(b=>b.pre===pre).length;
+    let before=0;
+    for(let k=0;k<i;k++){
+      const t=STEPS[k];
+      if(t && t.side===step.side && t.phase===step.phase) before+=t.count;
+    }
+    return Math.max(0, Math.min(tot - before, step.count));
+  }
+  if(step.phase==='pick'){
+    const before=picksBefore(i);
+    return step.side==='me'
+      ? Math.max(0, Math.min(state.my_picks.length - before.my, step.count))
+      : Math.max(0, Math.min(state.enemy_picks.length - before.en, step.count));
+  }
+  return 0;
+}
+// bans stored as {code,pre:true/false}
+
+async function getSuggest(phase){
+  const side=curStep()?curStep().side:'me';
+  const key=side+'|'+phase+'|'+state.stepIndex+'|'+state.my_picks.join(',')+'|'+state.enemy_picks.join(',')+'|'+state.my_bans.map(b=>b.code).join(',')+'|'+state.enemy_bans.map(b=>b.code).join(',');
+  if(suggestCache[key]) return suggestCache[key];
+  const body={hand:state.hand,season:state.season||null,phase,side,
+    my_picks:state.my_picks,enemy_picks:state.enemy_picks,
+    my_bans:state.my_bans.map(b=>b.code),enemy_bans:state.enemy_bans.map(b=>b.code)};
+  const r=await fetch('/api/draft/suggest',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+  const d=await r.json(); suggestCache[key]=d; return d;
+}
+
+function renderTrack(){
+  const t=document.getElementById('track'); t.innerHTML='';
+  STEPS.forEach((s,i)=>{
+    const c=document.createElement('div');
+    const done=i<state.stepIndex, active=i===state.stepIndex;
+    c.className='chip '+(s.side==='me'?'me':'enemy')+(isBan(s.phase)?' ban':'')+(active?' active':'')+(done?' done':'');
+    let lbl = s.phase==='preban'?'Ban':(s.phase==='postban'?'终Ban':'选'+s.round);
+    c.innerHTML=`<div class="lbl">${lbl}</div><div class="cnt">${s.side==='me'?'我':'敌'} · ${isBan(s.phase)?'ban':('×'+s.count)}</div>`;
+    t.appendChild(c);
+  });
+}
+
+function renderSlots(){
+  const me=document.getElementById('meSlots'), en=document.getElementById('enemySlots');
+  const step=curStep();
+  me.innerHTML=''; en.innerHTML='';
+  for(let i=0;i<5;i++){
+    me.appendChild(slotEl(state.my_picks[i],'me',i,step));
+    en.appendChild(slotEl(state.enemy_picks[i],'enemy',i,step));
+  }
+  document.getElementById('meCount').textContent='('+state.my_picks.length+'/5)';
+  document.getElementById('enemyCount').textContent='('+state.enemy_picks.length+'/5)';
+  // bans
+  renderBans('meBans',state.my_bans,'me');
+  renderBans('enemyBans',state.enemy_bans,'enemy');
+}
+function slotEl(code,side,idx,step){
+  const d=document.createElement('div'); d.className='slot';
+  if(code){
+    const h=HMAP[code]||{name:code,attr:'',job:''};
+    d.classList.add('filled');
+    // 我方阵容被对方预测为下步 ban/pick → 预警
+    const threat = (side==='me' && threatFromEnemy.has(code));
+    const warn = threat ? `<span class="warn" title="对方下一步最可能 ban/选你">⚠️</span>` : '';
+    const x = `<span class="x-slot" title="点击删除这一选">✕</span>`;
+    d.innerHTML=`<span class="po">${idx+1}</span>${warn}${x}${heroImg(code,h.name,h.attr,'s')}<div class="nm">${h.name}</div>`;
+    if(threat) d.classList.add('threat');
+    // 点 slot 任意处（含图片本身）→ 删除该选
+    d.style.cursor='pointer';
+    d.title = '点击删除这一选';
+    d.onclick = (ev)=>{ ev.stopPropagation(); removePick(side, idx); };
+  } else {
+    d.innerHTML=`<span class="po">${idx+1}</span>`;
+  }
+  // highlight active slot to fill
+  if(step && step.phase==='pick' && step.side===side && !code){
+    d.classList.add(side==='me'?'active-me':'active-enemy');
+    d.style.cursor='pointer';
+  }
+  return d;
+}
+
+function removePick(side, idx){
+  const arr = side==='me' ? state.my_picks : state.enemy_picks;
+  if(idx < 0 || idx >= arr.length) return;
+  arr.splice(idx, 1);
+  // 回退 stepIndex：正序找第一个还没填满的 step（旧实现倒序找，会跳到最靠后的未满步）
+  for(let i=0; i<STEPS.length; i++){
+    const s=STEPS[i];
+    const pre = s.phase==='preban';
+    const filled = isBan(s.phase)
+      ? (s.side==='me' ? state.my_bans.filter(b=>b.pre===pre).length : state.enemy_bans.filter(b=>b.pre===pre).length)
+      : stepFilledCount(s, i);
+    if(filled < s.count){ state.stepIndex = i; break; }
+  }
+  afterChange();
+}
+function renderBans(elId,bans,owner){
+  const el=document.getElementById(elId); el.innerHTML='';
+  if(!bans.length){el.innerHTML='<span style="opacity:.5">—</span>';return;}
+  bans.forEach(b=>{
+    const h=HMAP[b.code]||{name:b.code,attr:''};
+    const p=document.createElement('span'); p.className='banpill '+(b.pre?'':'ban-me');
+    p.innerHTML=`${heroImg(b.code,h.name,h.attr,'m')}<span>${h.name}</span><span class="x" data-b="${b.code}" data-pre="${b.pre}">✕</span>`;
+    el.appendChild(p);
+  });
+  el.querySelectorAll('.x').forEach(x=>x.onclick=()=>removeBan(x.dataset.b,x.dataset.pre==='true'));
+}
+
+function removeBan(code,pre){
+  const arr=state.my_bans.concat(state.enemy_bans);
+  if(state.my_bans.find(b=>b.code===code&&b.pre===pre)) state.my_bans=state.my_bans.filter(b=>!(b.code===code&&b.pre===pre));
+  else state.enemy_bans=state.enemy_bans.filter(b=>!(b.code===code&&b.pre===pre));
+  afterChange();
+}
+
+function statusText(step){
+  if(!step) return '';
+  if(step.phase==='preban') return step.side==='me'?'<b>Pre-ban：</b>轮到你 ban 英雄（整场双方都不能用）':'<b>Pre-ban：</b>对方正在 ban（点击对方 ban 的英雄记录）';
+  if(step.phase==='postban') return step.side==='me'?'<b>终 Ban：</b>轮到你 ban 对方 1 名英雄（第 3 选受保护，不可 ban）':'<b>终 Ban：</b>对方正在 ban 你方英雄';
+  const who=step.side==='me'?'你':'对方';
+  return `<b>第 ${step.round} 轮：</b>${who}选 ${step.count} 人（顺序 1-2-2-2-2-1）${step.side==='me'?' —— 根据下方推荐选人':''}`;
+}
+
+function cardHTML(h,mode){
+  // mode='pick'：显示推荐指数 + 选位数据；mode='ban'：显示威胁指数
+  // 2026-09-19 精简：去掉属性/职业/星数标签行与静态克制链（数据仍在，筛选器照常可用），只留名字+推荐信息
+  const isBan = mode==='ban';
+  const raw = isBan ? (h.ban_score??h.score) : h.score;
+  const hasData = raw!=null;
+  const scoreTxt = hasData ? Math.round(raw*100) : '—';
+  const scoreTitle = isBan ? '威胁指数(0-100，越高越该 ban)' : '推荐指数(0-100，越高越推荐)';
+  const rs = (h.reasons||[]).join('；');
+  // 对位数据只在我方回合展示（敌方回合的列表是敌方视角，展示会混淆）
+  let vsLine='';
+  if(!isBan && currentRoster.side!=='enemy'){
+    if(h.lineup){
+      const lu=h.lineup;
+      const who=(lu.heroes||[]).map(x=>x.name).join('+');
+      vsLine = `<div class="vs-line"><span class="vs-chip lineup" title="历史对局中这 ${lu.size} 人同时在敌方阵容、且我方带此英雄时的胜率">`
+        + `阵容${lu.size}人 <b>${lu.wr}%</b> · ${lu.games}场<span class="who">${who}</span></span></div>`;
+    }else if(h.vs_list && h.vs_list.length){
+      const chips = h.vs_list.slice(0,2).map((v,i)=>
+        `<span class="vs-chip ${i===0?'best':''}" title="单体对位 ${v.name}：胜率 ${v.wr}%（${v.games} 场）· 阵容级样本不足，已降级">vs ${v.name} <b>${v.wr}%</b></span>`).join('');
+      vsLine = `<div class="vs-line">${chips}</div>`;
+    }
+  }
+  // 选位数据行（pick）：第 N 选率 + 该位胜率 + 自身强度/场次（合并为一行组，精简展示）
+  let statLine='', nodata='';
+  if(!isBan){
+    if(hasData){
+      const posTxt = h.pos_games>0
+        ? `第${h.pos_order||'？'}选率 <b>${h.pos_rate??0}%</b> · 该位胜率 <b>${h.pos_wr??'-'}%</b>`
+        : `第${h.pos_order||'？'}选率 <b>${h.pos_rate??0}%</b>（该位几乎不用）`;
+      statLine = `<div class="stat-line"><span>${posTxt}</span></div>`+
+        `<div class="stat-line"><span>自身强度 <b>${h.self_win_rate??'-'}%</b></span><span>${h.games||0} 场</span></div>`;
+    }else{
+      nodata = `<div class="nodata">暂无对局数据</div>`;
+    }
+  }
+  // ban 卡：meta pre-ban 高亮徽章
+  const metaBadge = isBan && h.meta_preban && h.meta_preban>=30
+    ? `<span class="meta-badge" title="Champion+ 段位职业选手 pre-ban 率 ${h.meta_preban}%">🔥 ${h.meta_preban}%</span>`
+    : (isBan && h.meta_preban ? `<span class="meta-badge low" title="Champion+ 段位职业选手 pre-ban 率 ${h.meta_preban}%">🔥 ${h.meta_preban}%</span>` : '');
+  return `<div class="card ${hasData?'':'nodata-card'}" data-code="${h.code}" data-meta="${h.meta_preban||0}" ${hasData?'':'style="opacity:.55"'}>
+    <span class="score" title="${scoreTitle}">${scoreTxt}</span>
+    ${metaBadge}
+    <div class="pic">${heroImg(h.code,h.name,h.attr,'s')}</div>
+    <div class="meta"><div class="nm">${h.name}</div></div>
+    ${vsLine}
+    ${statLine}
+    ${nodata}
+    ${rs&&!isBan&&h.vs_list&&h.vs_list.length?'':(rs?`<div class="rs">${rs}</div>`:'')}</div>`;
+}
+
+function counterHTML(h){
+  const weak = h.counters_weak||'';   // 我方克它
+  const strong = h.counters_strong||'';  // 它克我方
+  if(!weak && !strong) return '';
+  return `<div class="counter">
+    ${strong?`<span class="ct ct-out" title="此英雄克制属性">⚔️ 克 <b>${strong}</b></span>`:''}
+    ${weak?`<span class="ct ct-in" title="被该属性克制">⚠️ 被克 <b>${weak}</b></span>`:''}
+  </div>`;
+}
+
+async function renderAction(){
+  const panel=document.getElementById('actionPanel'); const step=curStep();
+  if(!step || state.stepIndex>=STEPS.length){panel.innerHTML=''; return;}
+  panel.innerHTML='';
+  const isMe = step.side==='me';
+  const banP = isBan(step.phase);
+  currentRoster={side:step.side, phase:step.phase};
+  // 我方回合：顶部展示对方下一步预测
+  let predictHTML='';
+  if(isMe){
+    const preds = await predictEnemyNext(step.phase);
+    if(preds.length){
+      const tag = banP ? 'ban' : '选';
+      predictHTML = `<div class="epredict"><span class="lbl">对方下一步最可能${tag}：</span>${
+        preds.map(p=>`<span class="epc" data-code="${p.code}"><img src="/img/heroes/${p.code}.png" onerror="this.style.display='none';this.nextElementSibling.style.display='inline-block'"><i style="display:none">${(p.name||p.code||'?').slice(0,1)}</i>${p.name||p.code}</span>`).join('')
+      }</div>`;
+    }
+  }
+  // 全量排序列表：推荐/威胁指数从高到低，一个网格搞定（不再割裂推荐区和全部英雄区）
+  const d = await getSuggest(step.phase);
+  currentAll = d.all || [];
+  currentMode = d.all_mode || (banP?'ban':'pick');
+  let head='', hint='';
+  if(banP){
+    if(isMe){
+      const scope = step.phase==='preban' ? 'Pre-ban（ban 任意英雄，整场不可用）' : '终 Ban（只能 ban 对方已选，第 3 选受保护）';
+      head=`<h3>🛡 我方 Ban · ${scope}</h3>`;
+      hint=`<div class="hint">按 <b>威胁指数</b> 从高到低排列（对己方威胁 50% + 职业选手共识 30% + 热门度 20%），点击即 ban。用下方 属性 / 职业 / 星数 筛选缩小范围（组内多选叠加=或，组间=且）。</div>`;
+    } else {
+      head=`<h3>对方正在 Ban</h3>`;
+      hint=`<div class="hint">按 <b>威胁指数</b> 排列：对手最可能 ban 的英雄，点击即记入敌方 ban 名单。${step.phase==='postban'?'终 Ban 只能 ban 我方已选英雄（第 3 选受保护），故仅列出我方阵容。':''}</div>`;
+    }
+  } else {
+    if(isMe){
+      head=`<h3>⚔ 我方选人（第 ${state.my_picks.length+1} 选）</h3>`;
+      hint=`<div class="hint">按 <b>推荐指数</b> 排列 = 对位克制 40% + 自身强度 25% + 该位胜率 25% + 配合 10%，再 × 选位常用度。<b>对位用分层估计</b>：优先「阵容级」（该英雄 vs 敌方已选全员/最大子集同时在场的真实胜率，需 ≥25 场），样本不足自动<b>降级</b>到逐个单体对位，再不足则退回自身强度+该位胜率。点击即选。</div>`;
+    } else {
+      head=`<h3>对方正在选人（第 ${state.enemy_picks.length+1} 选）</h3>`;
+      hint=`<div class="hint">按对手视角推荐度排列（克制你方阵容 + 自身强度 + 该选位习惯），点击即记入敌方阵容。</div>`;
+    }
+  }
+  const simBtn = !isMe ? `<button class="btn primary" id="simBtn" style="margin-top:8px">🎲 模拟对手${banP?'Ban':'选人'}</button>` : '';
+  panel.innerHTML = head + hint + predictHTML +
+    `<div class="filter-bar" id="filterChips"></div>
+     <input class="search" id="rosterSearch" placeholder="搜索英雄名…">
+     <div class="recgrid" id="rosterBox"></div>` + simBtn;
+  renderFilterChips();
+  refreshRoster();
+  if(!isMe) document.getElementById('simBtn').onclick=()=>simulateEnemy(banP?'ban':'pick');
+}
+
+async function predictEnemyNext(phase){
+  // 预测对方下一步最可能选/ban 的前 3 个英雄（按评分排序），同时更新威胁集合
+  try{
+    let preds=[];
+    if(isBan(phase)){
+      const d = await getSuggestSwapped();   // 敌方视角下 ban 我方英雄
+      preds = (d.my_bans||[]).slice(0,3);
+      threatFromEnemy = new Set(preds.map(p=>p.code));
+    }else{
+      const d = await getSuggest('pick');
+      preds = (d.enemy_picks||[]).slice(0,3);
+      threatFromEnemy = new Set(preds.map(p=>p.code));
+    }
+    return preds;
+  }catch(_){ return []; }
+}
+
+function bindCards(panel,phase){
+  panel.querySelectorAll('.card').forEach(c=>c.onclick=()=>{
+    const code=c.dataset.code;
+    if(phase==='ban') addMyBan(code); else addMyPick(code);
+  });
+}
+// 统一网格：按后端排好的 currentAll（推荐度降序）+ 前端筛选（搜索/属性/职业/星数）渲染。
+// 筛选规则：组内多选=或（叠加），组间=且；无数据英雄仍在列表尾部（可选中）。
+function refreshRoster(){
+  const box=document.getElementById('rosterBox'); if(!box)return;
+  const q=(document.getElementById('rosterSearch')?.value||'').toLowerCase();
+  const rs=document.getElementById('rosterSearch');
+  if(rs) rs.oninput=refreshRoster;
+  const list=currentAll.filter(h=>
+    (h.name||'').toLowerCase().includes(q) &&
+    (HERO_FILTER.attrs.size===0 || HERO_FILTER.attrs.has(h.attr_raw||'')) &&
+    (HERO_FILTER.jobs.size===0  || HERO_FILTER.jobs.has(h.job_raw||'')) &&
+    (HERO_FILTER.rarities.size===0 || HERO_FILTER.rarities.has(h.rarity||0))
+  );
+  box.innerHTML=list.map(h=>cardHTML(h,currentMode)).join('') ||
+    '<div class="empty">没有符合筛选条件的英雄</div>';
+}
+// 全局事件委托：在稳定的 #actionPanel 上只绑定一次，内部重渲染不会丢失。
+// 推荐卡与「全部英雄」网格里的 .card 都走这里，按当前 step 分发到正确的 add 函数。
+function onActionPanelClick(e){
+  const card=e.target.closest('.card'); if(!card) return;
+  const code=card.dataset.code; if(!code) return;
+  const step=curStep(); if(!step) return;
+  if(step.side==='me'){ if(isBan(step.phase)) addMyBan(code); else addMyPick(code); }
+  else { if(isBan(step.phase)) addEnemyBan(code); else addEnemyPick(code); }
+}
+
+async function getSuggestSwapped(){
+  const body={hand:state.hand,season:state.season||null,phase:'postban',
+    my_picks:state.enemy_picks,enemy_picks:state.my_picks,
+    my_bans:state.enemy_bans.map(b=>b.code),enemy_bans:state.my_bans.map(b=>b.code)};
+  const r=await fetch('/api/draft/suggest',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+  return await r.json();
+}
+
+async function simulateEnemy(phase){
+  const step=curStep(); const need=step.count;
+  let recs=[];
+  if(phase==='ban'){
+    const d=await getSuggest(step.phase);   // 对手视角 ban 推荐（enemy_bans）
+    recs=d.enemy_bans;
+  }else{
+    const d=await getSuggest('pick');
+    recs=d.enemy_picks;
+  }
+  let added=0;
+  for(const h of recs){
+    if(added>=need)break;
+    if(phase==='ban'){ if(addEnemyBan(h.code,true))added++; }
+    else { if(addEnemyPick(h.code,true))added++; }
+  }
+  // 兜底：终ban 时若推荐里没有我方英雄，从 my_picks 挑非第3选 ban
+  if(phase==='ban' && added<need){
+    for(let i=0;i<state.my_picks.length;i++){ if(i===2)continue; if(addEnemyBan(state.my_picks[i],true)){added++; if(added>=need)break;} }
+  }
+  afterChange();
+}
+
+function addMyPick(code){
+  const step=curStep(); if(!step||step.side!=='me'||step.phase!=='pick')return false;
+  if(state.my_picks.includes(code)||state.enemy_picks.includes(code))return false;
+  if([...state.my_bans,...state.enemy_bans].some(b=>b.code===code))return false;
+  state.my_picks.push(code); afterChange(); return true;
+}
+function addEnemyPick(code,silent){
+  const step=curStep(); if(!step||step.side!=='enemy'||step.phase!=='pick')return false;
+  if(state.my_picks.includes(code)||state.enemy_picks.includes(code))return false;
+  if([...state.my_bans,...state.enemy_bans].some(b=>b.code===code))return false;
+  state.enemy_picks.push(code); if(!silent)afterChange(); return true;
+}
+function addMyBan(code){
+  const step=curStep(); if(!step||step.side!=='me'||step.phase==='pick')return false;
+  const pre=step.phase==='preban';
+  if([...state.my_bans,...state.enemy_bans].some(b=>b.code===code))return false;
+  if(pre){
+    if(state.my_picks.includes(code)||state.enemy_picks.includes(code))return false;
+    state.my_bans.push({code,pre}); afterChange(); return true;
+  }
+  // 终ban：只能 ban 敌方已选英雄，且不能 ban 敌方第3选(index 2)
+  const idx=state.enemy_picks.indexOf(code);
+  if(idx<0) return false;
+  if(idx===2){alert('敌方第 3 选受保护，不可 ban');return false;}
+  state.my_bans.push({code,pre}); afterChange(); return true;
+}
+function addEnemyBan(code,silent){
+  const step=curStep(); if(!step||step.side!=='enemy'||step.phase==='pick')return false;
+  const pre=step.phase==='preban';
+  if([...state.my_bans,...state.enemy_bans].some(b=>b.code===code))return false;
+  if(pre){
+    if(state.my_picks.includes(code)||state.enemy_picks.includes(code))return false;
+    state.enemy_bans.push({code,pre}); if(!silent)afterChange(); return true;
+  }
+  // 终ban：敌方 ban 我方英雄，不能 ban 我方第3选(index 2)
+  const idx=state.my_picks.indexOf(code);
+  if(idx<0) return false;
+  if(idx===2){ if(!silent)alert('我方第 3 选受保护，不可 ban'); return false; }
+  state.enemy_bans.push({code,pre}); if(!silent)afterChange(); return true;
+}
+
+function afterChange(){
+  // advance steps while current is filled（while 兜底：万一某步已被后续操作补满可连续推进）
+  let guard=0;
+  while(guard++ < 20){
+    const step=curStep();
+    if(!step) break;
+    if(stepFilledCount(step) < step.count) break;
+    state.stepIndex++;
+  }
+  render();
+}
+
+async function renderFinal(){
+  const w=document.getElementById('finalWrap'); const step=curStep();
+  if(step){w.innerHTML='';return;}
+  // 4v4: 各自去掉终ban的1个
+  const myPost=state.my_bans.find(b=>!b.pre); const enPost=state.enemy_bans.find(b=>!b.pre);
+  const my4=state.my_picks.filter(c=>!(myPost&&c===myPost.code));
+  const en4=state.enemy_picks.filter(c=>!(enPost&&c===enPost.code));
+  // 调 suggest 拿 matchup + 属性克制总览
+  let match = null, attrOv = null;
+  try{
+    const d = await getSuggest('postban');
+    match = d.matchup; attrOv = d.attr_overview;
+  }catch(_){}
+  // 自动保存到 localStorage（用于复盘）
+  saveBPHistory(match);
+  const wrHTML = matchHTML(match, my4.length>=4 && en4.length>=4);
+  const attrHTML = attrOv ? attrOverviewHTML(attrOv) : '';
+  const sideHTML=(arr,title)=>`<div class="side"><h4>${title}</h4><div class="mini">${
+    arr.map(c=>{const h=HMAP[c]||{name:c,attr:''};return `<div class="m">${heroImg(c,h.name,h.attr,'m')}<div class="nm">${h.name}</div></div>`;}).join('')}</div></div>`;
+  w.innerHTML=`<div class="final"><h3>✅ BP 完成 · 4v4 对阵</h3>
+    ${wrHTML}
+    ${attrHTML}
+    <div class="vs">${sideHTML(my4,'我方 (4)')}<div class="vsmark">VS</div>${sideHTML(en4,'敌方 (4)')}</div>
+    <div class="note">提示：本模拟器基于历史对局数据给出选人 / ban 建议，反映英雄间的克制与配合胜率。
+    胜率预估值基于「我方英雄 vs 敌方阵容」对位数据（场次≥10 才参与），仅作 BP 决策参考。
+    先后手由抛硬币决定；e7stats 不记录真实先后手，故模拟器以你选定的先手/后手严格走真实 BP 顺序。</div></div>`;
+}
+
+const BP_HIST_KEY = 'e7bp_history_v1';
+function saveBPHistory(match){
+  try{
+    const entry = {
+      ts: Date.now(),
+      hand: state.hand,
+      my_picks: state.my_picks.slice(),
+      enemy_picks: state.enemy_picks.slice(),
+      my_bans: state.my_bans.map(b=>({code:b.code,pre:b.pre})),
+      enemy_bans: state.enemy_bans.map(b=>({code:b.code,pre:b.pre})),
+      my_wr: match.my_wr,
+      enemy_wr: match.enemy_wr,
+    };
+    const arr = JSON.parse(localStorage.getItem(BP_HIST_KEY)||'[]');
+    arr.unshift(entry);
+    localStorage.setItem(BP_HIST_KEY, JSON.stringify(arr.slice(0,30)));   // 保留最近 30 条
+    renderHistoryPanel();
+  }catch(_){}
+}
+function loadBPHistory(){try{return JSON.parse(localStorage.getItem(BP_HIST_KEY)||'[]');}catch(_){return [];}}
+function restoreFromHistory(i){
+  const arr = loadBPHistory();
+  if(!arr[i]) return;
+  const e = arr[i];
+  state.hand = e.hand; state.preban = 1; state.stepIndex = 99;
+  state.my_picks = e.my_picks.slice(); state.enemy_picks = e.enemy_picks.slice();
+  state.my_bans = e.my_bans.map(b=>({code:b.code,pre:b.pre}));
+  state.enemy_bans = e.enemy_bans.map(b=>({code:b.code,pre:b.pre}));
+  loadSequence().then(()=>{render();});
+}
+function deleteHistory(i){
+  const arr = loadBPHistory(); arr.splice(i,1);
+  localStorage.setItem(BP_HIST_KEY, JSON.stringify(arr));
+  renderHistoryPanel();
+}
+function renderHistoryPanel(){
+  const el = document.getElementById('historyPanel');
+  if(!el) return;
+  const arr = loadBPHistory();
+  if(!arr.length){el.innerHTML='<span class="empty-h">（暂无历史）</span>';return;}
+  el.innerHTML = arr.map((e,i)=>{
+    const date = new Date(e.ts).toLocaleString('zh-CN',{month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'});
+    const myMini = e.my_picks.slice(0,5).map(c=>{const h=HMAP[c]||{name:c};return `<span class="hm">${h.name}</span>`;}).join('');
+    const enMini = e.enemy_picks.slice(0,5).map(c=>{const h=HMAP[c]||{name:c};return `<span class="hm">${h.name}</span>`;}).join('');
+    const wr = e.my_wr!=null? `<b class="wr">${e.my_wr}%</b>` : '<b class="wr">-</b>';
+    return `<div class="hrow">
+      <span class="hd">${date}</span>
+      <span class="hmine">我: ${myMini}</span>
+      <span class="hvs">vs</span>
+      <span class="hene">${enMini}</span>
+      <span class="hwr">${wr}</span>
+      <button class="btn-mini" data-i="${i}" data-act="r">恢复</button>
+      <button class="btn-mini" data-i="${i}" data-act="d">删</button>
+    </div>`;
+  }).join('');
+  el.querySelectorAll('.btn-mini').forEach(b=>{
+    const i = +b.dataset.i; const act = b.dataset.act;
+    b.onclick = ()=>{if(act==='r') restoreFromHistory(i); else deleteHistory(i);};
+  });
+}
+
+function attrOverviewHTML(o){
+  const distHTML = (d)=>Object.entries(d).map(([a,n])=>`<span class="adt adt-${a}">${a} ×${n}</span>`).join('');
+  const counted = o.my_counted_by_enemy - o.en_counted_by_me;
+  const cls = counted>0?'bad':(counted<0?'good':'mid');
+  const tip = counted>0?`我方有 ${counted} 人被敌方属性克制` : (counted<0?`敌方有 ${-counted} 人被我方属性克制` : `属性互克平衡`);
+  return `<div class="aov"><div class="aov-side"><b>我方属性</b>${distHTML(o.my_attr)}</div>
+    <div class="aov-mid"><span class="aov-tag ${cls}">${tip}</span></div>
+    <div class="aov-side"><b>敌方属性</b>${distHTML(o.en_attr)}</div></div>`;
+}
+
+function matchHTML(m, ready){
+  if(!m || m.my_wr==null) return `<div class="matchup no">胜率预估：${ready?'计算中…':'阵容未完整，需双方各 4 人'}</div>`;
+  const adv = m.advantage;
+  let cls='mid', tag='五五开';
+  if(adv>=8) {cls='good'; tag='优势 BP';}
+  else if(adv>=-7) {cls='mid'; tag='五五开';}
+  else if(adv>=-15) {cls='warn'; tag='小劣，建议调阵容';}
+  else {cls='bad'; tag='大劣，强烈建议重置';}
+  return `<div class="matchup ${cls}"><span class="mw">我方预估胜率 <b>${m.my_wr}%</b></span>
+    <span class="adv">${adv>0?'+':''}${adv}%</span>
+    <span class="tag">${tag}</span></div>`;
+}
+
+function render(){
+  renderTrack(); renderSlots();
+  const step=curStep();
+  document.getElementById('status').innerHTML=step?statusText(step):'<b>BP 完成。</b> 见下方 4v4 复盘。';
+  renderFinal();
+  renderAction();
+}
+
+// controls
+document.getElementById('handSeg').onclick=e=>{
+  const b=e.target.closest('button'); if(!b)return;
+  state.hand=b.dataset.h;
+  [...e.currentTarget.children].forEach(x=>x.classList.toggle('on',x===b));
+  resetDraft();
+};
+document.getElementById('coinBtn').onclick=()=>{
+  const h=Math.random()<0.5?'first':'second';
+  state.hand=h;
+  [...document.getElementById('handSeg').children].forEach(x=>x.classList.toggle('on',x.dataset.h===h));
+  resetDraft();
+};
+document.getElementById('masterChk').onchange=e=>{state.preban=e.target.checked?2:1;resetDraft();};
+document.getElementById('seasonSel').onchange=e=>{state.season=e.target.value;resetDraft();};
+document.getElementById('resetBtn').onclick=resetDraft;
+document.getElementById('histBtn').onclick=()=>{
+  const w=document.getElementById('historyWrap');
+  const open = w.style.display==='block';
+  w.style.display = open?'none':'block';
+  if(!open) renderHistoryPanel();
+};
+
+async function resetDraft(){
+  state.my_picks=[];state.enemy_picks=[];state.my_bans=[];state.enemy_bans=[];state.stepIndex=0;
+  suggestCache={};
+  await loadSequence();
+  render();
+}
+
+(async function init(){
+  await loadHeroes(); await loadSeasons(); await loadSequence(); await loadMeta();
+  renderFilterChips();
+  // 全局点击委托：只绑一次，重渲染不丢；ban/pick 全部由 onActionPanelClick 分发
+  document.getElementById('actionPanel').addEventListener('click', onActionPanelClick);
+  if (location.search.includes('demo=final')) {
+    const ST={my_picks:['c1132','c1182','c1096','c2128','c1118'],
+      enemy_picks:['c1106','c1129','c1157','c2111','c1159'],
+      my_bans:[{code:'c2007',pre:true},{code:'c1159',pre:false}],
+      enemy_bans:[{code:'c5154',pre:true},{code:'c2128',pre:false}]};
+    state.hand='first'; state.preban=1; state.stepIndex=99;
+    state.my_picks=ST.my_picks; state.enemy_picks=ST.enemy_picks;
+    state.my_bans=ST.my_bans; state.enemy_bans=ST.enemy_bans;
+  }
+  render();
+  renderHistoryPanel();
+  // ?demo=final 直接注入终局 state（内联常量，截图调试用，跳过网络往返）
+  if (location.search.includes('demo=final')) {
+    const ST={my_picks:['c1132','c1182','c1096','c2128','c1118'],
+      enemy_picks:['c1106','c1129','c1157','c2111','c1159'],
+      my_bans:[{code:'c2007',pre:true},{code:'c1159',pre:false}],
+      enemy_bans:[{code:'c5154',pre:true},{code:'c2128',pre:false}]};
+    state.hand='first'; state.preban=1; state.stepIndex=99;
+    state.my_picks=ST.my_picks; state.enemy_picks=ST.enemy_picks;
+    state.my_bans=ST.my_bans; state.enemy_bans=ST.enemy_bans;
+    render();
+  }
+})();
+</script>
+</body>
+</html>

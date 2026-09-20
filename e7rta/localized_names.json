@@ -1,0 +1,3988 @@
+{
+    "heroes": {
+        "arbiter-vildred": {
+            "en": "Arbiter Vildred",
+            "ko": "집행관 빌트레드",
+            "ja": "調停者ヴィルドレッド",
+            "zh": "仲裁者維爾德雷德"
+        },
+        "apocalypse-ravi": {
+            "en": "Apocalypse Ravi",
+            "ko": "종말의 라비",
+            "ja": "終末のラヴィ",
+            "zh": "末日拉薇"
+        },
+        "fallen-cecilia": {
+            "en": "Fallen Cecilia",
+            "ko": "나락의 세실리아",
+            "ja": "堕落したセシリア",
+            "zh": "墮落的塞西莉亞"
+        },
+        "specter-tenebria": {
+            "en": "Specter Tenebria",
+            "ko": "환영의 테네브리아",
+            "ja": "スペクターテネブリア",
+            "zh": "幽靈黛妮布莉亞"
+        },
+        "martial-artist-ken": {
+            "en": "Martial Artist Ken",
+            "ko": "무투가 켄",
+            "ja": "格闘家ケン",
+            "zh": "格鬥家肯"
+        },
+        "ruele-of-light": {
+            "en": "Ruele of Light",
+            "ko": "빛의 루엘",
+            "ja": "光のルエレ",
+            "zh": "光之露艾兒"
+        },
+        "judge-kise": {
+            "en": "Judge Kise",
+            "ko": "심판자 키세",
+            "ja": "審判者キセ",
+            "zh": "審判者琪瑟"
+        },
+        "maid-chloe": {
+            "en": "Maid Chloe",
+            "ko": "메이드 클로에",
+            "ja": "メイドクロエ",
+            "zh": "女僕克蘿伊"
+        },
+        "seaside-bellona": {
+            "en": "Seaside Bellona",
+            "ko": "해변의 벨로나",
+            "ja": "浜辺のベローナ",
+            "zh": "海邊貝羅娜"
+        },
+        "hwayoung": {
+            "en": "Hwayoung",
+            "ko": "화영",
+            "ja": "ファヨン",
+            "zh": "花英"
+        },
+        "peira": {
+            "en": "Peira",
+            "ko": "페이라",
+            "ja": "ペイラ",
+            "zh": "佩拉"
+        },
+        "ran": {
+            "en": "Ran",
+            "ko": "란",
+            "ja": "ラン",
+            "zh": "蘭"
+        },
+        "conqueror-lilias": {
+            "en": "Conqueror Lilias",
+            "ko": "지배자 릴리아스",
+            "ja": "征服者リリアス",
+            "zh": "征服者莉莉雅絲"
+        },
+        "angel-of-light-angelica": {
+            "en": "Angel of Light Angelica",
+            "ko": "빛의 천사 안젤리카",
+            "ja": "光の天使アンジェリカ",
+            "zh": "光之天使安潔莉卡"
+        },
+        "rimuru": {
+            "en": "Rimuru",
+            "ko": "리무루",
+            "ja": "リムル",
+            "zh": "利姆路"
+        },
+        "vildred": {
+            "en": "Vildred",
+            "ko": "빌트레드",
+            "ja": "ヴィルドレッド",
+            "zh": "維爾德雷德"
+        },
+        "ravi": {
+            "en": "Ravi",
+            "ko": "라비",
+            "ja": "ラヴィ",
+            "zh": "拉薇"
+        },
+        "ken": {
+            "en": "Ken",
+            "ko": "켄",
+            "ja": "ケン",
+            "zh": "肯"
+        },
+        "kise": {
+            "en": "Kise",
+            "ko": "키세",
+            "ja": "キセ",
+            "zh": "琪瑟"
+        },
+        "chloe": {
+            "en": "Chloe",
+            "ko": "클로에",
+            "ja": "クロエ",
+            "zh": "克蘿伊"
+        },
+        "bellona": {
+            "en": "Bellona",
+            "ko": "벨로나",
+            "ja": "ベローナ",
+            "zh": "貝羅娜"
+        },
+        "luna": {
+            "en": "Luna",
+            "ko": "루나",
+            "ja": "ルナ",
+            "zh": "露娜"
+        },
+        "yufine": {
+            "en": "Yufine",
+            "ko": "유피네",
+            "ja": "ユピネ",
+            "zh": "尤菲涅"
+        },
+        "cecilia": {
+            "en": "Cecilia",
+            "ko": "세실리아",
+            "ja": "セシリア",
+            "zh": "塞西莉亞"
+        },
+        "iseria": {
+            "en": "Iseria",
+            "ko": "이세리아",
+            "ja": "イセリア",
+            "zh": "伊塞莉亞"
+        },
+        "lilias": {
+            "en": "Lilias",
+            "ko": "릴리아스",
+            "ja": "リリアス",
+            "zh": "莉莉雅絲"
+        },
+        "tamarinne": {
+            "en": "Tamarinne",
+            "ko": "타마린느",
+            "ja": "タマリンヌ",
+            "zh": "塔瑪琳"
+        },
+        "destina": {
+            "en": "Destina",
+            "ko": "데스티나",
+            "ja": "デスティーナ",
+            "zh": "黛絲緹娜"
+        },
+        "diene": {
+            "en": "Diene",
+            "ko": "디에네",
+            "ja": "ディエネ",
+            "zh": "迪耶妮"
+        },
+        "angelica": {
+            "en": "Angelica",
+            "ko": "안젤리카",
+            "ja": "アンジェリカ",
+            "zh": "安潔莉卡"
+        },
+        "charlotte": {
+            "en": "Charlotte",
+            "ko": "샬롯",
+            "ja": "シャルロッテ",
+            "zh": "夏綠蒂"
+        },
+        "krau": {
+            "en": "Krau",
+            "ko": "크라우",
+            "ja": "クラウ",
+            "zh": "克勞"
+        },
+        "tywin": {
+            "en": "Tywin",
+            "ko": "타이윈",
+            "ja": "タイウィン",
+            "zh": "泰溫"
+        },
+        "charles": {
+            "en": "Charles",
+            "ko": "찰스",
+            "ja": "チャールズ",
+            "zh": "查爾斯"
+        },
+        "tenebria": {
+            "en": "Tenebria",
+            "ko": "테네브리아",
+            "ja": "テネブリア",
+            "zh": "黛妮布莉亞"
+        },
+        "aramintha": {
+            "en": "Aramintha",
+            "ko": "아라민타",
+            "ja": "アラミンタ",
+            "zh": "亞拉敏塔"
+        },
+        "vivian": {
+            "en": "Vivian",
+            "ko": "비비안",
+            "ja": "ビビアン",
+            "zh": "薇薇安"
+        },
+        "basar": {
+            "en": "Basar",
+            "ko": "바사르",
+            "ja": "バサール",
+            "zh": "巴薩爾"
+        },
+        "ray": {
+            "en": "Ray",
+            "ko": "레이",
+            "ja": "レイ",
+            "zh": "雷"
+        },
+        "elena": {
+            "en": "Elena",
+            "ko": "엘레나",
+            "ja": "エレナ",
+            "zh": "艾蓮娜"
+        },
+        "roana": {
+            "en": "Roana",
+            "ko": "로앤나",
+            "ja": "ロアナ",
+            "zh": "羅安娜"
+        },
+        "alencia": {
+            "en": "Alencia",
+            "ko": "알렌시아",
+            "ja": "アレンシア",
+            "zh": "艾倫西亞"
+        },
+        "celine": {
+            "en": "Celine",
+            "ko": "셀린",
+            "ja": "セリン",
+            "zh": "瑟琳"
+        },
+        "pavel": {
+            "en": "Pavel",
+            "ko": "파벨",
+            "ja": "パヴェル",
+            "zh": "帕維爾"
+        },
+        "lilibet": {
+            "en": "Lilibet",
+            "ko": "릴리벳",
+            "ja": "リリベット",
+            "zh": "莉莉貝特"
+        },
+        "luluca": {
+            "en": "Luluca",
+            "ko": "루루카",
+            "ja": "ルルカ",
+            "zh": "露露卡"
+        },
+        "lidica": {
+            "en": "Lidica",
+            "ko": "리디카",
+            "ja": "リディカ",
+            "zh": "莉迪卡"
+        },
+        "ludwig": {
+            "en": "Ludwig",
+            "ko": "루트비히",
+            "ja": "ルートヴィヒ",
+            "zh": "路德維希"
+        },
+        "sez": {
+            "en": "Sez",
+            "ko": "세즈",
+            "ja": "セズ",
+            "zh": "賽茲"
+        },
+        "yuna": {
+            "en": "Yuna",
+            "ko": "유나",
+            "ja": "ユナ",
+            "zh": "尤娜"
+        },
+        "karin": {
+            "en": "Karin",
+            "ko": "카린",
+            "ja": "カリン",
+            "zh": "卡琳"
+        },
+        "violet": {
+            "en": "Violet",
+            "ko": "비올레토",
+            "ja": "ヴィオレタ",
+            "zh": "維歐萊特"
+        },
+        "kayron": {
+            "en": "Kayron",
+            "ko": "카일론",
+            "ja": "カイロン",
+            "zh": "凱隆"
+        },
+        "haste": {
+            "en": "Haste",
+            "ko": "헤이스트",
+            "ja": "ヘイスト",
+            "zh": "海斯特"
+        },
+        "melissa": {
+            "en": "Melissa",
+            "ko": "멜리사",
+            "ja": "メリッサ",
+            "zh": "梅麗莎"
+        },
+        "mui": {
+            "en": "Mui",
+            "ko": "뮤이",
+            "ja": "ミュイ",
+            "zh": "繆伊"
+        },
+        "kawerik": {
+            "en": "Kawerik",
+            "ko": "카웨릭",
+            "ja": "カヴェリク",
+            "zh": "卡維里克"
+        },
+        "ervalen": {
+            "en": "Ervalen",
+            "ko": "에르발렌",
+            "ja": "エルヴァレン",
+            "zh": "艾爾瓦倫"
+        },
+        "flan": {
+            "en": "Flan",
+            "ko": "플랑",
+            "ja": "フラン",
+            "zh": "芙蘭"
+        },
+        "politis": {
+            "en": "Politis",
+            "ko": "폴리티스",
+            "ja": "ポリティス",
+            "zh": "波麗提斯"
+        },
+        "elphelt": {
+            "en": "Elphelt",
+            "ko": "엘페르트",
+            "ja": "エルフェルト",
+            "zh": "艾爾菲特"
+        },
+        "baiken": {
+            "en": "Baiken",
+            "ko": "바이켄",
+            "ja": "바이켄",
+            "zh": "梅喧"
+        },
+        "dizzy": {
+            "en": "Dizzy",
+            "ko": "디지",
+            "ja": "ディジー",
+            "zh": "蒂姿"
+        },
+        "sol": {
+            "en": "Sol Badguy",
+            "ko": "솔",
+            "ja": "ソル",
+            "zh": "乖離聖索爾"
+        },
+        "ram": {
+            "en": "Ram",
+            "ko": "람",
+            "ja": "ラム",
+            "zh": "拉姆"
+        },
+        "rem": {
+            "en": "Rem",
+            "ko": "렘",
+            "ja": "レム",
+            "zh": "雷姆"
+        },
+        "emilia": {
+            "en": "Emilia",
+            "ko": "에밀리아",
+            "ja": "エミリア",
+            "zh": "艾蜜莉雅"
+        },
+        "ras": {
+            "en": "Ras",
+            "ko": "라스",
+            "ja": "ラス",
+            "zh": "拉斯"
+        },
+        "mercedes": {
+            "en": "Mercedes",
+            "ko": "메르세데스",
+            "ja": "メルセデス",
+            "zh": "梅賽德斯"
+        },
+        "silk": {
+            "en": "Silk",
+            "ko": "실크",
+            "ja": "シルク",
+            "zh": "絲爾克"
+        },
+        "dominiel": {
+            "en": "Dominiel",
+            "ko": "도미니엘",
+            "ja": "ドミニエル",
+            "zh": "多米妮爾"
+        },
+        "achates": {
+            "en": "Achates",
+            "ko": "아카테스",
+            "ja": "アカテス",
+            "zh": "阿凱特斯"
+        },
+        "clarissa": {
+            "en": "Clarissa",
+            "ko": "클라릿사",
+            "ja": "クラリッサ",
+            "zh": "克拉麗莎"
+        },
+        "rose": {
+            "en": "Rose",
+            "ko": "로제",
+            "ja": "ロゼ",
+            "zh": "蘿絲"
+        },
+        "maya": {
+            "en": "Maya",
+            "ko": "마야",
+            "ja": "マヤ",
+            "zh": "瑪雅"
+        },
+        "armin": {
+            "en": "Armin",
+            "ko": "아밍",
+            "ja": "アルミン",
+            "zh": "阿爾明"
+        },
+        "cidd": {
+            "en": "Cidd",
+            "ko": "시더",
+            "ja": "シダー",
+            "zh": "希德"
+        },
+        "surin": {
+            "en": "Surin",
+            "ko": "수린",
+            "ja": "スリン",
+            "zh": "秀琳"
+        },
+        "corvus": {
+            "en": "Corvus",
+            "ko": "코르부스",
+            "ja": "コルヴス",
+            "zh": "科爾布斯"
+        },
+        "cartuja": {
+            "en": "Cartuja",
+            "ko": "카르투하",
+            "ja": "カルトゥハ",
+            "zh": "卡圖哈"
+        },
+        "dingo": {
+            "en": "Dingo",
+            "ko": "딩고",
+            "ja": "ディンゴ",
+            "zh": "丁哥"
+        },
+        "purrgis": {
+            "en": "Purrgis",
+            "ko": "퍼지스",
+            "ja": "パージス",
+            "zh": "普爾吉斯"
+        },
+        "zerato": {
+            "en": "Zerato",
+            "ko": "제라토",
+            "ja": "ゼラト",
+            "zh": "傑拉托"
+        },
+        "roman": {
+            "en": "Roman",
+            "ko": "로만",
+            "ja": "ロマン",
+            "zh": "羅曼"
+        },
+        "furious": {
+            "en": "Furious",
+            "ko": "퓨리우스",
+            "ja": "フュリオス",
+            "zh": "弗里歐斯"
+        },
+        "schuri": {
+            "en": "Schuri",
+            "ko": "슈리",
+            "ja": "シュリ",
+            "zh": "舒莉"
+        },
+        "leo": {
+            "en": "Leo",
+            "ko": "레오",
+            "ja": "レオ",
+            "zh": "雷歐"
+        },
+        "roozid": {
+            "en": "Roozid",
+            "ko": "루지드",
+            "ja": "ルージッド",
+            "zh": "路濟德"
+        },
+        "wanda": {
+            "en": "Wanda",
+            "ko": "완다",
+            "ja": "ワンダ",
+            "zh": "旺達"
+        },
+        "kiris": {
+            "en": "Kiris",
+            "ko": "키리스",
+            "ja": "キリス",
+            "zh": "琪莉絲"
+        },
+        "hazel": {
+            "en": "Hazel",
+            "ko": "헤이즐",
+            "ja": "ヘイゼル",
+            "zh": "黑茲爾"
+        },
+        "montmorancy": {
+            "en": "Montmorancy",
+            "ko": "몽모랑시",
+            "ja": "モンモランシー",
+            "zh": "蒙莫朗西"
+        },
+        "lorina": {
+            "en": "Lorina",
+            "ko": "로리나",
+            "ja": "ロリナ",
+            "zh": "洛琳娜"
+        },
+        "elson": {
+            "en": "Elson",
+            "ko": "엘슨",
+            "ja": "エルソン",
+            "zh": "艾爾森"
+        },
+        "alexa": {
+            "en": "Alexa",
+            "ko": "알렉사",
+            "ja": "アレクサ",
+            "zh": "阿蕾莎"
+        },
+        "adin": {
+            "en": "Adin",
+            "ko": "아딘",
+            "ja": "アディン",
+            "zh": "亞丁"
+        },
+        "dark-corvus": {
+            "en": "Dark Corvus",
+            "ko": "어둠의 코르부스",
+            "ja": "闇コルヴス",
+            "zh": "暗黑科爾布斯"
+        },
+        "blood-blade-karin": {
+            "en": "Blood Blade Karin",
+            "ko": "혈검 카린",
+            "ja": "ブラッドブレイドカリン",
+            "zh": "血刃卡琳"
+        },
+        "assassin-cidd": {
+            "en": "Assassin Cidd",
+            "ko": "암살자 시더",
+            "ja": "アサシンシダー",
+            "zh": "刺客希德"
+        },
+        "assassin-coli": {
+            "en": "Assassin Coli",
+            "ko": "암살자 콜리",
+            "ja": "アサシンコリ",
+            "zh": "刺客科莉"
+        },
+        "challenger-dominiel": {
+            "en": "Challenger Dominiel",
+            "ko": "도전자 도미니엘",
+            "ja": "チャレンジャードミニエル",
+            "zh": "挑戰者多米妮爾"
+        },
+        "shooting-star-achates": {
+            "en": "Shooting Star Achates",
+            "ko": "슈팅스타 아카테스",
+            "ja": "シューティングスターアカテス",
+            "zh": "流星阿凱特斯"
+        },
+        "wanderer-silk": {
+            "en": "Wanderer Silk",
+            "ko": "방랑자 실크",
+            "ja": "放浪者シルク",
+            "zh": "流浪者絲爾克"
+        },
+        "general-purrgis": {
+            "en": "General Purrgis",
+            "ko": "대장 퍼지스",
+            "ja": "ジェネラルパージス",
+            "zh": "將軍普爾吉斯"
+        },
+        "specimen-sez": {
+            "en": "Specimen Sez",
+            "ko": "실험체 세즈",
+            "ja": "スペシメンセズ",
+            "zh": "實驗體賽茲"
+        },
+        "gaither": {
+            "en": "Auxiliary Lots",
+            "ko": "보조형 랏츠",
+            "ja": "オグジュアリーロッツ",
+            "zh": "輔助洛茲"
+        },
+        "last-rider-krau": {
+            "en": "Last Rider Krau",
+            "ko": "라스트 라이더 크라우",
+            "ja": "ラストライダークラウ",
+            "zh": "最後騎士克勞"
+        },
+        "ambitious-tywin": {
+            "en": "Ambitious Tywin",
+            "ko": "야심가 타이윈",
+            "ja": "野心家タイウィン",
+            "zh": "野心家泰溫"
+        },
+        "remnant-violet": {
+            "en": "Remnant Violet",
+            "ko": "잔영의 비올레토",
+            "ja": "残影のヴィオレタ",
+            "zh": "殘影維歐萊特"
+        },
+        "briar-witch-iseria": {
+            "en": "Briar Witch Iseria",
+            "ko": "잿빛 숲의 이세리아",
+            "ja": "いばら魔女イセリア",
+            "zh": "荊棘女巫伊塞莉亞"
+        },
+        "designer-lilibet": {
+            "en": "Designer Lilibet",
+            "ko": "디자이너 릴리벳",
+            "ja": "デザイナーリリベット",
+            "zh": "設計師莉莉貝特"
+        },
+        "mediator-kawerik": {
+            "en": "Mediator Kawerik",
+            "ko": "조율자 카웨릭",
+            "ja": "調停者カヴェリク",
+            "zh": "調解者卡維里克"
+        },
+        "belian": {
+            "en": "Belian",
+            "ko": "벨리안",
+            "ja": "ベリアン",
+            "zh": "貝莉安"
+        },
+        "zahhak": {
+            "en": "Zahhak",
+            "ko": "자하크",
+            "ja": "ザハク",
+            "zh": "扎哈克"
+        },
+        "straze": {
+            "en": "Straze",
+            "ko": "스트라제스",
+            "ja": "ストレイズ",
+            "zh": "斯特雷茲"
+        },
+        "landy": {
+            "en": "Landy",
+            "ko": "랑디",
+            "ja": "ランディ",
+            "zh": "蘭迪"
+        },
+        "fairytale-tenebria": {
+            "en": "Fairytale Tenebria",
+            "ko": "메르헨 테네브리아",
+            "ja": "童話テネブリア",
+            "zh": "童話黛妮布莉亞"
+        },
+        "closer-charles": {
+            "en": "Closer Charles",
+            "ko": "종결자 찰스",
+            "ja": "クローザーチャールズ",
+            "zh": "終結者查爾斯"
+        },
+        "operator-sigret": {
+            "en": "Operator Sigret",
+            "ko": "오퍼레이터 세크레트",
+            "ja": "オペレーターシグレット",
+            "zh": "操作員希格雷特"
+        },
+        "swift-flagbearer-sigret": {
+            "en": "Swift Flagbearer Sigret",
+            "ko": "신속한 기수 세크레트",
+            "ja": "疾風旗手シグレット",
+            "zh": "疾風旗手希格雷特",
+            "pt": "Sigret Porta-Estandarte Veloz",
+            "es": "Sigret Abanderada Veloz"
+        },
+        "fire-ravi": {
+            "en": "Verdant Ravi",
+            "ko": "화란의 라비",
+            "ja": "翠嵐のラヴィ",
+            "zh": "翠嵐拉薇"
+        },
+        "lone-wolf-peira": {
+            "en": "Lone Wolf Peira",
+            "ko": "고독한 늑대 페이라",
+            "ja": "一匹狼ペイラ",
+            "zh": "獨狼佩拉"
+        },
+        "shadow-bystander-hwayoung": {
+            "en": "Bystander Hwayoung",
+            "ko": "방관자 화영",
+            "ja": "傍観者ファヨン",
+            "zh": "旁觀者花英"
+        },
+        "frieren": {
+            "en": "Frieren",
+            "ko": "프리렌",
+            "ja": "フリーレン",
+            "zh": "芙莉蓮"
+        },
+        "fern": {
+            "en": "Fern",
+            "ko": "페른",
+            "ja": "フェルン",
+            "zh": "斐倫"
+        },
+        "stark": {
+            "en": "Stark",
+            "ko": "슈타르크",
+            "ja": "シュタルク",
+            "zh": "修塔爾克"
+        },
+        "edward-elric": {
+            "en": "Edward Elric",
+            "ko": "에드워드 엘릭",
+            "ja": "エドワード・エルリック",
+            "zh": "愛德華·艾力克"
+        },
+        "roy-mustang": {
+            "en": "Roy Mustang",
+            "ko": "로이 머스탱",
+            "ja": "ロイ・マスタング",
+            "zh": "羅伊·乘斯坦"
+        },
+        "riza-hawkeye": {
+            "en": "Riza Hawkeye",
+            "ko": "리자 호크아이",
+            "ja": "リザ・ホークアイ",
+            "zh": "莉莎·乘克艾"
+        },
+        "benimaru": {
+            "en": "Benimaru",
+            "ko": "베니마루",
+            "ja": "ベニマル",
+            "zh": "紅丸"
+        },
+        "shuna": {
+            "en": "Shuna",
+            "ko": "슈나",
+            "ja": "シュナ",
+            "zh": "朱菜"
+        },
+        "milim": {
+            "en": "Milim",
+            "ko": "밀림",
+            "ja": "ミリム",
+            "zh": "米利姆"
+        },
+        "albedo": {
+            "en": "Albedo",
+            "ko": "알베도",
+            "ja": "アルベド",
+            "zh": "雅兒貝德"
+        },
+        "ainz": {
+            "en": "Ainz Ooal Gown",
+            "ko": "아인즈 울 고운",
+            "ja": "アインズ・ウール・ゴウン",
+            "zh": "安茲·烏爾·恭"
+        },
+        "shalltear": {
+            "en": "Shalltear",
+            "ko": "샤르티아",
+            "ja": "シャルティア",
+            "zh": "夏提雅"
+        },
+        "sigret": {
+            "en": "Sigret",
+            "ko": "세크레트",
+            "ja": "シグレット",
+            "zh": "希格雷特"
+        },
+        "mort": {
+            "en": "Mort",
+            "ko": "모르트",
+            "ja": "モルト",
+            "zh": "莫特"
+        },
+        "senya": {
+            "en": "Senya",
+            "ko": "셰나",
+            "ja": "セーニャ",
+            "zh": "瑟娜"
+        },
+        "ilynav": {
+            "en": "Ilynav",
+            "ko": "일리나브",
+            "ja": "イリナヴ",
+            "zh": "伊莉娜芙"
+        },
+        "aria": {
+            "en": "Aria",
+            "ko": "아리아",
+            "ja": "アリア",
+            "zh": "亞莉亞"
+        },
+        "eda": {
+            "en": "Eda",
+            "ko": "에다",
+            "ja": "エダ",
+            "zh": "艾達"
+        },
+        "fmaya": {
+            "en": "Fighter Maya",
+            "ko": "전투형 마야",
+            "ja": "ファイターマヤ",
+            "zh": "戰鬥型瑪雅"
+        },
+        "shadow-rose": {
+            "en": "Shadow Rose",
+            "ko": "그림자 로제",
+            "ja": "シャドウローズ",
+            "zh": "影子蘿絲"
+        },
+        "watcher-schuri": {
+            "en": "Watcher Schuri",
+            "ko": "주시자 슈리",
+            "ja": "ウォッチャーシュリ",
+            "zh": "監視者舒莉"
+        },
+        "silver-blade-aramintha": {
+            "en": "Silver Blade Aramintha",
+            "ko": "백은칼날의 아라민타",
+            "ja": "銀刃のアラミンタ",
+            "zh": "銀刃亞拉敏塔"
+        },
+        "archdemon-mercedes": {
+            "en": "Archdemon Mercedes",
+            "ko": "외우주의 메르세데스",
+            "ja": "魔神メルセデス",
+            "zh": "魔神梅賽德斯"
+        },
+        "blood-moon-haste": {
+            "en": "Blood Moon Haste",
+            "ko": "적월의 귀족 헤이스트",
+            "ja": "ブラッドムーンヘイスト",
+            "zh": "血月海斯特"
+        },
+        "little-queen-charlotte": {
+            "en": "Little Queen Charlotte",
+            "ko": "어린 여왕 샬롯",
+            "ja": "幼き女王シャルロッテ",
+            "zh": "幼女王夏綠蒂"
+        },
+        "top-model-luluca": {
+            "en": "Top Model Luluca",
+            "ko": "최강 모델 루루카",
+            "ja": "トップモデルルルカ",
+            "zh": "頂級模特露露卡"
+        },
+        "faithless-lidica": {
+            "en": "Faithless Lidica",
+            "ko": "불신자 리디카",
+            "ja": "不信者リディカ",
+            "zh": "無信者莉迪卡"
+        },
+        "spirit-eye-celine": {
+            "en": "Spirit Eye Celine",
+            "ko": "영안의 셀린",
+            "ja": "霊眼のセリン",
+            "zh": "靈眼瑟琳"
+        },
+        "command-model-laika": {
+            "en": "Command Model Laika",
+            "ko": "지휘형 라이카",
+            "ja": "指揮型ライカ",
+            "zh": "指揮型萊卡"
+        },
+        "kawana": {
+            "en": "Kawana",
+            "ko": "카와나",
+            "ja": "カワナ",
+            "zh": "卡瓦娜"
+        },
+        "torami": {
+            "en": "Torami",
+            "ko": "토라미",
+            "ja": "トラミ",
+            "zh": "托拉米"
+        },
+        "elvira": {
+            "en": "Elvira",
+            "ko": "엘비라",
+            "ja": "エルヴィラ",
+            "zh": "艾爾薇拉"
+        },
+        "bianka": {
+            "en": "Bianka",
+            "ko": "비브리스",
+            "ja": "ビアンカ",
+            "zh": "碧安卡"
+        },
+        "solitaria": {
+            "en": "Solitaria",
+            "ko": "솔리타리아",
+            "ja": "ソリタリア",
+            "zh": "索莉塔莉亞"
+        },
+        "lucia": {
+            "en": "Lucia",
+            "ko": "루시아",
+            "ja": "ルシア",
+            "zh": "露西亞"
+        },
+        "sharun": {
+            "en": "Sharun",
+            "ko": "샤룬",
+            "ja": "シャルン",
+            "zh": "夏倫"
+        },
+        "arunka": {
+            "en": "Arunka",
+            "ko": "아룬카",
+            "ja": "アルンカ",
+            "zh": "阿倫卡"
+        },
+        "abigail": {
+            "en": "Abigail",
+            "ko": "아비게일",
+            "ja": "アビゲイル",
+            "zh": "阿比蓋爾"
+        },
+        "jack-o": {
+            "en": "Jack-O",
+            "ko": "잭 오",
+            "ja": "ジャック・オー",
+            "zh": "傑克歐"
+        },
+        "laika": {
+            "en": "Laika",
+            "ko": "라이카",
+            "ja": "ライカ",
+            "zh": "萊卡"
+        },
+        "hwayoung-heir": {
+            "en": "Heir Taeyou",
+            "ko": "후계자 태유",
+            "ja": "後継者テユ",
+            "zh": "繼承者泰宥"
+        },
+        "taeyou": {
+            "en": "Taeyou",
+            "ko": "태유",
+            "ja": "テユ",
+            "zh": "泰宥"
+        },
+        "pearlhorizon": {
+            "en": "Pearlhorizon",
+            "ko": "펄호라이즌",
+            "ja": "パールホライズン",
+            "zh": "珍珠地平線"
+        },
+        "carrot": {
+            "en": "Carrot",
+            "ko": "캐롯",
+            "ja": "キャロット",
+            "zh": "胡蘿蔔"
+        },
+        "researcher-carrot": {
+            "en": "Researcher Carrot",
+            "ko": "연구자 캐롯",
+            "ja": "研究者キャロット",
+            "zh": "研究員胡蘿蔔"
+        },
+        "carmainerose": {
+            "en": "Carmainerose",
+            "ko": "카마인로즈",
+            "ja": "カーマインローズ",
+            "zh": "深紅玫瑰"
+        },
+        "mistychain": {
+            "en": "Mistychain",
+            "ko": "미스티체인",
+            "ja": "ミスティチェイン",
+            "zh": "迷霧鏈"
+        },
+        "gloomyrain": {
+            "en": "Gloomyrain",
+            "ko": "글루미레인",
+            "ja": "グルーミイレイン",
+            "zh": "陰雨"
+        },
+        "requiemroar": {
+            "en": "Requiemroar",
+            "ko": "레퀴엠로어",
+            "ja": "レクイエムロア",
+            "zh": "安魂咆哮"
+        },
+        "lots": {
+            "en": "Lots",
+            "ko": "랏츠",
+            "ja": "ロッツ",
+            "zh": "洛茲"
+        },
+        "ring": {
+            "en": "Ring",
+            "ko": "링",
+            "ja": "リング",
+            "zh": "鈴"
+        },
+        "coli": {
+            "en": "Coli",
+            "ko": "콜리",
+            "ja": "コリ",
+            "zh": "科莉"
+        },
+        "mirsa": {
+            "en": "Mirsa",
+            "ko": "미르사",
+            "ja": "ミルサ",
+            "zh": "米爾莎"
+        },
+        "judith": {
+            "en": "Judith",
+            "ko": "쥬디스",
+            "ja": "ジュディス",
+            "zh": "朱蒂絲"
+        },
+        "tieria": {
+            "en": "Tieria",
+            "ko": "티에리아",
+            "ja": "ティエリア",
+            "zh": "提艾莉亞"
+        },
+        "jena": {
+            "en": "Jena",
+            "ko": "제나",
+            "ja": "ジェナ",
+            "zh": "傑娜"
+        },
+        "jecht": {
+            "en": "Jecht",
+            "ko": "제크토",
+            "ja": "ジェクト",
+            "zh": "傑克特"
+        },
+        "doris": {
+            "en": "Doris",
+            "ko": "도리스",
+            "ja": "ドリス",
+            "zh": "朵莉絲"
+        },
+        "magic-scholar-doris": {
+            "en": "Magic Scholar Doris",
+            "ko": "마법학자 도리스",
+            "ja": "魔法学者ドリス",
+            "zh": "魔法學者朵莉絲"
+        },
+        "mascot-hazel": {
+            "en": "Mascot Hazel",
+            "ko": "마스코트 헤이즐",
+            "ja": "マスコットヘイゼル",
+            "zh": "吉祥物黑茲爾"
+        },
+        "angelic-montmorancy": {
+            "en": "Angelic Montmorancy",
+            "ko": "수호천사 몽모랑시",
+            "ja": "守護天使モンモランシー",
+            "zh": "守護天使蒙莫朗西"
+        },
+        "commander-lorina": {
+            "en": "Commander Lorina",
+            "ko": "지휘관 로리나",
+            "ja": "司令官ロリナ",
+            "zh": "指揮官洛琳娜"
+        },
+        "chaos-sect-axe": {
+            "en": "Chaos Sect Axe",
+            "ko": "카오스교 도끼 대장군",
+            "ja": "カオス教斧隊大将",
+            "zh": "混沌教斧大將軍"
+        },
+        "champion-zerato": {
+            "en": "Champion Zerato",
+            "ko": "승부의 제라토",
+            "ja": "チャンピオンゼラト",
+            "zh": "冠軍傑拉托"
+        },
+        "celestial-mercedes": {
+            "en": "Celestial Mercedes",
+            "ko": "외우주의 메르세데스",
+            "ja": "天界メルセデス",
+            "zh": "天界梅賽德斯"
+        },
+        "crimson-armin": {
+            "en": "Crimson Armin",
+            "ko": "홍염의 아밍",
+            "ja": "紅炎のアルミン",
+            "zh": "緋紅阿爾明"
+        },
+        "assassin-cartuja": {
+            "en": "Assassin Cartuja",
+            "ko": "암살자 카르투하",
+            "ja": "アサシンカルトゥハ",
+            "zh": "刺客卡圖哈"
+        },
+        "inferno-khawazu": {
+            "en": "Inferno Khawazu",
+            "ko": "광염의 카와주",
+            "ja": "インフェルノカワズ",
+            "zh": "烈焰卡瓦祖"
+        },
+        "tempest-surin": {
+            "en": "Tempest Surin",
+            "ko": "풍운의 수린",
+            "ja": "テンペストスリン",
+            "zh": "暴風秀琳"
+        },
+        "blaze-dingo": {
+            "en": "Blaze Dingo",
+            "ko": "열화의 딩고",
+            "ja": "ブレイズディンゴ",
+            "zh": "烈焰丁哥"
+        },
+        "kitty-clarissa": {
+            "en": "Kitty Clarissa",
+            "ko": "고양이 클라릿사",
+            "ja": "キティクラリッサ",
+            "zh": "貓咪克拉麗莎"
+        },
+        "righteous-thief-roozid": {
+            "en": "Righteous Thief Roozid",
+            "ko": "의적 루지드",
+            "ja": "義賊ルージッド",
+            "zh": "義賊路濟德"
+        },
+        "all-rounder-wanda": {
+            "en": "All-Rounder Wanda",
+            "ko": "만능 해결사 완다",
+            "ja": "オールラウンダーワンダ",
+            "zh": "全能旺達"
+        },
+        "captain-rikoris": {
+            "en": "Captain Rikoris",
+            "ko": "선봉대장 리코리스",
+            "ja": "キャプテンリコリス",
+            "zh": "隊長里科里斯"
+        },
+        "zealot-carmainerose": {
+            "en": "Zealot Carmainerose",
+            "ko": "전도자 카마인로즈",
+            "ja": "ゼロットカーマインローズ",
+            "zh": "狂熱者深紅玫瑰"
+        },
+        "verdant-adin": {
+            "en": "Verdant Adin",
+            "ko": "신록의 아딘",
+            "ja": "翠緑のアディン",
+            "zh": "翠綠亞丁"
+        },
+        "holy-flame-adin": {
+            "en": "Holy Flame Adin",
+            "ko": "성염의 아딘",
+            "ja": "聖炎のアディン",
+            "zh": "聖焰亞丁"
+        },
+        "azure-adin": {
+            "en": "Azure Adin",
+            "ko": "청현의 아딘",
+            "ja": "蒼玄のアディン",
+            "zh": "蒼玄亞丁"
+        },
+        "savior-adin": {
+            "en": "Savior Adin",
+            "ko": "구원자 아딘",
+            "ja": "救世主アディン",
+            "zh": "救世主亞丁"
+        },
+        "adventurer-ras": {
+            "en": "Adventurer Ras",
+            "ko": "모험가 라스",
+            "ja": "冒険者ラス",
+            "zh": "冒險家拉斯"
+        },
+        "free-spirit-tieria": {
+            "en": "Free Spirit Tieria",
+            "ko": "자유로운 티에리아",
+            "ja": "フリースピリットティエリア",
+            "zh": "自由精神提艾莉亞"
+        },
+        "kizuna-ai": {
+            "en": "Kizuna AI",
+            "ko": "키즈나 아이",
+            "ja": "キズナアイ",
+            "zh": "絆愛"
+        },
+        "vildred-ml": {
+            "en": "Dark Vildred",
+            "ko": "집행관 빌트레드",
+            "ja": "闇ヴィルドレッド",
+            "zh": "暗維爾德雷德"
+        },
+        "yulha": {
+            "en": "Yulha",
+            "ko": "율하",
+            "ja": "ユルハ",
+            "zh": "律荷"
+        },
+        "jenua": {
+            "en": "Jenua",
+            "ko": "제뉴아",
+            "ja": "ジェニュア",
+            "zh": "傑紐亞"
+        },
+        "hasetsue": {
+            "en": "Hasetsue",
+            "ko": "하르세티",
+            "ja": "ハルセチ",
+            "zh": "哈瑟雀"
+        },
+        "harsetti": {
+            "en": "Harsetti",
+            "ko": "하르세티",
+            "ja": "ハルセチ",
+            "zh": "哈瑟蒂"
+        },
+        "humir": {
+            "en": "Humir",
+            "ko": "후미르",
+            "ja": "フミル",
+            "zh": "胡米爾"
+        },
+        "amid": {
+            "en": "Amid",
+            "ko": "아미드",
+            "ja": "アミド",
+            "zh": "阿米德"
+        },
+        "frieda": {
+            "en": "Frieda",
+            "ko": "프리다",
+            "ja": "フリーダ",
+            "zh": "芙麗達"
+        },
+        "pene": {
+            "en": "Pene",
+            "ko": "페네",
+            "ja": "ペネ",
+            "zh": "佩妮"
+        },
+        "tiwig": {
+            "en": "Tiwig",
+            "ko": "티위그",
+            "ja": "ティウィグ",
+            "zh": "提薇格"
+        },
+        "seris": {
+            "en": "Seris",
+            "ko": "세리스",
+            "ja": "セリス",
+            "zh": "瑟芮絲"
+        },
+        "khawazu": {
+            "en": "Khawazu",
+            "ko": "카와주",
+            "ja": "カワズ",
+            "zh": "卡瓦祖"
+        },
+        "rikoris": {
+            "en": "Rikoris",
+            "ko": "리코리스",
+            "ja": "リコリス",
+            "zh": "里科里斯"
+        },
+        "romann": {
+            "en": "Romann",
+            "ko": "로만",
+            "ja": "ロマン",
+            "zh": "羅曼"
+        },
+        "crozet": {
+            "en": "Crozet",
+            "ko": "크로제",
+            "ja": "クロゼット",
+            "zh": "克羅澤"
+        },
+        "phyllis": {
+            "en": "Phyllis",
+            "ko": "필리스",
+            "ja": "フィリス",
+            "zh": "菲莉絲"
+        },
+        "enott": {
+            "en": "Enott",
+            "ko": "에노트",
+            "ja": "エノット",
+            "zh": "艾諾特"
+        },
+        "arowell": {
+            "en": "Arowell",
+            "ko": "아로웰",
+            "ja": "アロウェル",
+            "zh": "阿洛維爾"
+        },
+        "glenn": {
+            "en": "Glenn",
+            "ko": "글렌",
+            "ja": "グレン",
+            "zh": "格倫"
+        },
+        "nemunas": {
+            "en": "Nemunas",
+            "ko": "네무나스",
+            "ja": "ネムナス",
+            "zh": "涅姆納斯"
+        },
+        "butcher-corps-inquisitor": {
+            "en": "Butcher Corps Inquisitor",
+            "ko": "도살부대원",
+            "ja": "虐殺部隊員",
+            "zh": "屠夫審判官"
+        },
+        "gunther": {
+            "en": "Gunther",
+            "ko": "군터",
+            "ja": "ガンター",
+            "zh": "岡瑟"
+        },
+        "aither": {
+            "en": "Aither",
+            "ko": "아이테르",
+            "ja": "アイテル",
+            "zh": "艾瑟"
+        },
+        "bask": {
+            "en": "Bask",
+            "ko": "바스크",
+            "ja": "バスク",
+            "zh": "巴斯克"
+        },
+        "mucacha": {
+            "en": "Mucacha",
+            "ko": "무카차",
+            "ja": "ムカチャ",
+            "zh": "穆卡恰"
+        },
+        "sven": {
+            "en": "Sven",
+            "ko": "스벤",
+            "ja": "スヴェン",
+            "zh": "史文"
+        },
+        "helga": {
+            "en": "Helga",
+            "ko": "헬가",
+            "ja": "ヘルガ",
+            "zh": "海爾加"
+        },
+        "azalea": {
+            "en": "Azalea",
+            "ko": "아젤리아",
+            "ja": "アゼリア",
+            "zh": "杜鵑"
+        },
+        "rima": {
+            "en": "Rima",
+            "ko": "리마",
+            "ja": "リマ",
+            "zh": "利瑪"
+        },
+        "lena": {
+            "en": "Lena",
+            "ko": "레나",
+            "ja": "レナ",
+            "zh": "蕾娜"
+        },
+        "ian": {
+            "en": "Ian",
+            "ko": "이안",
+            "ja": "イアン",
+            "zh": "伊恩"
+        },
+        "celeste": {
+            "en": "Celeste",
+            "ko": "셀레스트",
+            "ja": "セレスト",
+            "zh": "瑟蕾絲特"
+        },
+        "taranor-guard": {
+            "en": "Taranor Guard",
+            "ko": "타라노르 근위부대원",
+            "ja": "タラノル近衛兵",
+            "zh": "塔拉諾衛兵"
+        },
+        "taranor-royal-guard": {
+            "en": "Taranor Royal Guard",
+            "ko": "타라노르 왕궁병사",
+            "ja": "タラノル王宮兵士",
+            "zh": "塔拉諾皇家衛兵"
+        },
+        "church-of-ilryos-axe": {
+            "en": "Church of Ilryos Axe",
+            "ko": "일리오스교 도끼병",
+            "ja": "イルリオス教斧兵",
+            "zh": "伊爾里歐斯教斧兵"
+        },
+        "hataan": {
+            "en": "Hataan",
+            "ko": "하탄",
+            "ja": "ハタン",
+            "zh": "哈坦"
+        },
+        "penelope": {
+            "en": "Penelope",
+            "ko": "페넬로페",
+            "ja": "ペネロペ",
+            "zh": "佩涅洛佩"
+        },
+        "christy": {
+            "en": "Christy",
+            "ko": "크리스티",
+            "ja": "クリスティ",
+            "zh": "克里斯蒂"
+        },
+        "helen": {
+            "en": "Helen",
+            "ko": "헬렌",
+            "ja": "ヘレン",
+            "zh": "海倫"
+        },
+        "hasol": {
+            "en": "Hasol",
+            "ko": "하솔",
+            "ja": "ハソル",
+            "zh": "哈索"
+        },
+        "talaz": {
+            "en": "Talaz",
+            "ko": "탈라즈",
+            "ja": "タラズ",
+            "zh": "塔拉茲"
+        },
+        "januta": {
+            "en": "Januta",
+            "ko": "자누타",
+            "ja": "ジャヌタ",
+            "zh": "賈努塔"
+        },
+        "camilla": {
+            "en": "Camilla",
+            "ko": "카밀라",
+            "ja": "カミラ",
+            "zh": "卡蜜拉"
+        },
+        "batus": {
+            "en": "Batus",
+            "ko": "바터스",
+            "ja": "バタス",
+            "zh": "巴圖斯"
+        },
+        "melany": {
+            "en": "Melany",
+            "ko": "멜라니",
+            "ja": "メラニー",
+            "zh": "梅拉妮"
+        },
+        "amiki": {
+            "en": "Amiki",
+            "ko": "아미키",
+            "ja": "アミキ",
+            "zh": "阿米琪"
+        },
+        "penila": {
+            "en": "Penila",
+            "ko": "페닐라",
+            "ja": "ペニラ",
+            "zh": "佩妮拉"
+        },
+        "sonia": {
+            "en": "Sonia",
+            "ko": "소니아",
+            "ja": "ソニア",
+            "zh": "索妮亞"
+        },
+        "bernard": {
+            "en": "Bernard",
+            "ko": "버나드",
+            "ja": "バーナード",
+            "zh": "伯納德"
+        },
+        "lucy": {
+            "en": "Lucy",
+            "ko": "루시",
+            "ja": "ルーシー",
+            "zh": "露西"
+        },
+        "otillie": {
+            "en": "Otillie",
+            "ko": "오틸리어",
+            "ja": "オティリエ",
+            "zh": "奧蒂莉"
+        },
+        "hurado": {
+            "en": "Hurado",
+            "ko": "휴라두",
+            "ja": "フラド",
+            "zh": "胡拉多"
+        },
+        "sdan": {
+            "en": "Sdan",
+            "ko": "스단",
+            "ja": "スダン",
+            "zh": "斯丹"
+        },
+        "adlay": {
+            "en": "Adlay",
+            "ko": "아들라이",
+            "ja": "アドレイ",
+            "zh": "阿德雷"
+        },
+        "ainos": {
+            "en": "Ainos",
+            "ko": "아이노스",
+            "ja": "アイノス",
+            "zh": "艾諾斯"
+        },
+        "lilka": {
+            "en": "Lilka",
+            "ko": "릴카",
+            "ja": "リルカ",
+            "zh": "莉爾卡"
+        },
+        "rea": {
+            "en": "Rea",
+            "ko": "레아",
+            "ja": "レア",
+            "zh": "蕾亞"
+        },
+        "veronica": {
+            "en": "Veronica",
+            "ko": "베로니카",
+            "ja": "ベロニカ",
+            "zh": "維羅妮卡"
+        },
+        "zeno": {
+            "en": "Zeno",
+            "ko": "제노",
+            "ja": "ゼノ",
+            "zh": "澤諾"
+        },
+        "gio": {
+            "en": "Gio",
+            "ko": "지오",
+            "ja": "ジオ",
+            "zh": "吉歐"
+        },
+        "serila": {
+            "en": "Serila",
+            "ko": "세릴라",
+            "ja": "セリラ",
+            "zh": "瑟莉拉"
+        },
+        "godmother": {
+            "en": "Godmother",
+            "ko": "갓마더",
+            "ja": "ゴッドマザー",
+            "zh": "教母"
+        },
+        "arowell-ml": {
+            "en": "Free Knight Arowell",
+            "ko": "자유기사 아로웰",
+            "ja": "自由騎士アロウェル",
+            "zh": "自由騎士阿洛維爾"
+        },
+        "rikoris-ml": {
+            "en": "Captain Rikoris",
+            "ko": "선봉대장 리코리스",
+            "ja": "キャプテンリコリス",
+            "zh": "隊長里科里斯"
+        },
+        "helga-ml": {
+            "en": "Mercenary Helga",
+            "ko": "자유로운 용병 헬가",
+            "ja": "傭兵ヘルガ",
+            "zh": "傭兵海爾加"
+        },
+        "amiki-ml": {
+            "en": "Succession Amiki",
+            "ko": "전승의 아미키",
+            "ja": "継承のアミキ",
+            "zh": "傳承阿米琪"
+        },
+        "christy-ml": {
+            "en": "Silver Christy",
+            "ko": "은결의 크리스티",
+            "ja": "銀結のクリスティ",
+            "zh": "銀結克里斯蒂"
+        },
+        "phyllis-ml": {
+            "en": "Black Knight Phyllis",
+            "ko": "흑기사 필리스",
+            "ja": "黒騎士フィリス",
+            "zh": "黑騎士菲莉絲"
+        },
+        "glenn-ml": {
+            "en": "Vigilante Glenn",
+            "ko": "자경단장 글렌",
+            "ja": "自警団長グレン",
+            "zh": "自警隊長格倫"
+        },
+        "rima-ml": {
+            "en": "Muse Rima",
+            "ko": "뮤즈 리마",
+            "ja": "ミューズリマ",
+            "zh": "繆斯利瑪"
+        },
+        "crozet-ml": {
+            "en": "Outlaw Crozet",
+            "ko": "무법자 크로제",
+            "ja": "無法者クロゼット",
+            "zh": "無法者克羅澤"
+        },
+        "summer-alexa": {
+            "en": "Summer Alexa",
+            "ko": "여름의 제자 알렉사",
+            "ja": "夏の弟子アレクサ",
+            "zh": "夏日弟子阿蕾莎"
+        },
+        "shu": {
+            "en": "Shu",
+            "ko": "슈",
+            "ja": "シュ",
+            "zh": "修"
+        },
+        "urban-shadow-shu": {
+            "en": "Urban Shadow Shu",
+            "ko": "도시의 그림자 슈",
+            "ja": "都会の影シュ",
+            "zh": "城市之影修"
+        },
+        "sethos": {
+            "en": "Sethos",
+            "ko": "세토스",
+            "ja": "セトス",
+            "zh": "賽托斯"
+        },
+        "lethe": {
+            "en": "Lethe",
+            "ko": "레테",
+            "ja": "レテ",
+            "zh": "蕾忒"
+        },
+        "laia": {
+            "en": "Laia",
+            "ko": "라이아",
+            "ja": "ライア",
+            "zh": "萊亞"
+        },
+        "nahkwol": {
+            "en": "Nahkwol",
+            "ko": "낙월",
+            "ja": "ナクウォル",
+            "zh": "落月"
+        },
+        "ains": {
+            "en": "Ains",
+            "ko": "에인즈",
+            "ja": "エインズ",
+            "zh": "艾因斯"
+        },
+        "talia": {
+            "en": "Talia",
+            "ko": "탈리아",
+            "ja": "タリア",
+            "zh": "塔莉亞"
+        },
+        "ezra": {
+            "en": "Ezra",
+            "ko": "에즈라",
+            "ja": "エズラ",
+            "zh": "艾茲拉"
+        },
+        "ranbald": {
+            "en": "Ranbald",
+            "ko": "랑발드",
+            "ja": "ランバルド",
+            "zh": "蘭巴德"
+        },
+        "rebna": {
+            "en": "Rebna",
+            "ko": "레브나",
+            "ja": "レブナ",
+            "zh": "雷布娜"
+        },
+        "muwei": {
+            "en": "Muwei",
+            "ko": "무위",
+            "ja": "ムウェイ",
+            "zh": "慕威"
+        },
+        "jiuni": {
+            "en": "Jiuni",
+            "ko": "쥬니",
+            "ja": "ジュニ",
+            "zh": "朱妮"
+        },
+        "seolhwa": {
+            "en": "Seolhwa",
+            "ko": "설화",
+            "ja": "ソルファ",
+            "zh": "雪花"
+        },
+        "bihu": {
+            "en": "Bihu",
+            "ko": "비후",
+            "ja": "ビフ",
+            "zh": "碧湖"
+        },
+        "robin": {
+            "en": "Robin",
+            "ko": "로빈",
+            "ja": "ロビン",
+            "zh": "羅賓"
+        },
+        "eligos": {
+            "en": "Eligos",
+            "ko": "엘리고스",
+            "ja": "エリゴス",
+            "zh": "艾利戈斯"
+        },
+        "sarmia": {
+            "en": "Sarmia",
+            "ko": "사르미아",
+            "ja": "サルミア",
+            "zh": "薩米婭"
+        },
+        "fenris": {
+            "en": "Fenris",
+            "ko": "펜리스",
+            "ja": "フェンリス",
+            "zh": "芬里斯"
+        },
+        "linac": {
+            "en": "Linac",
+            "ko": "리나크",
+            "ja": "リナック",
+            "zh": "利納克"
+        },
+        "hwaseo": {
+            "en": "Hwaseo",
+            "ko": "화서",
+            "ja": "ファソ",
+            "zh": "花瑞"
+        },
+        "lionheart-cermia": {
+            "en": "Lionheart Cermia",
+            "ko": "사자왕 체르미아",
+            "ja": "獅子王セルミア",
+            "zh": "獅心塞米婭"
+        },
+        "cermia": {
+            "en": "Cermia",
+            "ko": "체르미아",
+            "ja": "セルミア",
+            "zh": "塞米婭"
+        },
+        "summer-charlotte": {
+            "en": "Summer Charlotte",
+            "ko": "여름 방학 샬롯",
+            "ja": "夏休みシャルロッテ",
+            "zh": "暑假夏綠蒂"
+        },
+        "abyss-yufine": {
+            "en": "Abyss Yufine",
+            "ko": "심연의 유피네",
+            "ja": "深淵のユピネ",
+            "zh": "深淵尤菲涅"
+        },
+        "holiday-yufine": {
+            "en": "Holiday Yufine",
+            "ko": "바캉스 유피네",
+            "ja": "ホリデーユピネ",
+            "zh": "假期尤菲涅"
+        },
+        "sky-ilynav": {
+            "en": "Sky Ilynav",
+            "ko": "창공의 일리나브",
+            "ja": "蒼空のイリナヴ",
+            "zh": "蒼空伊莉娜芙"
+        },
+        "brieg": {
+            "en": "Brieg",
+            "ko": "브리그",
+            "ja": "ブリーグ",
+            "zh": "布利格"
+        },
+        "naval-colonel-landy": {
+            "en": "Naval Colonel Landy",
+            "ko": "해군 대령 랑디",
+            "ja": "海軍大佐ランディ",
+            "zh": "海軍上校蘭迪"
+        },
+        "ae-karina": {
+            "en": "AE Karina",
+            "ko": "ae-카리나",
+            "ja": "aeカリナ",
+            "zh": "AE卡琳娜"
+        },
+        "ae-winter": {
+            "en": "AE Winter",
+            "ko": "ae-윈터",
+            "ja": "aeウィンター",
+            "zh": "AE溫特"
+        },
+        "ae-giselle": {
+            "en": "AE Giselle",
+            "ko": "ae-지젤",
+            "ja": "aeジゼル",
+            "zh": "AE吉賽爾"
+        },
+        "ae-ningning": {
+            "en": "AE Ningning",
+            "ko": "ae-닝닝",
+            "ja": "aeニンニン",
+            "zh": "AE寧寧"
+        },
+        "victora": {
+            "en": "Victora",
+            "ko": "빅토리카",
+            "ja": "ヴィクトーラ",
+            "zh": "維多利卡"
+        },
+        "arowell-original": {
+            "en": "Arowell",
+            "ko": "아로웰",
+            "ja": "アロウェル",
+            "zh": "阿洛維爾"
+        },
+        "dragon-bride-senya": {
+            "en": "Dragon Bride Senya",
+            "ko": "용의 반려 셰나",
+            "ja": "龍の伴侶セーニャ",
+            "zh": "龍之伴侶瑟娜"
+        },
+        "chief-arunka": {
+            "en": "Chief Arunka",
+            "ko": "조장 아룬카",
+            "ja": "組長アルンカ",
+            "zh": "組長阿倫卡"
+        },
+        "grand-chieftain-kawana": {
+            "en": "Grand Chieftain Kawana",
+            "ko": "대족장 카와나",
+            "ja": "大族長カワナ",
+            "zh": "大族長卡瓦娜"
+        },
+        "badcat-armin": {
+            "en": "Bad Cat Armin",
+            "ko": "배드캣 아밍",
+            "ja": "バッドキャットアルミン",
+            "zh": "壞貓阿爾明"
+        },
+        "daybreak-dieria": {
+            "en": "Daybreak Dieria",
+            "ko": "여일의 디에리아",
+            "ja": "暁のディエリア",
+            "zh": "黎明迪耶里亞"
+        },
+        "dieria": {
+            "en": "Dieria",
+            "ko": "디에리아",
+            "ja": "ディエリア",
+            "zh": "迪耶里亞"
+        },
+        "escort-krau": {
+            "en": "Escort Krau",
+            "ko": "호위대장 크라우",
+            "ja": "護衛隊長クラウ",
+            "zh": "護衛隊長克勞"
+        },
+        "bystander-hwayoung": {
+            "en": "Bystander Hwayoung",
+            "ko": "방관자 화영",
+            "ja": "傍観者ファヨン",
+            "zh": "旁觀者花英"
+        },
+        "silver-tidal-hwayoung": {
+            "en": "Silver Tidal Hwayoung",
+            "ko": "은빛 해일 화영",
+            "ja": "銀色の海嘯ファヨン",
+            "zh": "銀潮花英"
+        },
+        "hecate": {
+            "en": "Hecate",
+            "ko": "헤카테",
+            "ja": "ヘカテ",
+            "zh": "赫卡忒"
+        },
+        "discipline-aria": {
+            "en": "Discipline Aria",
+            "ko": "풍기위원 아리아",
+            "ja": "風紀委員アリア",
+            "zh": "風紀委員亞莉亞"
+        },
+        "student-adin": {
+            "en": "Transfer Student Adin",
+            "ko": "전학생 아딘",
+            "ja": "転校生アディン",
+            "zh": "轉學生亞丁"
+        },
+        "new-moon-luna": {
+            "en": "New Moon Luna",
+            "ko": "신월의 루나",
+            "ja": "新月のルナ",
+            "zh": "新月露娜"
+        },
+        "snowland-solitaria": {
+            "en": "Snowland Solitaria",
+            "ko": "설국의 솔리타리아",
+            "ja": "雪国のソリタリア",
+            "zh": "雪國索莉塔莉亞"
+        },
+        "dragon-king-sharun": {
+            "en": "Dragon King Sharun",
+            "ko": "용왕 샤룬",
+            "ja": "龍王シャルン",
+            "zh": "龍王夏倫"
+        },
+        "requiem-roana": {
+            "en": "Requiem Roana",
+            "ko": "진혼의 로앤나",
+            "ja": "鎮魂のロアナ",
+            "zh": "鎮魂羅安娜"
+        },
+        "sealed-surin": {
+            "en": "Sealed Surin",
+            "ko": "봉안의 수린",
+            "ja": "封印のスリン",
+            "zh": "封印秀琳"
+        },
+        "moonlit-bellona": {
+            "en": "Moonlit Bellona",
+            "ko": "일편고월 벨로나",
+            "ja": "月明かりのベローナ",
+            "zh": "月明貝羅娜"
+        },
+        "ocean-bellona": {
+            "en": "Ocean Bellona",
+            "ko": "바다의 유령 벨로나",
+            "ja": "海のベローナ",
+            "zh": "海洋貝羅娜"
+        },
+        "drifter-ludwig": {
+            "en": "Drifter Ludwig",
+            "ko": "영겁의 표류자 루트비히",
+            "ja": "漂流者ルートヴィヒ",
+            "zh": "漂流者路德維希"
+        },
+        "wandering-prince-cidd": {
+            "en": "Wandering Prince Cidd",
+            "ko": "떠돌이 왕자 시더",
+            "ja": "放浪王子シダー",
+            "zh": "流浪王子希德"
+        },
+        "benevolent-romann": {
+            "en": "Benevolent Romann",
+            "ko": "자애의 로만",
+            "ja": "慈愛のロマン",
+            "zh": "仁愛羅曼"
+        },
+        "seeker-aither": {
+            "en": "Seeker Aither",
+            "ko": "구도자 아이테르",
+            "ja": "求道者アイテル",
+            "zh": "求道者艾瑟"
+        },
+        "wise-forest-vivian": {
+            "en": "Wise Forest Vivian",
+            "ko": "숲의 현자 비비안",
+            "ja": "森の賢者ビビアン",
+            "zh": "森林賢者薇薇安"
+        },
+        "architect-laika": {
+            "en": "Architect Laika",
+            "ko": "설계자 라이카",
+            "ja": "設計者ライカ",
+            "zh": "設計師萊卡"
+        },
+        "festival-eda": {
+            "en": "Festival Eda",
+            "ko": "축제의 에다",
+            "ja": "祭りのエダ",
+            "zh": "節慶艾達"
+        },
+        "midnight-flan": {
+            "en": "Midnight Flan",
+            "ko": "한낮의 유영 플랑",
+            "ja": "真夜中のフラン",
+            "zh": "午夜芙蘭"
+        },
+        "pirate-flan": {
+            "en": "Pirate Captain Flan",
+            "ko": "해적 선장 플랑",
+            "ja": "海賊船長フラン",
+            "zh": "海盜船長芙蘭"
+        },
+        "commander-pavel": {
+            "en": "Commander Pavel",
+            "ko": "사령관 파벨",
+            "ja": "司令官パヴェル",
+            "zh": "司令官帕維爾"
+        },
+        "moonrabbit-dominiel": {
+            "en": "Moonrabbit Dominiel",
+            "ko": "달토끼 도미니엘",
+            "ja": "月兎ドミニエル",
+            "zh": "月兔多米妮爾"
+        },
+        "mourning-rose": {
+            "en": "Mourning Rose",
+            "ko": "비탄의 로제",
+            "ja": "悲嘆のロゼ",
+            "zh": "悲嘆蘿絲"
+        },
+        "sinful-angelica": {
+            "en": "Sinful Angelica",
+            "ko": "죄악의 안젤리카",
+            "ja": "罪のアンジェリカ",
+            "zh": "罪惡安潔莉卡"
+        },
+        "unknown-possibility-achates": {
+            "en": "Unknown Possibility Achates",
+            "ko": "미지의 가능성 아카테스",
+            "ja": "未知の可能性アカテス",
+            "zh": "未知可能阿凱特斯"
+        },
+        "deathseeker-ray": {
+            "en": "Death Seeker Ray",
+            "ko": "죽음의 탐구자 레이",
+            "ja": "死の探究者レイ",
+            "zh": "死亡探求者雷"
+        },
+        "origin-ras": {
+            "en": "Origin Ras",
+            "ko": "기원의 라스",
+            "ja": "起源のラス",
+            "zh": "起源拉斯"
+        },
+        "night-party-lilias": {
+            "en": "Night Party Lilias",
+            "ko": "밤의 연회 릴리아스",
+            "ja": "夜会のリリアス",
+            "zh": "夜宴莉莉雅絲"
+        },
+        "garden-lidica": {
+            "en": "Garden Lidica",
+            "ko": "화원의 리디카",
+            "ja": "庭園のリディカ",
+            "zh": "花園莉迪卡"
+        },
+        "lakeside-tenebria": {
+            "en": "Lakeside Witch Tenebria",
+            "ko": "호반의 마녀 테네브리아",
+            "ja": "湖畔の魔女テネブリア",
+            "zh": "湖畔魔女黛妮布莉亞"
+        },
+        "tropical-iseria": {
+            "en": "Tropical Iseria",
+            "ko": "남국의 이세리아",
+            "ja": "南国のイセリア",
+            "zh": "南國伊塞莉亞"
+        },
+        "desert-jewel-basar": {
+            "en": "Desert Jewel Basar",
+            "ko": "사막의 보석 바사르",
+            "ja": "砂漠の宝石バサール",
+            "zh": "沙漠寶石巴薩爾"
+        },
+        "sea-luluca": {
+            "en": "Sea Breeze Luluca",
+            "ko": "바다 향기 루루카",
+            "ja": "海風のルルカ",
+            "zh": "海風露露卡"
+        },
+        "young-senya": {
+            "en": "Young Senya",
+            "ko": "어린 셰나",
+            "ja": "幼いセーニャ",
+            "zh": "幼年瑟娜"
+        },
+        "balance-furious": {
+            "en": "Balanced Furious",
+            "ko": "균형의 퓨리우스",
+            "ja": "均衡のフュリオス",
+            "zh": "平衡弗里歐斯"
+        },
+        "mischievous-lua": {
+            "en": "Mischievous Lua",
+            "ko": "소악마 루아",
+            "ja": "いたずら小悪魔ルア",
+            "zh": "小惡魔露亞"
+        },
+        "lua": {
+            "en": "Lua",
+            "ko": "루아",
+            "ja": "ルア",
+            "zh": "露亞"
+        },
+        "swift-rider-secret": {
+            "en": "Swift Rider Sigret",
+            "ko": "쾌속의 기수 세크레트",
+            "ja": "疾走の騎手シグレット",
+            "zh": "疾速騎手希格雷特"
+        },
+        "twisted-kayron": {
+            "en": "Twisted Spirit Kayron",
+            "ko": "뒤틀린 망령 카일론",
+            "ja": "歪んだ亡霊カイロン",
+            "zh": "扭曲幽靈凱隆"
+        },
+        "star-oracle-elena": {
+            "en": "Star Oracle Elena",
+            "ko": "별의 신탁 엘레나",
+            "ja": "星の神託エレナ",
+            "zh": "星之神諭艾蓮娜"
+        },
+        "phantom-politis": {
+            "en": "Phantom Politis",
+            "ko": "바다의 유령 폴리티스",
+            "ja": "海の幽霊ポリティス",
+            "zh": "海上幽靈波麗提斯"
+        },
+        "crescent-dancer-ring": {
+            "en": "Crescent Dancer Ring",
+            "ko": "초승달 무희 링",
+            "ja": "三日月の舞姫リング",
+            "zh": "新月舞姬鈴"
+        },
+        "west-executioner-schuri": {
+            "en": "Western Executioner Schuri",
+            "ko": "서풍의 처형자 슈리",
+            "ja": "西風の処刑人シュリ",
+            "zh": "西風處刑人舒莉"
+        },
+        "health-teacher-yulha": {
+            "en": "Health Teacher Yulha",
+            "ko": "보건교사 율하",
+            "ja": "保健教師ユルハ",
+            "zh": "保健教師律荷"
+        },
+        "immortal-wukong": {
+            "en": "Immortal Wukong",
+            "ko": "불사형 오공",
+            "ja": "不死身悟空",
+            "zh": "不死悟空"
+        },
+        "kikirat-v2": {
+            "en": "Kikirat V2",
+            "ko": "키키라트V.2",
+            "ja": "キキラトV.2",
+            "zh": "奇奇拉特V2"
+        },
+        "bomber-unit": {
+            "en": "Bomb Model Kanna",
+            "ko": "폭격형 카논",
+            "ja": "爆撃型カノン",
+            "zh": "轟炸型卡農"
+        },
+        "support-lots": {
+            "en": "Support Model Lots",
+            "ko": "보조형 랏츠",
+            "ja": "補助型ロッツ",
+            "zh": "輔助型洛茲"
+        },
+        "aux-lots": {
+            "en": "Auxiliary Lots",
+            "ko": "보조형 랏츠",
+            "ja": "オグジュアリーロッツ",
+            "zh": "輔助洛茲"
+        },
+        "model-2-ainos": {
+            "en": "Model 2 Ainos",
+            "ko": "제2형 아이노스",
+            "ja": "第2型アイノス",
+            "zh": "第二型艾諾斯"
+        },
+        "judgment-guide-jena": {
+            "en": "Judgment Guide Jena",
+            "ko": "인도자 제나",
+            "ja": "導き手ジェナ",
+            "zh": "引導者傑娜"
+        },
+        "dollmaker-pearlhorizon": {
+            "en": "Dollmaker Pearlhorizon",
+            "ko": "인형 제작가 펄호라이즌",
+            "ja": "人形師パールホライズン",
+            "zh": "人偶師珍珠地平線"
+        },
+        "wise-baal-and-sezan": {
+            "en": "Sage Baal & Sezan",
+            "ko": "현자 바알&세잔",
+            "ja": "賢者バアル＆セザン",
+            "zh": "賢者巴爾與瑟贊"
+        },
+        "baal-and-sezan": {
+            "en": "Baal & Sezan",
+            "ko": "바알&세잔",
+            "ja": "バアル＆セザン",
+            "zh": "巴爾與瑟贊"
+        }
+    },
+    "artifacts": {
+        "moonlight-dreamblade": {
+            "en": "Moonlight Dreamblade",
+            "ko": "월광 몽환검",
+            "ja": "月光夢幻剣",
+            "zh": "月光夢幻劍"
+        },
+        "alexa-basket": {
+            "en": "Alexa's Basket",
+            "ko": "알렉사의 바구니",
+            "ja": "アレクサのバスケット",
+            "zh": "愛莉莎的籃子"
+        },
+        "crimson-seed": {
+            "en": "Crimson Seed",
+            "ko": "진홍의 씨앗",
+            "ja": "深紅の種",
+            "zh": "深紅之種"
+        },
+        "portrait-of-the-saviors": {
+            "en": "Portrait of the Saviors",
+            "ko": "구원자들의 초상화",
+            "ja": "救世主の肖像",
+            "zh": "救世主的肖像"
+        },
+        "symbol-of-unity": {
+            "en": "Symbol of Unity",
+            "ko": "단결의 상징",
+            "ja": "団結の象徴",
+            "zh": "團結的象徵"
+        },
+        "elbris-ritual-sword": {
+            "en": "Elbris Ritual Sword",
+            "ko": "엘브리스 의식검",
+            "ja": "エルブリス儀式剣",
+            "zh": "艾爾布里斯儀式劍"
+        },
+        "aurius": {
+            "en": "Aurius",
+            "ko": "아우리우스",
+            "ja": "アウリウス",
+            "zh": "奧里烏斯"
+        },
+        "proof-of-valor": {
+            "en": "Proof of Valor",
+            "ko": "용기의 증표",
+            "ja": "勇気の証",
+            "zh": "勇氣的證明"
+        },
+        "rod-of-amaryllis": {
+            "en": "Rod of Amaryllis",
+            "ko": "아마릴리스의 지팡이",
+            "ja": "アマリリスの杖",
+            "zh": "朱頂紅杖"
+        },
+        "abyssal-crown": {
+            "en": "Abyssal Crown",
+            "ko": "심연의 왕관",
+            "ja": "深淵の王冠",
+            "zh": "深淵王冠"
+        },
+        "tome-of-knowledge": {
+            "en": "Tome of Knowledge",
+            "ko": "지식의 책",
+            "ja": "知識の書",
+            "zh": "知識之書"
+        },
+        "etica-scepter": {
+            "en": "Etica's Scepter",
+            "ko": "에티카의 홀",
+            "ja": "エティカの笏",
+            "zh": "艾提卡權杖"
+        },
+        "tagahels-ancient-book": {
+            "en": "Tagahel's Ancient Book",
+            "ko": "타가헬의 고서",
+            "ja": "タガヘルの古書",
+            "zh": "塔加赫爾古書"
+        },
+        "basket-of-wishes": {
+            "en": "Basket of Wishes",
+            "ko": "소원의 바구니",
+            "ja": "願いのバスケット",
+            "zh": "願望籃子"
+        },
+        "wind-rider": {
+            "en": "Wind Rider",
+            "ko": "바람의 라이더",
+            "ja": "ウィンドライダー",
+            "zh": "風騎士"
+        },
+        "dust-devil": {
+            "en": "Dust Devil",
+            "ko": "먼지악마",
+            "ja": "ダストデビル",
+            "zh": "塵暴惡魔"
+        },
+        "rhianna-and-luciella": {
+            "en": "Rhianna & Luciella",
+            "ko": "리안나와 루시엘라",
+            "ja": "リアナ＆ルシエラ",
+            "zh": "莉安娜與露西艾拉"
+        },
+        "border-coin": {
+            "en": "Border Coin",
+            "ko": "국경의 동전",
+            "ja": "ボーダーコイン",
+            "zh": "邊境硬幣"
+        },
+        "merciless-glutton": {
+            "en": "Merciless Glutton",
+            "ko": "무자비한 대식가",
+            "ja": "無慈悲な大食い",
+            "zh": "無情饕餮"
+        },
+        "holy-sacrifice": {
+            "en": "Holy Sacrifice",
+            "ko": "성스러운 희생",
+            "ja": "聖なる犠牲",
+            "zh": "神聖犧牲"
+        },
+        "shimadras-staff": {
+            "en": "Shimadra's Staff",
+            "ko": "시마드라의 지팡이",
+            "ja": "シマドラの杖",
+            "zh": "希瑪德拉之杖"
+        },
+        "noble-oath": {
+            "en": "Noble Oath",
+            "ko": "고결한 서약",
+            "ja": "高潔な誓い",
+            "zh": "高潔誓約"
+        },
+        "sigurd-scythe": {
+            "en": "Sigurd Scythe",
+            "ko": "시구르드의 낫",
+            "ja": "シグルドの大鎌",
+            "zh": "西格爾德大鐮"
+        },
+        "draco-plate": {
+            "en": "Draco Plate",
+            "ko": "드라코 플레이트",
+            "ja": "ドラコプレート",
+            "zh": "龍鱗板甲"
+        },
+        "daydream-joker": {
+            "en": "Daydream Joker",
+            "ko": "백일몽의 조커",
+            "ja": "デイドリームジョーカー",
+            "zh": "白日夢小丑"
+        },
+        "prophetic-candlestick": {
+            "en": "Prophetic Candlestick",
+            "ko": "예언의 촛대",
+            "ja": "予言の燭台",
+            "zh": "預言燭台"
+        },
+        "song-of-stars": {
+            "en": "Song of Stars",
+            "ko": "별들의 노래",
+            "ja": "星の歌",
+            "zh": "星之歌"
+        },
+        "magaraha-tome": {
+            "en": "Magahara's Tome",
+            "ko": "마가라하의 책",
+            "ja": "マガラハの書",
+            "zh": "瑪加拉哈之書"
+        },
+        "spirits-breath": {
+            "en": "Spirit's Breath",
+            "ko": "정령의 숨결",
+            "ja": "精霊の息吹",
+            "zh": "精靈吐息"
+        },
+        "idol-cheer": {
+            "en": "Idol's Cheer",
+            "ko": "아이돌의 응원",
+            "ja": "アイドルの応援",
+            "zh": "偶像應援"
+        },
+        "celestine": {
+            "en": "Celestine",
+            "ko": "셀레스틴",
+            "ja": "セレスティン",
+            "zh": "塞萊絲汀"
+        },
+        "touch-of-rekos": {
+            "en": "Touch of Rekos",
+            "ko": "레코스의 손길",
+            "ja": "レコスの手",
+            "zh": "雷科斯之觸"
+        },
+        "war-horn": {
+            "en": "War Horn",
+            "ko": "전쟁의 뿔피리",
+            "ja": "ウォーホーン",
+            "zh": "戰爭號角"
+        },
+        "steadfast-gatekeeper": {
+            "en": "Steadfast Gatekeeper",
+            "ko": "충직한 문지기",
+            "ja": "堅実な門番",
+            "zh": "堅定守門人"
+        },
+        "adamant-shield": {
+            "en": "Adamant Shield",
+            "ko": "강철의 방패",
+            "ja": "アダマントシールド",
+            "zh": "剛毅之盾"
+        },
+        "rose-hargana": {
+            "en": "Rose Hargana",
+            "ko": "장미의 하르가나",
+            "ja": "ローズハルガナ",
+            "zh": "玫瑰哈加納"
+        },
+        "iron-fan": {
+            "en": "Iron Fan",
+            "ko": "쇠부채",
+            "ja": "鉄扇",
+            "zh": "鐵扇"
+        },
+        "sashe-ithanes": {
+            "en": "Sashe Ithanes",
+            "ko": "사셰 이타네스",
+            "ja": "サシェイタネス",
+            "zh": "薩榭伊塔內斯"
+        },
+        "bloodstone": {
+            "en": "Bloodstone",
+            "ko": "블러드스톤",
+            "ja": "ブラッドストーン",
+            "zh": "血石"
+        },
+        "guiding-light": {
+            "en": "Guiding Light",
+            "ko": "인도의 빛",
+            "ja": "導きの光",
+            "zh": "引導之光"
+        },
+        "sword-of-summer-twilight": {
+            "en": "Sword of Summer Twilight",
+            "ko": "여름 황혼의 검",
+            "ja": "夏の黄昏の剣",
+            "zh": "盛夏黃昏之劍"
+        },
+        "time-matter": {
+            "en": "Time Matter",
+            "ko": "시간의 물질",
+            "ja": "タイムマター",
+            "zh": "時間物質"
+        },
+        "necro-and-undine": {
+            "en": "Necro & Undine",
+            "ko": "네크로와 언다인",
+            "ja": "ネクロ＆ウンディーネ",
+            "zh": "死靈與水神"
+        },
+        "junkyard-dog": {
+            "en": "Junkyard Dog",
+            "ko": "정크야드 도그",
+            "ja": "ジャンクヤードドッグ",
+            "zh": "垃圾場狗"
+        },
+        "otherworldly-machinery": {
+            "en": "Otherworldly Machinery",
+            "ko": "이세계의 기계장치",
+            "ja": "異世界の機械",
+            "zh": "異世界機械"
+        },
+        "reingar-drink": {
+            "en": "Reingar's Special Drink",
+            "ko": "레인가르 특제 음료",
+            "ja": "レインガル特製ドリンク",
+            "zh": "雷因加爾特調飲料"
+        },
+        "violet-talisman": {
+            "en": "Violet Talisman",
+            "ko": "보라빛 부적",
+            "ja": "紫の護符",
+            "zh": "紫羅蘭護符"
+        },
+        "unseen-observer": {
+            "en": "Unseen Observer",
+            "ko": "보이지 않는 관찰자",
+            "ja": "見えざる観察者",
+            "zh": "無形觀察者"
+        },
+        "kaladra": {
+            "en": "Kaladra",
+            "ko": "칼라드라",
+            "ja": "カラドラ",
+            "zh": "卡拉德拉"
+        },
+        "sira-ren": {
+            "en": "Sira-Ren",
+            "ko": "시라렌",
+            "ja": "シラレン",
+            "zh": "希拉蓮"
+        },
+        "hell-cutter": {
+            "en": "Hell Cutter",
+            "ko": "헬 커터",
+            "ja": "ヘルカッター",
+            "zh": "地獄切割者"
+        },
+        "exorcist-tonfa": {
+            "en": "Exorcist's Tonfa",
+            "ko": "퇴마사의 쌍절곤",
+            "ja": "祓魔師のトンファー",
+            "zh": "驅魔師雙截棍"
+        },
+        "strak-gauntlet": {
+            "en": "Strak Gauntlet",
+            "ko": "스트락 건틀릿",
+            "ja": "ストラクガントレット",
+            "zh": "斯特拉克護手"
+        },
+        "spear-of-apocalypse": {
+            "en": "Spear of Apocalypse",
+            "ko": "개벽의 창",
+            "ja": "開闢の槍",
+            "zh": "開闢之槍"
+        },
+        "noble-vow": {
+            "en": "Noble Vow",
+            "ko": "고결한 맹세",
+            "ja": "高潔な誓い",
+            "zh": "高潔誓約"
+        },
+        "ancient-dragon-legacy": {
+            "en": "Ancient Dragon Legacy",
+            "ko": "고룡의 유산",
+            "ja": "古龍の遺産",
+            "zh": "古龍遺產"
+        },
+        "orbs-of-wisdom": {
+            "en": "Orbs of Wisdom",
+            "ko": "기학의 구",
+            "ja": "機学の玉",
+            "zh": "機學之球"
+        },
+        "wings-of-light-and-shadow": {
+            "en": "Wings of Light and Shadow",
+            "ko": "명암의 쌍익",
+            "ja": "明暗の双翼",
+            "zh": "明暗雙翼"
+        },
+        "justice-for-all": {
+            "en": "Justice for All",
+            "ko": "모두를 위한 정의",
+            "ja": "皆のための正義",
+            "zh": "為眾正義"
+        },
+        "sacrificial-will": {
+            "en": "Sacrificial Will",
+            "ko": "부서진 제사장의 의지",
+            "ja": "砕けた祭司長の意志",
+            "zh": "破碎祭司長意志"
+        },
+        "crown-of-glory": {
+            "en": "Crown of Glory",
+            "ko": "영광의 관",
+            "ja": "栄光の冠",
+            "zh": "榮耀之冠"
+        },
+        "birth-of-a-king": {
+            "en": "Birth of a King",
+            "ko": "왕의 탄생",
+            "ja": "王の誕生",
+            "zh": "王之誕生"
+        },
+        "bastion-of-perlutia": {
+            "en": "Bastion of Perlutia",
+            "ko": "퍼루티아의 보루",
+            "ja": "ペルティアの砦",
+            "zh": "珀魯蒂亞堡壘"
+        },
+        "sword-of-ezera": {
+            "en": "Sword of Ezera",
+            "ko": "이제라의 성검",
+            "ja": "イゼラの聖剣",
+            "zh": "伊澤拉聖劍"
+        },
+        "3f": {
+            "en": "3F",
+            "ko": "3F",
+            "ja": "3F",
+            "zh": "3F"
+        },
+        "rocket-punch": {
+            "en": "Rocket Punch",
+            "ko": "로켓 펀치",
+            "ja": "ロケットパンチ",
+            "zh": "火箭拳"
+        },
+        "precious-bond": {
+            "en": "Precious Bond",
+            "ko": "소중한 인연",
+            "ja": "大切な縁",
+            "zh": "珍貴緣分"
+        },
+        "adult-sunglasses": {
+            "en": "Adult Sunglasses",
+            "ko": "어른스러운 선글라스",
+            "ja": "大人っぽいサングラス",
+            "zh": "成熟太陽眼鏡"
+        },
+        "moas": {
+            "en": "M.O.A.S",
+            "ko": "M.O.A.S",
+            "ja": "M.O.A.S",
+            "zh": "M.O.A.S"
+        },
+        "uberius-tooth": {
+            "en": "Uberius's Tooth",
+            "ko": "우베리우스의 이빨",
+            "ja": "ウベリウスの牙",
+            "zh": "烏貝里烏斯之牙"
+        },
+        "black-blood-protector": {
+            "en": "Black Blood Protector",
+            "ko": "검은 피의 수호자",
+            "ja": "黒き血の守護者",
+            "zh": "黑血守護者"
+        },
+        "mutual-destruction": {
+            "en": "Mutual Destruction",
+            "ko": "동귀절도",
+            "ja": "相討ち",
+            "zh": "同歸於盡"
+        },
+        "cup-of-oath": {
+            "en": "Cup of Oath",
+            "ko": "맹세의 잔",
+            "ja": "誓いの杯",
+            "zh": "誓約之杯"
+        },
+        "guide-of-inaction": {
+            "en": "Guide of Inaction",
+            "ko": "무위의 인도자",
+            "ja": "無為の導き手",
+            "zh": "無為引導者"
+        },
+        "secret-art-lightning": {
+            "en": "Secret Art: Lightning",
+            "ko": "비급-뇌천일검",
+            "ja": "秘剣-雷天一剣",
+            "zh": "秘技-雷天一劍"
+        },
+        "sword-of-circulation": {
+            "en": "Sword of Circulation",
+            "ko": "순환의 검",
+            "ja": "循環の剣",
+            "zh": "循環之劍"
+        },
+        "alabastron": {
+            "en": "Alabastron",
+            "ko": "알라바스트론",
+            "ja": "アラバストロン",
+            "zh": "雪花石膏瓶"
+        },
+        "dual-blade-decrescent": {
+            "en": "Dual Blade Decrescent",
+            "ko": "양날검 디크레센트",
+            "ja": "両刃剣デクレセント",
+            "zh": "雙刃減弱劍"
+        },
+        "dangerous-whisper": {
+            "en": "Dangerous Whisper",
+            "ko": "위험한 속삭임",
+            "ja": "危険な囁き",
+            "zh": "危險低語"
+        },
+        "control-manica": {
+            "en": "Control Manica",
+            "ko": "통제의 마니카",
+            "ja": "制御のマニカ",
+            "zh": "控制護甲"
+        },
+        "swift-flash": {
+            "en": "Swift Flash",
+            "ko": "하야섬도",
+            "ja": "疾閃刀",
+            "zh": "疾閃刀"
+        },
+        "wings-of-charm": {
+            "en": "Wings of Charm",
+            "ko": "현혹의 날개",
+            "ja": "惑わしの翼",
+            "zh": "迷惑之翼"
+        },
+        "spear-of-blame": {
+            "en": "Spear of Blame",
+            "ko": "비난의 창",
+            "ja": "非難の槍",
+            "zh": "責難之槍"
+        },
+        "armament": {
+            "en": "Armament",
+            "ko": "아머먼트",
+            "ja": "アーマメント",
+            "zh": "武裝"
+        },
+        "master-of-nightmares": {
+            "en": "Master of Nightmares",
+            "ko": "악몽의 주인",
+            "ja": "悪夢の主",
+            "zh": "噩夢之主"
+        },
+        "summer-photogenic": {
+            "en": "Summer Photogenic",
+            "ko": "여름의 포토제닉",
+            "ja": "夏のフォトジェニック",
+            "zh": "夏日上鏡"
+        },
+        "party-master": {
+            "en": "Party Master",
+            "ko": "연회의 주인",
+            "ja": "宴会の主",
+            "zh": "宴會之主"
+        },
+        "flag-of-glory": {
+            "en": "Flag of Glory",
+            "ko": "영광의 깃발",
+            "ja": "栄光の旗",
+            "zh": "榮耀之旗"
+        },
+        "secret-touch": {
+            "en": "Secret Touch",
+            "ko": "은밀한 손길",
+            "ja": "ひそやかな手",
+            "zh": "隱密之觸"
+        },
+        "tempting-flower": {
+            "en": "Tempting Flower",
+            "ko": "유혹하는 꽃",
+            "ja": "誘惑の花",
+            "zh": "誘惑之花"
+        },
+        "torn-right-sleeve": {
+            "en": "Torn Right Sleeve",
+            "ko": "찢어진 오른 소매",
+            "ja": "裂けた右袖",
+            "zh": "撕裂右袖"
+        },
+        "irresistible-offer": {
+            "en": "Irresistible Offer",
+            "ko": "거절할 수 없는 제안",
+            "ja": "断れない提案",
+            "zh": "無法拒絕的提議"
+        },
+        "air-to-ground-missile": {
+            "en": "Air-to-Ground Missile: Misha",
+            "ko": "공대지 미사일 : 미샤",
+            "ja": "空対地ミサイル：ミシャ",
+            "zh": "空對地飛彈：米沙"
+        },
+        "glow-wings-21": {
+            "en": "Glow Wings 21",
+            "ko": "글로 윙즈 21",
+            "ja": "グローウィングス21",
+            "zh": "光翼21"
+        },
+        "wakened-leaf": {
+            "en": "Wakened Leaf",
+            "ko": "눈을 뜬 잎새",
+            "ja": "目覚めた木の葉",
+            "zh": "甦醒之葉"
+        },
+        "dux-noctis": {
+            "en": "Dux Noctis",
+            "ko": "둑스 녹티스",
+            "ja": "ドゥクスノクティス",
+            "zh": "夜之公爵"
+        },
+        "sphere-of-destruction": {
+            "en": "Sphere of Destruction",
+            "ko": "멸화의 구",
+            "ja": "滅火の球",
+            "zh": "滅火之球"
+        },
+        "reinforced-will": {
+            "en": "Reinforced Will",
+            "ko": "보완된 의지",
+            "ja": "補完された意志",
+            "zh": "強化的意志"
+        },
+        "tangent-of-time": {
+            "en": "Tangent of Time",
+            "ko": "시공의 접선",
+            "ja": "時空の接線",
+            "zh": "時空切線"
+        },
+        "sword-of-judgment": {
+            "en": "Sword of Judgment",
+            "ko": "심판의 검",
+            "ja": "審判の剣",
+            "zh": "審判之劍"
+        },
+        "assassin-blessing": {
+            "en": "Assassin's Blessing",
+            "ko": "암살자의 가호",
+            "ja": "暗殺者の加護",
+            "zh": "刺客祝福"
+        },
+        "spirit-candle": {
+            "en": "Spirit Candle",
+            "ko": "위령의 촛불",
+            "ja": "慰霊の蝋燭",
+            "zh": "慰靈蠟燭"
+        },
+        "ruby-bloodstone": {
+            "en": "Ruby Bloodstone",
+            "ko": "혈옥수",
+            "ja": "血玉髄",
+            "zh": "血玉髓"
+        },
+        "miss-confile": {
+            "en": "Miss Confile",
+            "ko": "Miss 콘필",
+            "ja": "ミスコンフィル",
+            "zh": "康菲爾小姐"
+        },
+        "dreamlike-holiday": {
+            "en": "Dreamlike Holiday",
+            "ko": "꿈결 같은 휴일",
+            "ja": "夢のような休日",
+            "zh": "夢幻假期"
+        },
+        "old-gardening-shears": {
+            "en": "Old Gardening Shears",
+            "ko": "낡은 원예용 가위",
+            "ja": "古い園芸バサミ",
+            "zh": "舊園藝剪刀"
+        },
+        "sharpshooter-pistol": {
+            "en": "Sharpshooter's Pistol",
+            "ko": "명사수의 권총",
+            "ja": "名射手の拳銃",
+            "zh": "神槍手手槍"
+        },
+        "starlight-in-deep-sea": {
+            "en": "Starlight in Deep Sea",
+            "ko": "심해에 뜨는 별",
+            "ja": "深海に昇る星",
+            "zh": "深海之星"
+        },
+        "barrier-of-order": {
+            "en": "Barrier of Order",
+            "ko": "질서의 방벽",
+            "ja": "秩序の障壁",
+            "zh": "秩序之壁"
+        },
+        "seal-of-capture": {
+            "en": "Seal of Capture",
+            "ko": "포박의 인",
+            "ja": "捕縛の印",
+            "zh": "捕縛之印"
+        },
+        "shadow-source-stone": {
+            "en": "Shadow Source Stone",
+            "ko": "그림자의 근원석",
+            "ja": "影の源石",
+            "zh": "暗影源石"
+        },
+        "book-of-shadows": {
+            "en": "Book of Shadows",
+            "ko": "그림자의 서",
+            "ja": "影の書",
+            "zh": "暗影之書"
+        },
+        "calamity-of-sunset": {
+            "en": "Calamity of Sunset",
+            "ko": "낙조의 재앙",
+            "ja": "落陽の災い",
+            "zh": "落日災厄"
+        },
+        "dignus-orb": {
+            "en": "Dignus Orb",
+            "ko": "디그누스 오브",
+            "ja": "ディグヌスオーブ",
+            "zh": "迪格納斯寶珠"
+        },
+        "last-tea-time": {
+            "en": "Last Tea Time",
+            "ko": "마지막 티타임",
+            "ja": "最後のティータイム",
+            "zh": "最後的茶會"
+        },
+        "red-nightmare-moon": {
+            "en": "Red Nightmare Moon",
+            "ko": "붉은 악몽의 달",
+            "ja": "赤き悪夢の月",
+            "zh": "紅色噩夢之月"
+        },
+        "bloody-rose": {
+            "en": "Bloody Rose",
+            "ko": "블러디 로즈",
+            "ja": "ブラッディローズ",
+            "zh": "血腥玫瑰"
+        },
+        "goddess-black-hand": {
+            "en": "Goddess's Black Hand",
+            "ko": "여신의 검은 손",
+            "ja": "女神の黒手",
+            "zh": "女神黑手"
+        },
+        "seed-of-knowledge": {
+            "en": "Seed of Knowledge",
+            "ko": "지식의 씨앗",
+            "ja": "知識の種",
+            "zh": "知識種子"
+        },
+        "magic-for-friends": {
+            "en": "Magic for Friends",
+            "ko": "친구를 위한 마법",
+            "ja": "友達への魔法",
+            "zh": "友誼魔法"
+        },
+        "improved-dragon-knuckle": {
+            "en": "Improved Dragon Knuckle",
+            "ko": "개량형 드래곤 너클",
+            "ja": "改良型ドラゴンナックル",
+            "zh": "改良龍拳"
+        },
+        "spasm-ring": {
+            "en": "Spasm Ring",
+            "ko": "경련화 반지",
+            "ja": "痙攣の指輪",
+            "zh": "痙攣之戒"
+        },
+        "butterfly-hair-pin": {
+            "en": "Butterfly Hair Pin",
+            "ko": "나비 머리핀",
+            "ja": "蝶のヘアピン",
+            "zh": "蝴蝶髮夾"
+        },
+        "magic-bubble-maker": {
+            "en": "Magic Bubble Maker",
+            "ko": "매직 버블 메이커",
+            "ja": "マジックバブルメーカー",
+            "zh": "魔法泡泡製造機"
+        },
+        "flame-cannon-glove": {
+            "en": "Flame Cannon Glove",
+            "ko": "발화포 장갑",
+            "ja": "火砲グローブ",
+            "zh": "火焰炮手套"
+        },
+        "frame-of-light": {
+            "en": "Frame of Light",
+            "ko": "빛의 프레임",
+            "ja": "光のフレーム",
+            "zh": "光之框架"
+        },
+        "staff-of-ainz": {
+            "en": "Staff of Ainz Ooal Gown",
+            "ko": "스태프 오브 아인즈 울 고운",
+            "ja": "アインズ・ウール・ゴウンの杖",
+            "zh": "安茲·烏爾·恭之杖"
+        },
+        "fairytale-for-nightmare": {
+            "en": "Fairytale for Nightmare",
+            "ko": "악몽을 위한 동화",
+            "ja": "悪夢のための童話",
+            "zh": "噩夢童話"
+        },
+        "severed-horn-staff": {
+            "en": "Severed Horn Staff",
+            "ko": "잘려진 뿔 지팡이",
+            "ja": "切られた角の杖",
+            "zh": "斷角之杖"
+        },
+        "chatty": {
+            "en": "Chatty",
+            "ko": "채티",
+            "ja": "チャティ",
+            "zh": "話嘮"
+        },
+        "idols-cheer": {
+            "en": "Idol's Cheer",
+            "ko": "가희의 응원",
+            "ja": "歌姫の応援",
+            "zh": "歌姬應援"
+        },
+        "watchers-eye": {
+            "en": "Watcher's Eye",
+            "ko": "관조자의 눈",
+            "ja": "傍観者の目",
+            "zh": "旁觀者之眼"
+        },
+        "proof-of-love": {
+            "en": "Proof of Love",
+            "ko": "사랑의 증거",
+            "ja": "愛の証",
+            "zh": "愛之證"
+        },
+        "stella-harpa": {
+            "en": "Stella Harpa",
+            "ko": "스텔라 하르파",
+            "ja": "ステラハルパ",
+            "zh": "星辰豎琴"
+        },
+        "branch-of-sacred-tree": {
+            "en": "Branch of Sacred Tree",
+            "ko": "신목의 가지",
+            "ja": "神木の枝",
+            "zh": "神木之枝"
+        },
+        "hommage-to-tarman": {
+            "en": "Hommage to Tarman",
+            "ko": "오마주 투 타르만",
+            "ja": "オマージュ・トゥ・タルマン",
+            "zh": "致敬塔曼"
+        },
+        "emergency-rescue-kit": {
+            "en": "Emergency Rescue Kit",
+            "ko": "응급구조키트",
+            "ja": "救急キット",
+            "zh": "緊急救護包"
+        },
+        "celestis": {
+            "en": "Celestis",
+            "ko": "첼레스티스",
+            "ja": "セレスティス",
+            "zh": "天星"
+        },
+        "exif-detective": {
+            "en": "EXIF Detective",
+            "ko": "EXIF Detective(E. d.)",
+            "ja": "EXIFディテクティブ",
+            "zh": "EXIF偵探"
+        },
+        "only-comfort": {
+            "en": "Only Comfort",
+            "ko": "단 하나의 위로",
+            "ja": "たった一つの慰め",
+            "zh": "唯一慰藉"
+        },
+        "universal-healing-wand": {
+            "en": "Universal Healing Wand",
+            "ko": "만능 회복 요술봉",
+            "ja": "万能回復の魔法棒",
+            "zh": "萬能治癒魔杖"
+        },
+        "ice-shard-of-protection": {
+            "en": "Ice Shard of Protection",
+            "ko": "수호의 얼음 파편",
+            "ja": "守護の氷片",
+            "zh": "守護冰晶"
+        },
+        "unfading-memory": {
+            "en": "Unfading Memory",
+            "ko": "시들지 않는 추억",
+            "ja": "色褪せない思い出",
+            "zh": "不褪色的回憶"
+        },
+        "token-of-friendship": {
+            "en": "Token of Friendship",
+            "ko": "우정의 증표",
+            "ja": "友情の証",
+            "zh": "友誼象徵"
+        },
+        "spotted-mouse-hairtie": {
+            "en": "Spotted Mouse Hair Tie",
+            "ko": "점박이쥐 머리끈",
+            "ja": "斑点ネズミのヘアゴム",
+            "zh": "斑點鼠髮圈"
+        },
+        "seamless-cloth": {
+            "en": "Seamless Cloth",
+            "ko": "천의무봉",
+            "ja": "天衣無縫",
+            "zh": "天衣無縫"
+        },
+        "queens-whistle": {
+            "en": "Queen's Whistle",
+            "ko": "퀸즈 휘슬",
+            "ja": "クイーンズホイッスル",
+            "zh": "女王哨"
+        },
+        "fan-of-spirit": {
+            "en": "Fan of Spirit",
+            "ko": "혼명의 부채",
+            "ja": "魂明の扇",
+            "zh": "魂明之扇"
+        },
+        "sigurd-blade": {
+            "en": "Sigurd Blade",
+            "ko": "시그루드 블레이드",
+            "ja": "シグルドブレード",
+            "zh": "西格爾德之劍"
+        },
+        "durandal": {
+            "en": "Durandal",
+            "ko": "듀란달",
+            "ja": "デュランダル",
+            "zh": "杜蘭達爾"
+        },
+        "gold-coin-of-borders": {
+            "en": "Gold Coin of Borders",
+            "ko": "경계의 금화",
+            "ja": "境界の金貨",
+            "zh": "邊界金幣"
+        },
+        "golden-rose": {
+            "en": "Golden Rose",
+            "ko": "골든 로즈",
+            "ja": "ゴールデンローズ",
+            "zh": "金色玫瑰"
+        },
+        "diamond-greaves": {
+            "en": "Diamond Greaves",
+            "ko": "금강 각반",
+            "ja": "金剛の脛当て",
+            "zh": "金剛護脛"
+        },
+        "el-fist": {
+            "en": "El's Fist",
+            "ko": "엘의 주먹",
+            "ja": "エルの拳",
+            "zh": "艾爾之拳"
+        },
+        "ascending-blade": {
+            "en": "Ascending Blade",
+            "ko": "승천룡의 검",
+            "ja": "昇天竜の剣",
+            "zh": "升天龍之劍"
+        },
+        "creation-and-destruction": {
+            "en": "Creation and Destruction",
+            "ko": "창조와 파괴",
+            "ja": "創造と破壊",
+            "zh": "創造與毀滅"
+        },
+        "victorious-flag": {
+            "en": "Victorious Flag",
+            "ko": "승리의 깃발",
+            "ja": "勝利の旗",
+            "zh": "勝利之旗"
+        },
+        "joker-tome": {
+            "en": "Joker's Tome",
+            "ko": "조커의 서",
+            "ja": "ジョーカーの書",
+            "zh": "小丑之書"
+        },
+        "torch-of-twilight": {
+            "en": "Torch of Twilight",
+            "ko": "황혼의 횃불",
+            "ja": "黄昏の松明",
+            "zh": "黃昏火炬"
+        },
+        "black-hand-of-goddess": {
+            "en": "Black Hand of Goddess",
+            "ko": "여신의 검은 손",
+            "ja": "女神の黒き手",
+            "zh": "女神的黑手"
+        },
+        "knowledge-tome": {
+            "en": "Knowledge Tome",
+            "ko": "지식의 책",
+            "ja": "知識の書",
+            "zh": "知識之書"
+        },
+        "ancient-book-of-tagahel": {
+            "en": "Ancient Book of Tagahel",
+            "ko": "타가헬의 고서",
+            "ja": "タガヘルの古書",
+            "zh": "塔加赫爾古書"
+        },
+        "wish-basket": {
+            "en": "Wish Basket",
+            "ko": "소원의 바구니",
+            "ja": "願いのバスケット",
+            "zh": "願望籃"
+        },
+        "dust-evil": {
+            "en": "Dust Devil",
+            "ko": "먼지악마",
+            "ja": "ダストデビル",
+            "zh": "塵暴惡魔"
+        },
+        "kal-adra": {
+            "en": "Kal'adra",
+            "ko": "칼아드라",
+            "ja": "カラドラ",
+            "zh": "卡拉德拉"
+        },
+        "cursed-compass": {
+            "en": "Cursed Compass",
+            "ko": "저주 받은 나침반",
+            "ja": "呪われた羅針盤",
+            "zh": "詛咒羅盤"
+        },
+        "midnight-bloom": {
+            "en": "Midnight Bloom",
+            "ko": "자정의 꽃",
+            "ja": "真夜中の花",
+            "zh": "午夜綻放"
+        },
+        "fairy-tome": {
+            "en": "Fairy Tome",
+            "ko": "페어리 토메",
+            "ja": "フェアリートーム",
+            "zh": "妖精之書"
+        },
+        "waters-origin": {
+            "en": "Water's Origin",
+            "ko": "워터스 오리진",
+            "ja": "ウォーターズオリジン",
+            "zh": "水之源"
+        },
+        "ranon-memorandum": {
+            "en": "Ranon's Memorandum",
+            "ko": "라논의 비망록",
+            "ja": "ラノンの覚書",
+            "zh": "拉農備忘錄"
+        },
+        "justice-medal": {
+            "en": "Justice Medal",
+            "ko": "정의의 훈장",
+            "ja": "正義の勲章",
+            "zh": "正義勳章"
+        },
+        "envoy-pipe": {
+            "en": "Envoy's Pipe",
+            "ko": "사자의 담뱃대",
+            "ja": "使者のパイプ",
+            "zh": "使者煙斗"
+        },
+        "ether-necklace": {
+            "en": "Ether Necklace",
+            "ko": "에테르 네크리스",
+            "ja": "エーテルネックレス",
+            "zh": "以太項鍊"
+        },
+        "oath-key": {
+            "en": "Oath Key",
+            "ko": "맹세의 열쇠",
+            "ja": "誓いの鍵",
+            "zh": "誓約鑰匙"
+        },
+        "victory-flag": {
+            "en": "Victory Flag",
+            "ko": "비토리 플래그",
+            "ja": "ビクトリーフラッグ",
+            "zh": "勝利旗幟"
+        },
+        "ancient-sheath": {
+            "en": "Ancient Sheath",
+            "ko": "낡은 칼집",
+            "ja": "古い鞘",
+            "zh": "古老刀鞘"
+        },
+        "labyrinth-cube": {
+            "en": "Labyrinth Cube",
+            "ko": "래비린스 큐브",
+            "ja": "ラビリンスキューブ",
+            "zh": "迷宮方塊"
+        },
+        "candlestick": {
+            "en": "Candlestick",
+            "ko": "촛대",
+            "ja": "燭台",
+            "zh": "燭台"
+        },
+        "martial-resolve": {
+            "en": "Martial Resolve",
+            "ko": "군심의 각오",
+            "ja": "軍心の覚悟",
+            "zh": "軍心覺悟"
+        },
+        "egg-of-delusion": {
+            "en": "Egg of Delusion",
+            "ko": "망상의 알",
+            "ja": "妄想の卵",
+            "zh": "妄想之卵"
+        },
+        "ascending-axe": {
+            "en": "Ascending Axe",
+            "ko": "승천부",
+            "ja": "昇天斧",
+            "zh": "升天之斧"
+        },
+        "spooky-solayu": {
+            "en": "Spooky Solayu",
+            "ko": "스푸키 솔라유",
+            "ja": "スプーキーソラユ",
+            "zh": "驚悚索拉尤"
+        },
+        "shepherd-staff": {
+            "en": "Shepherd's Staff",
+            "ko": "양치기의 지팡이",
+            "ja": "羊飼いの杖",
+            "zh": "牧羊人之杖"
+        },
+        "ancient-sheath-artifact": {
+            "en": "Ancient Sheath",
+            "ko": "고대의 검집",
+            "ja": "古代の鞘",
+            "zh": "古代劍鞘"
+        },
+        "golden-yaksha": {
+            "en": "Golden Yaksha",
+            "ko": "금강야차",
+            "ja": "金剛夜叉",
+            "zh": "金剛夜叉"
+        },
+        "forest-totem": {
+            "en": "Forest Totem",
+            "ko": "녹림의 토템",
+            "ja": "林のトーテム",
+            "zh": "森林圖騰"
+        },
+        "goblin-lantern": {
+            "en": "Goblin Lantern",
+            "ko": "도깨비 등불",
+            "ja": "鬼火ランタン",
+            "zh": "鬼火燈籠"
+        },
+        "aqua-rose": {
+            "en": "Aqua Rose",
+            "ko": "아쿠아 로즈",
+            "ja": "アクアローズ",
+            "zh": "水玫瑰"
+        },
+        "atma-portal": {
+            "en": "Atma's Portal",
+            "ko": "아트마의 포탈",
+            "ja": "アトマのポータル",
+            "zh": "阿特瑪傳送門"
+        },
+        "devils-brand": {
+            "en": "Devil's Brand",
+            "ko": "악마의 낙인",
+            "ja": "悪魔の烙印",
+            "zh": "惡魔烙印"
+        },
+        "spear-of-asaeci": {
+            "en": "Spear of Asaeci",
+            "ko": "알세이스의 창",
+            "ja": "アルセイスの槍",
+            "zh": "阿塞西之槍"
+        },
+        "sword-of-dawn": {
+            "en": "Sword of Dawn",
+            "ko": "여명의 검",
+            "ja": "黎明の剣",
+            "zh": "黎明之劍"
+        },
+        "anchor-of-eternity": {
+            "en": "Anchor of Eternity",
+            "ko": "영겁의 닻",
+            "ja": "永劫の錨",
+            "zh": "永劫之錨"
+        },
+        "blood-grail": {
+            "en": "Blood Grail",
+            "ko": "피의 성배",
+            "ja": "血の聖杯",
+            "zh": "血之聖杯"
+        },
+        "butterfly-mandolin": {
+            "en": "Butterfly Mandolin",
+            "ko": "호접의 만돌린",
+            "ja": "蝶のマンドリン",
+            "zh": "蝴蝶曼陀林"
+        },
+        "tonfa-of-battle": {
+            "en": "Tonfa of Battle",
+            "ko": "투귀의 톤파",
+            "ja": "闘鬼のトンファー",
+            "zh": "戰鬼雙截棍"
+        },
+        "heaven-piercing-axe": {
+            "en": "Heaven Piercing Axe",
+            "ko": "참천의 도끼",
+            "ja": "斬天の斧",
+            "zh": "斬天之斧"
+        },
+        "super-duper-water-gun": {
+            "en": "Super Duper Water Gun SSS",
+            "ko": "수퍼 요술봉 트리플 S",
+            "ja": "スーパー魔法棒トリプルS",
+            "zh": "超级魔法棒三重S"
+        },
+        "mighty-yaksha": {
+            "en": "Mighty Yaksha",
+            "ko": "무쌍 야차",
+            "ja": "無双夜叉",
+            "zh": "無雙夜叉"
+        },
+        "snazzy-sunglasses": {
+            "en": "Snazzy Sunglasses",
+            "ko": "스나지 선글라스",
+            "ja": "スナジーサングラス",
+            "zh": "時髦太陽鏡"
+        },
+        "severed-chain": {
+            "en": "Severed Chain",
+            "ko": "끊어진 사슬",
+            "ja": "断たれた鎖",
+            "zh": "斷裂鎖鏈"
+        },
+        "blazing-wildfire": {
+            "en": "Blazing Wildfire",
+            "ko": "불타는 들불",
+            "ja": "燃え盛る野火",
+            "zh": "燃燒野火"
+        },
+        "new-moon-essence": {
+            "en": "New Moon Essence",
+            "ko": "신월의 정수",
+            "ja": "新月のエッセンス",
+            "zh": "新月精華"
+        },
+        "iron-grip": {
+            "en": "Iron Grip",
+            "ko": "철권",
+            "ja": "鉄拳",
+            "zh": "鐵拳"
+        },
+        "battle-trophy": {
+            "en": "Battle Trophy",
+            "ko": "전투의 전리품",
+            "ja": "戦利品",
+            "zh": "戰利品"
+        },
+        "snow-crystal": {
+            "en": "Snow Crystal",
+            "ko": "눈의 결정",
+            "ja": "雪の結晶",
+            "zh": "雪之結晶"
+        },
+        "moonlight-veil": {
+            "en": "Moonlight Veil",
+            "ko": "월광의 베일",
+            "ja": "月光のベール",
+            "zh": "月光面紗"
+        },
+        "life-stealing-fang": {
+            "en": "Life-Stealing Fang",
+            "ko": "생명을 빨아먹는 송곳니",
+            "ja": "生命を吸う牙",
+            "zh": "吸命之牙"
+        },
+        "corrupted-sword": {
+            "en": "Corrupted Sword",
+            "ko": "타락한 검",
+            "ja": "堕落した剣",
+            "zh": "墮落之劍"
+        },
+        "ring-of-mastery": {
+            "en": "Ring of Mastery",
+            "ko": "숙련의 반지",
+            "ja": "熟練の指輪",
+            "zh": "精通之戒"
+        },
+        "haste-armor": {
+            "en": "Haste Armor",
+            "ko": "질풍의 갑옷",
+            "ja": "疾風の鎧",
+            "zh": "疾風護甲"
+        },
+        "willpower-barrier": {
+            "en": "Willpower Barrier",
+            "ko": "의지의 방벽",
+            "ja": "意思の障壁",
+            "zh": "意志屏障"
+        },
+        "burning-soul": {
+            "en": "Burning Soul",
+            "ko": "불타는 영혼",
+            "ja": "燃える魂",
+            "zh": "燃燒靈魂"
+        },
+        "saber-of-justice": {
+            "en": "Saber of Justice",
+            "ko": "정의의 세이버",
+            "ja": "正義のサーベル",
+            "zh": "正義軍刀"
+        },
+        "shield-of-faith": {
+            "en": "Shield of Faith",
+            "ko": "신념의 방패",
+            "ja": "信念の盾",
+            "zh": "信念之盾"
+        },
+        "gem-of-fortune": {
+            "en": "Gem of Fortune",
+            "ko": "행운의 보석",
+            "ja": "幸運の宝石",
+            "zh": "幸運寶石"
+        },
+        "healing-potion": {
+            "en": "Healing Potion",
+            "ko": "치유의 물약",
+            "ja": "癒しの薬",
+            "zh": "治愈藥水"
+        },
+        "warriors-pride": {
+            "en": "Warrior's Pride",
+            "ko": "전사의 긍지",
+            "ja": "戦士の誇り",
+            "zh": "戰士之傲"
+        },
+        "knights-honor": {
+            "en": "Knight's Honor",
+            "ko": "기사의 명예",
+            "ja": "騎士の名誉",
+            "zh": "騎士之榮"
+        },
+        "rogues-dagger": {
+            "en": "Rogue's Dagger",
+            "ko": "도적의 단검",
+            "ja": "盗賊のダガー",
+            "zh": "盜賊匕首"
+        },
+        "rangers-bow": {
+            "en": "Ranger's Bow",
+            "ko": "사수의 활",
+            "ja": "射手の弓",
+            "zh": "射手之弓"
+        },
+        "mages-tome": {
+            "en": "Mage's Tome",
+            "ko": "마도사의 서",
+            "ja": "魔道士の書",
+            "zh": "魔法師之書"
+        },
+        "healers-staff": {
+            "en": "Healer's Staff",
+            "ko": "치유사의 지팡이",
+            "ja": "癒者の杖",
+            "zh": "治癒者之杖"
+        },
+        "dragon-scale": {
+            "en": "Dragon Scale",
+            "ko": "용의 비늘",
+            "ja": "竜の鱗",
+            "zh": "龍鱗"
+        },
+        "phoenix-feather": {
+            "en": "Phoenix Feather",
+            "ko": "불사조의 깃털",
+            "ja": "不死鳥の羽",
+            "zh": "不死鳥羽"
+        },
+        "unicorn-horn": {
+            "en": "Unicorn Horn",
+            "ko": "유니콘의 뿔",
+            "ja": "ユニコーンの角",
+            "zh": "獨角獸之角"
+        },
+        "griffins-talon": {
+            "en": "Griffin's Talon",
+            "ko": "그리핀의 발톱",
+            "ja": "グリフォンの爪",
+            "zh": "獅鷲之爪"
+        },
+        "chimeras-heart": {
+            "en": "Chimera's Heart",
+            "ko": "키메라의 심장",
+            "ja": "キメラの心臓",
+            "zh": "奇美拉之心"
+        },
+        "hydras-blood": {
+            "en": "Hydra's Blood",
+            "ko": "히드라의 피",
+            "ja": "ヒドラの血",
+            "zh": "九頭蛇之血"
+        },
+        "basilisk-eye": {
+            "en": "Basilisk Eye",
+            "ko": "바실리스크의 눈",
+            "ja": "バジリスクの目",
+            "zh": "蛇怪之眼"
+        },
+        "werewolf-pelt": {
+            "en": "Werewolf Pelt",
+            "ko": "늑대인간의 가죽",
+            "ja": "人狼の毛皮",
+            "zh": "狼人皮毛"
+        },
+        "vampire-fang": {
+            "en": "Vampire Fang",
+            "ko": "뱀파이어의 송곳니",
+            "ja": "バンパイアの牙",
+            "zh": "吸血鬼之牙"
+        },
+        "ghost-essence": {
+            "en": "Ghost Essence",
+            "ko": "유령의 정수",
+            "ja": "幽霊のエッセンス",
+            "zh": "幽靈精華"
+        },
+        "demon-core": {
+            "en": "Demon Core",
+            "ko": "악마의 핵",
+            "ja": "悪魔の核",
+            "zh": "惡魔之核"
+        },
+        "angel-wing": {
+            "en": "Angel Wing",
+            "ko": "천사의 날개",
+            "ja": "天使の翼",
+            "zh": "天使之翼"
+        },
+        "fairy-dust": {
+            "en": "Fairy Dust",
+            "ko": "요정의 가루",
+            "ja": "妖精の粉",
+            "zh": "妖精之粉"
+        },
+        "elemental-stone": {
+            "en": "Elemental Stone",
+            "ko": "정령석",
+            "ja": "精霊石",
+            "zh": "精靈石"
+        },
+        "mystic-orb": {
+            "en": "Mystic Orb",
+            "ko": "신비의 구슬",
+            "ja": "神秘の珠",
+            "zh": "神秘之珠"
+        },
+        "arcane-crystal": {
+            "en": "Arcane Crystal",
+            "ko": "비전의 수정",
+            "ja": "秘術の水晶",
+            "zh": "奧術水晶"
+        },
+        "soul-gem": {
+            "en": "Soul Gem",
+            "ko": "영혼의 보석",
+            "ja": "魂の宝石",
+            "zh": "靈魂寶石"
+        },
+        "mana-stone": {
+            "en": "Mana Stone",
+            "ko": "마나석",
+            "ja": "マナ石",
+            "zh": "魔力石"
+        },
+        "runic-tablet": {
+            "en": "Runic Tablet",
+            "ko": "룬의 서판",
+            "ja": "ルーンの石板",
+            "zh": "符文石板"
+        },
+        "enchanted-scroll": {
+            "en": "Enchanted Scroll",
+            "ko": "마법의 두루마리",
+            "ja": "魔法の巻物",
+            "zh": "魔法卷軸"
+        },
+        "sacred-relic": {
+            "en": "Sacred Relic",
+            "ko": "신성한 유물",
+            "ja": "聖なる遺物",
+            "zh": "神聖遺物"
+        },
+        "cursed-artifact": {
+            "en": "Cursed Artifact",
+            "ko": "저주받은 유물",
+            "ja": "呪われた遺物",
+            "zh": "詛咒遺物"
+        },
+        "blessed-charm": {
+            "en": "Blessed Charm",
+            "ko": "축복의 부적",
+            "ja": "祝福のお守り",
+            "zh": "祝福護符"
+        },
+        "lucky-coin": {
+            "en": "Lucky Coin",
+            "ko": "행운의 동전",
+            "ja": "幸運のコイン",
+            "zh": "幸運硬幣"
+        },
+        "fortune-card": {
+            "en": "Fortune Card",
+            "ko": "행운의 카드",
+            "ja": "運勢カード",
+            "zh": "命運卡牌"
+        },
+        "destiny-star": {
+            "en": "Destiny Star",
+            "ko": "운명의 별",
+            "ja": "運命の星",
+            "zh": "命運之星"
+        },
+        "twilight-orb": {
+            "en": "Twilight Orb",
+            "ko": "황혼의 구슬",
+            "ja": "黄昏の珠",
+            "zh": "黃昏之珠"
+        },
+        "chaos-shard": {
+            "en": "Chaos Shard",
+            "ko": "혼돈의 조각",
+            "ja": "混沌の破片",
+            "zh": "混沌碎片"
+        },
+        "order-sigil": {
+            "en": "Order Sigil",
+            "ko": "질서의 인장",
+            "ja": "秩序の印章",
+            "zh": "秩序印記"
+        },
+        "light-prism": {
+            "en": "Light Prism",
+            "ko": "빛의 프리즘",
+            "ja": "光のプリズム",
+            "zh": "光之稜鏡"
+        },
+        "shadow-cloak": {
+            "en": "Shadow Cloak",
+            "ko": "그림자의 망토",
+            "ja": "影のマント",
+            "zh": "暗影斗篷"
+        },
+        "flame-signet": {
+            "en": "Flame Signet",
+            "ko": "화염의 인장",
+            "ja": "炎の印章",
+            "zh": "火焰印記"
+        },
+        "ice-pendant": {
+            "en": "Ice Pendant",
+            "ko": "얼음의 펜던트",
+            "ja": "氷のペンダント",
+            "zh": "冰之墜飾"
+        },
+        "thunder-emblem": {
+            "en": "Thunder Emblem",
+            "ko": "번개의 문장",
+            "ja": "雷の紋章",
+            "zh": "雷霆徽章"
+        },
+        "earth-amulet": {
+            "en": "Earth Amulet",
+            "ko": "대지의 부적",
+            "ja": "大地のお守り",
+            "zh": "大地護符"
+        },
+        "wind-charm": {
+            "en": "Wind Charm",
+            "ko": "바람의 부적",
+            "ja": "風のお守り",
+            "zh": "風之護符"
+        },
+        "water-talisman": {
+            "en": "Water Talisman",
+            "ko": "물의 부적",
+            "ja": "水のお守り",
+            "zh": "水之護符"
+        },
+        "nature-emblem": {
+            "en": "Nature Emblem",
+            "ko": "자연의 문장",
+            "ja": "自然の紋章",
+            "zh": "自然徽章"
+        },
+        "void-crystal": {
+            "en": "Void Crystal",
+            "ko": "공허의 수정",
+            "ja": "虚空の水晶",
+            "zh": "虛空水晶"
+        },
+        "time-dial": {
+            "en": "Time Dial",
+            "ko": "시간의 다이얼",
+            "ja": "時のダイヤル",
+            "zh": "時間錶盤"
+        },
+        "space-compass": {
+            "en": "Space Compass",
+            "ko": "공간의 나침반",
+            "ja": "空間の羅針盤",
+            "zh": "空間羅盤"
+        },
+        "dimension-key": {
+            "en": "Dimension Key",
+            "ko": "차원의 열쇠",
+            "ja": "次元の鍵",
+            "zh": "次元之鑰"
+        },
+        "reality-anchor": {
+            "en": "Reality Anchor",
+            "ko": "현실의 닻",
+            "ja": "現実の錨",
+            "zh": "現實之錨"
+        },
+        "eternity-loop": {
+            "en": "Eternity Loop",
+            "ko": "영원의 고리",
+            "ja": "永遠の輪",
+            "zh": "永恆之環"
+        },
+        "infinity-band": {
+            "en": "Infinity Band",
+            "ko": "무한의 밴드",
+            "ja": "無限のバンド",
+            "zh": "無限環帶"
+        },
+        "unity-chain": {
+            "en": "Unity Chain",
+            "ko": "단결의 사슬",
+            "ja": "団結の鎖",
+            "zh": "團結鎖鏈"
+        },
+        "harmony-bell": {
+            "en": "Harmony Bell",
+            "ko": "조화의 종",
+            "ja": "調和の鐘",
+            "zh": "和諧之鐘"
+        },
+        "balance-scale": {
+            "en": "Balance Scale",
+            "ko": "균형의 저울",
+            "ja": "均衡の天秤",
+            "zh": "平衡天秤"
+        }
+    },
+    "sets": {
+        "speed": {
+            "en": "Speed",
+            "ko": "속도",
+            "ja": "速度",
+            "zh": "速度"
+        },
+        "attack": {
+            "en": "Attack",
+            "ko": "공격력",
+            "ja": "攻撃",
+            "zh": "攻擊"
+        },
+        "health": {
+            "en": "Health",
+            "ko": "생명력",
+            "ja": "生命",
+            "zh": "生命"
+        },
+        "defense": {
+            "en": "Defense",
+            "ko": "방어력",
+            "ja": "防禦",
+            "zh": "防禦"
+        },
+        "critical": {
+            "en": "Critical",
+            "ko": "치명",
+            "ja": "クリティカル",
+            "zh": "致命"
+        },
+        "hit": {
+            "en": "Hit",
+            "ko": "적중",
+            "ja": "命中",
+            "zh": "命中"
+        },
+        "destruction": {
+            "en": "Destruction",
+            "ko": "파멸",
+            "ja": "破滅",
+            "zh": "毀滅"
+        },
+        "lifesteal": {
+            "en": "Lifesteal",
+            "ko": "흡혈",
+            "ja": "吸血",
+            "zh": "吸血"
+        },
+        "counter": {
+            "en": "Counter",
+            "ko": "반격",
+            "ja": "反撃",
+            "zh": "反擊"
+        },
+        "resist": {
+            "en": "Resist",
+            "ko": "저항",
+            "ja": "抵抗",
+            "zh": "抗性"
+        },
+        "rage": {
+            "en": "Rage",
+            "ko": "격노",
+            "ja": "激怒",
+            "zh": "憤怒"
+        },
+        "immunity": {
+            "en": "Immunity",
+            "ko": "면역",
+            "ja": "免疫",
+            "zh": "免疫"
+        },
+        "unity": {
+            "en": "Unity",
+            "ko": "협동",
+            "ja": "協力",
+            "zh": "團結"
+        },
+        "revenge": {
+            "en": "Revenge",
+            "ko": "복수",
+            "ja": "復讐",
+            "zh": "復仇"
+        },
+        "injury": {
+            "en": "Injury",
+            "ko": "상해",
+            "ja": "傷害",
+            "zh": "傷害"
+        },
+        "penetration": {
+            "en": "Penetration",
+            "ko": "관통",
+            "ja": "貫通",
+            "zh": "穿透"
+        },
+        "protection": {
+            "en": "Protection",
+            "ko": "수호",
+            "ja": "守護",
+            "zh": "守護"
+        },
+        "torrent": {
+            "en": "Torrent",
+            "ko": "급류",
+            "ja": "激流",
+            "zh": "激流"
+        }
+    }
+}
